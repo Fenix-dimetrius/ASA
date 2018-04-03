@@ -1,0 +1,116 @@
+== MARK == TMSiApi $Revision: 109 $ ==
+ 4.19.370 DllMain, Entry
+ 4.19.370 DllMain, hInstance!=hModule
+ 4.19.370 DllMain, DLL_PROCESS_ATTACH
+ 4.19.370 DllMain, lpReserved == NULL
+ 4.19.370 DllMain, Exit
+ 4.19.401 DllMain, Entry
+ 4.19.402 DllMain, hInstance==hModule
+ 4.19.402 DllMain, DLL_THREAD_ATTACH
+ 4.19.402 DllMain, lpReserved == NULL
+ 4.19.402 DllMain, Exit
+ 4.19.582 DllMain, Entry
+ 4.19.582 DllMain, hInstance==hModule
+ 4.19.582 DllMain, DLL_THREAD_ATTACH
+ 4.19.582 DllMain, lpReserved == NULL
+ 4.19.582 DllMain, Exit
+ 4.19.586 DllMain, Entry
+ 4.19.586 DllMain, hInstance==hModule
+ 4.19.586 DllMain, DLL_THREAD_DETACH
+ 4.19.586 DllMain, lpReserved == NULL
+ 4.19.586 DllMain, Exit
+ 4.19.589 DllMain, Entry
+ 4.19.589 DllMain, hInstance==hModule
+ 4.19.589 DllMain, DLL_THREAD_ATTACH
+ 4.19.589 DllMain, lpReserved == NULL
+ 4.19.589 DllMain, Exit
+ 4.19.594 DllMain, Entry
+ 4.19.594 DllMain, hInstance==hModule
+ 4.19.594 DllMain, DLL_THREAD_DETACH
+ 4.19.594 DllMain, lpReserved == NULL
+ 4.19.594 DllMain, Exit
+ 4.19.599 DllMain, Entry
+ 4.19.599 DllMain, hInstance==hModule
+ 4.19.599 DllMain, DLL_THREAD_ATTACH
+ 4.19.599 DllMain, lpReserved == NULL
+ 4.19.599 DllMain, Exit
+ 4.19.887 DllMain, Entry
+ 4.19.887 DllMain, hInstance==hModule
+ 4.19.887 DllMain, DLL_THREAD_ATTACH
+ 4.19.887 DllMain, lpReserved == NULL
+ 4.19.887 DllMain, Exit
+ 4.19.890 DllMain, Entry
+ 4.19.890 DllMain, hInstance==hModule
+ 4.19.890 DllMain, DLL_THREAD_DETACH
+ 4.19.890 DllMain, lpReserved == NULL
+ 4.19.890 DllMain, Exit
+ 4.19.905 DllMain, Entry
+ 4.19.905 DllMain, hInstance==hModule
+ 4.19.905 DllMain, DLL_THREAD_ATTACH
+ 4.19.905 DllMain, lpReserved == NULL
+ 4.19.905 DllMain, Exit
+ 4.19.908 DllMain, Entry
+ 4.19.908 DllMain, hInstance==hModule
+ 4.19.908 DllMain, DLL_THREAD_ATTACH
+ 4.19.908 DllMain, lpReserved == NULL
+ 4.19.908 DllMain, Exit
+ 4.19.909 DllMain, Entry
+ 4.19.909 DllMain, hInstance==hModule
+ 4.19.909 DllMain, DLL_THREAD_DETACH
+ 4.19.909 DllMain, lpReserved == NULL
+ 4.19.909 DllMain, Exit
+ 4.19.909 DllMain, Entry
+ 4.19.910 DllMain, hInstance==hModule
+ 4.19.910 DllMain, DLL_THREAD_DETACH
+ 4.19.910 DllMain, lpReserved == NULL
+ 4.19.910 DllMain, Exit
+ 4.19.996 DllMain, Entry
+ 4.19.996 DllMain, hInstance==hModule
+ 4.19.996 DllMain, DLL_THREAD_ATTACH
+ 4.19.996 DllMain, lpReserved == NULL
+ 4.19.996 DllMain, Exit
+ 4.20.  5 DllMain, Entry
+ 4.20.  5 DllMain, hInstance==hModule
+ 4.20.  5 DllMain, DLL_THREAD_ATTACH
+ 4.20.  5 DllMain, lpReserved == NULL
+ 4.20.  5 DllMain, Exit
+ 4.20.  6 DllMain, Entry
+ 4.20.  6 DllMain, hInstance==hModule
+ 4.20.  6 DllMain, DLL_THREAD_ATTACH
+ 4.20.  6 DllMain, lpReserved == NULL
+ 4.20.  6 DllMain, Exit
+ 4.20.  6 DllMain, Entry
+ 4.20.  6 DllMain, hInstance==hModule
+ 4.20.  6 DllMain, DLL_THREAD_ATTACH
+ 4.20.  7 DllMain, lpReserved == NULL
+ 4.20.  7 DllMain, Exit
+ 4.20.  9 DllMain, Entry
+ 4.20.  9 DllMain, hInstance==hModule
+ 4.20.  9 DllMain, DLL_THREAD_ATTACH
+ 4.20.  9 DllMain, lpReserved == NULL
+ 4.20.  9 DllMain, Exit
+ 4.20.  9 DllMain, Entry
+ 4.20.  9 DllMain, hInstance==hModule
+ 4.20.  9 DllMain, DLL_THREAD_ATTACH
+ 4.20.  9 DllMain, lpReserved == NULL
+ 4.20.  9 DllMain, Exit
+ 4.20.  9 DllMain, Entry
+ 4.20.  9 DllMain, hInstance==hModule
+ 4.20.  9 DllMain, DLL_THREAD_ATTACH
+ 4.20.  9 DllMain, lpReserved == NULL
+ 4.20.  9 DllMain, Exit
+ 4.20. 11 DllMain, Entry
+ 4.20. 11 DllMain, hInstance==hModule
+ 4.20. 11 DllMain, DLL_THREAD_DETACH
+ 4.20. 11 DllMain, lpReserved == NULL
+ 4.20. 11 DllMain, Exit
+ 4.20. 24 DllMain, Entry
+ 4.20. 24 DllMain, hInstance==hModule
+ 4.20. 24 DllMain, DLL_THREAD_DETACH
+ 4.20. 24 DllMain, lpReserved == NULL
+ 4.20. 24 DllMain, Exit
+ 4.20. 35 DllMain, Entry
+ 4.20. 35 DllMain, hInstance==hModule
+ 4.20. 35 DllMain, DLL_THREAD_DETACH
+ 4.20. 35 DllMain, lpReserved == NULL
+ 4.20. 35 DllMain, Exit

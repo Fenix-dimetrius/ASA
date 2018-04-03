@@ -1,0 +1,87 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (MFCLibrary1.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  stdafx.cpp
+E:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\atlmfc\include\afx.h(38): warning C4996: 'MBCS_Support_Deprecated_In_MFC': MBCS support in MFC is deprecated and may be removed in a future version of MFC.
+  E:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\atlmfc\include\afx.h(33): note:  см. объявление "MBCS_Support_Deprecated_In_MFC"
+  ASADlg.cpp
+ASADlg.cpp(356): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+ASADlg.cpp(358): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+ASADlg.cpp(504): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+  ASATest.cpp
+ASATest.cpp(122): warning C4129: %: неизвестная escape-последовательность
+ASATest.cpp(169): warning C4244: аргумент: преобразование "LONGLONG" в "unsigned int", возможна потеря данных
+ASATest.cpp(174): warning C4018: <: несоответствие типов со знаком и без знака
+ASATest.cpp(241): warning C4018: <: несоответствие типов со знаком и без знака
+ASATest.cpp(285): warning C4018: <: несоответствие типов со знаком и без знака
+ASATest.cpp(301): warning C4018: <: несоответствие типов со знаком и без знака
+ASATest.cpp(333): warning C4018: <: несоответствие типов со знаком и без знака
+ASATest.cpp(342): warning C4018: <: несоответствие типов со знаком и без знака
+ASATest.cpp(384): warning C4018: <: несоответствие типов со знаком и без знака
+ASATest.cpp(387): warning C4018: <: несоответствие типов со знаком и без знака
+ASATest.cpp(392): warning C4018: <: несоответствие типов со знаком и без знака
+ASATest.cpp(407): warning C4018: >=: несоответствие типов со знаком и без знака
+ASATest.cpp(423): warning C4018: <: несоответствие типов со знаком и без знака
+ASATest.cpp(434): warning C4018: <: несоответствие типов со знаком и без знака
+ASATest.cpp(458): warning C4018: <: несоответствие типов со знаком и без знака
+ASATest.cpp(461): warning C4018: <: несоответствие типов со знаком и без знака
+ASATest.cpp(466): warning C4018: <: несоответствие типов со знаком и без знака
+ASATest.cpp(481): warning C4018: >=: несоответствие типов со знаком и без знака
+ASATest.cpp(669): warning C4018: <: несоответствие типов со знаком и без знака
+ASATest.cpp(678): warning C4018: <: несоответствие типов со знаком и без знака
+ASATest.cpp(685): warning C4018: <: несоответствие типов со знаком и без знака
+ASATest.cpp(746): warning C4244: аргумент: преобразование "double" в "__int64", возможна потеря данных
+ASATest.cpp(803): warning C4244: =: преобразование "LONGLONG" в "double", возможна потеря данных
+  DialogTest.cpp
+  MFCLibrary1.cpp
+MFCLibrary1.cpp(271): warning C4018: <: несоответствие типов со знаком и без знака
+MFCLibrary1.cpp(351): warning C4129: %: неизвестная escape-последовательность
+MFCLibrary1.cpp(439): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+MFCLibrary1.cpp(451): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+MFCLibrary1.cpp(461): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+MFCLibrary1.cpp(469): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+MFCLibrary1.cpp(478): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+MFCLibrary1.cpp(425): warning C4101: valLen: неиспользованная локальная переменная
+  PicCardContrl1.cpp
+  PicCardContrl2.cpp
+  PicFonContrl.cpp
+PicFonContrl.cpp(49): warning C4244: =: преобразование "double" в "LONG", возможна потеря данных
+PicFonContrl.cpp(50): warning C4244: =: преобразование "float" в "LONG", возможна потеря данных
+  PlugInSettingDlg.cpp
+PlugInSettingDlg.cpp(146): warning C4800: int: принудительно задано логическое значение "true" или "false" (предупреждение о производительности)
+PlugInSettingDlg.cpp(148): warning C4800: int: принудительно задано логическое значение "true" или "false" (предупреждение о производительности)
+PlugInSettingDlg.cpp(150): warning C4800: int: принудительно задано логическое значение "true" или "false" (предупреждение о производительности)
+PlugInSettingDlg.cpp(227): warning C4129: %: неизвестная escape-последовательность
+PlugInSettingDlg.cpp(232): warning C4129: %: неизвестная escape-последовательность
+PlugInSettingDlg.cpp(236): warning C4129: %: неизвестная escape-последовательность
+PlugInSettingDlg.cpp(239): warning C4129: %: неизвестная escape-последовательность
+PlugInSettingDlg.cpp(243): warning C4129: %: неизвестная escape-последовательность
+  SumEpochClass.cpp
+SumEpochClass.cpp(56): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+SumEpochClass.cpp(82): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+SumEpochClass.cpp(83): warning C4018: <: несоответствие типов со знаком и без знака
+SumEpochClass.cpp(109): warning C4018: <: несоответствие типов со знаком и без знака
+SumEpochClass.cpp(149): warning C4018: <: несоответствие типов со знаком и без знака
+SumEpochClass.cpp(215): warning C4018: <: несоответствие типов со знаком и без знака
+SumEpochClass.cpp(259): warning C4018: <: несоответствие типов со знаком и без знака
+SumEpochClass.cpp(332): warning C4018: <: несоответствие типов со знаком и без знака
+SumEpochClass.cpp(214): warning C4930: std::vector<float,std::allocator<_Ty>> TempTrueSum(void): функция с прототипом не вызвана (предполагалось определение переменной?)
+          with
+          [
+              _Ty=float
+          ]
+SumEpochClass.cpp(373): warning C4018: <: несоответствие типов со знаком и без знака
+SumEpochClass.cpp(378): warning C4018: <: несоответствие типов со знаком и без знака
+SumEpochClass.cpp(398): warning C4018: <: несоответствие типов со знаком и без знака
+SumEpochClass.cpp(420): warning C4018: <: несоответствие типов со знаком и без знака
+SumEpochClass.cpp(444): warning C4018: <: несоответствие типов со знаком и без знака
+SumEpochClass.cpp(464): warning C4018: <: несоответствие типов со знаком и без знака
+SumEpochClass.cpp(469): warning C4018: <: несоответствие типов со знаком и без знака
+SumEpochClass.cpp(490): warning C4018: <: несоответствие типов со знаком и без знака
+SumEpochClass.cpp(507): warning C4018: <: несоответствие типов со знаком и без знака
+SumEpochClass.cpp(532): warning C4018: <: несоответствие типов со знаком и без знака
+  TimerCls.cpp
+LINK : warning LNK4075: не учитывается "/INCREMENTAL" из-за спецификации "/LTCG"
+     Создается библиотека E:\projects\vs2015\PlugIn Final V0.3\MFCLibrary1\Debug\MFCLibraryV0.2.lib и объект E:\projects\vs2015\PlugIn Final V0.3\MFCLibrary1\Debug\MFCLibraryV0.2.exp
+  Создание кода
+  All 1721 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Создание кода завершено
+  MFCLibrary1.vcxproj -> E:\projects\vs2015\PlugIn Final V0.3\MFCLibrary1\Debug\MFCLibraryV0.2.dll

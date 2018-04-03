@@ -1,0 +1,38 @@
+<BioTrace+ Software debug output>
+
+09:13:17.713 - Date       : 01/05/2016
+09:13:17.714 - Time       : 09:13:17
+09:13:17.714 - Device Type: 0
+
+
+
+09:13:17.715 - Init:1
+09:13:17.716 - Init:2
+09:13:17.717 - Init:3
+09:13:17.718 - Init:4
+09:13:17.718 - Init:5
+09:13:17.726 - Init:5A
+09:13:17.727 - Init:6
+09:13:17.727 - SystemVars:1
+09:13:17.728 - SystemVars:2
+09:13:17.729 - SystemVars:3
+09:13:17.729 - Load BackupLanguagePack
+09:13:17.730 - dwError = 126 
+09:13:17.731 - DLL missing or unable to load:
+09:13:17.731 - E:\projects\vs2015\PlugIn Final V0.3\MFCLibrary1\MFCLibrary1\System\Language\M32_UK.DLL
+09:13:17.732 - Load LanguagePack
+09:13:17.732 - dwError = 126 
+09:13:17.733 - DLL missing or unable to load:
+09:13:17.734 - E:\projects\vs2015\PlugIn Final V0.3\MFCLibrary1\MFCLibrary1\System\Language\M32_UK.dll
+09:13:17.734 - VersionNumber: 141
+09:13:17.735 - V2015A
+09:13:17.736 - SystemVars:4
+09:13:17.736 - SystemVars:5
+09:13:17.737 - Load LanguagePack
+09:13:17.738 - dwError = 126 
+09:13:17.738 - DLL missing or unable to load:
+09:13:17.739 - E:\projects\vs2015\PlugIn Final V0.3\MFCLibrary1\MFCLibrary1\System\Language\m32_uk.dll
+09:13:17.739 - Load LanguagePack
+09:13:17.740 - dwError = 126 
+09:13:17.741 - DLL missing or unable to load:
+09:13:17.741 - E:\projects\vs2015\PlugIn Final V0.3\MFCLibrary1\MFCLibrary1\System\Language\M32_UK.dll
