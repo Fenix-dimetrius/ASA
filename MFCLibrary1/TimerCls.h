@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 class TimerCls
 {
 public:
@@ -6,16 +6,16 @@ public:
 	~TimerCls();
 
 private:
-	LARGE_INTEGER start;                        //начальное время
-	double freq;                                //частота таймера
-	double tickLen;                            //длина тика
-	double currentTime;                        //текущее время
-	double lastTime;                           //предыдущее время
-	void init();                                //инициализация
-	double getFreq();                          //частота таймера    
+	LARGE_INTEGER start;                        //РЅР°С‡Р°Р»СЊРЅРѕРµ РІСЂРµРјСЏ
+	double freq;                                //С‡Р°СЃС‚РѕС‚Р° С‚Р°Р№РјРµСЂР°
+	double tickLen;                            //РґР»РёРЅР° С‚РёРєР°
+	double currentTime;                        //С‚РµРєСѓС‰РµРµ РІСЂРµРјСЏ
+	double lastTime;                           //РїСЂРµРґС‹РґСѓС‰РµРµ РІСЂРµРјСЏ
+	void init();                                //РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ
+	double getFreq();                          //С‡Р°СЃС‚РѕС‚Р° С‚Р°Р№РјРµСЂР°    
 public:
-	void stopTimer();                          //остановка таймера
-	void startTimer();                      //старт таймера 
-	double readTimer();                        //вернуть время (от начального времени)
+	void stopTimer();                          //РѕСЃС‚Р°РЅРѕРІРєР° С‚Р°Р№РјРµСЂР°
+	void startTimer();                      //СЃС‚Р°СЂС‚ С‚Р°Р№РјРµСЂР° 
+	double readTimer();                        //РІРµСЂРЅСѓС‚СЊ РІСЂРµРјСЏ (РѕС‚ РЅР°С‡Р°Р»СЊРЅРѕРіРѕ РІСЂРµРјРµРЅРё)
 };
 

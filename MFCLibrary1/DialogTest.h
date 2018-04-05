@@ -1,23 +1,23 @@
-#pragma once
+п»ї#pragma once
 #include "resource.h"
 #include "ASADlg.h"
-// диалоговое окно DialogTest
+// РґРёР°Р»РѕРіРѕРІРѕРµ РѕРєРЅРѕ DialogTest
 
 class DialogTest : public CDialogEx
 {
 	DECLARE_DYNAMIC(DialogTest)
 
 public:
-	DialogTest(CWnd* pParent = NULL);   // стандартный конструктор
+	DialogTest(CWnd* pParent = NULL);   // СЃС‚Р°РЅРґР°СЂС‚РЅС‹Р№ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 	virtual ~DialogTest();
 
-// Данные диалогового окна
+// Р”Р°РЅРЅС‹Рµ РґРёР°Р»РѕРіРѕРІРѕРіРѕ РѕРєРЅР°
 #ifdef AFX_DESIGN_TIME
 	enum { IDD = IDD_DIALOG1 };
 #endif
 
 protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // поддержка DDX/DDV
+	virtual void DoDataExchange(CDataExchange* pDX);    // РїРѕРґРґРµСЂР¶РєР° DDX/DDV
 	ASADlg dlg;
 	DECLARE_MESSAGE_MAP()
 public:

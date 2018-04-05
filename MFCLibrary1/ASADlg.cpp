@@ -1,4 +1,4 @@
-// ASADlg.cpp: файл реализации
+п»ї// ASADlg.cpp: С„Р°Р№Р» СЂРµР°Р»РёР·Р°С†РёРё
 //
 
 #include "stdafx.h"
@@ -8,23 +8,23 @@
 #include "ASATest.h"
 
 
-// Время показа
+// Р’СЂРµРјСЏ РїРѕРєР°Р·Р°
 int m_ShowTime;
-// Задержка до показа
+// Р—Р°РґРµСЂР¶РєР° РґРѕ РїРѕРєР°Р·Р°
 int m_BeforeShow;
-//  Задержка после показа
+//  Р—Р°РґРµСЂР¶РєР° РїРѕСЃР»Рµ РїРѕРєР°Р·Р°
 int m_AfterShow;
 
-//  Задержка после показа
+//  Р—Р°РґРµСЂР¶РєР° РїРѕСЃР»Рµ РїРѕРєР°Р·Р°
 int m_DelaySpeedMouse;
 
 
-// завершить показ по клику
+// Р·Р°РІРµСЂС€РёС‚СЊ РїРѕРєР°Р· РїРѕ РєР»РёРєСѓ
 bool m_EndShowByClick = false;
-// генерация до выбора
+// РіРµРЅРµСЂР°С†РёСЏ РґРѕ РІС‹Р±РѕСЂР°
 bool GenNumPicBefore = false;
 
-// точные отсчеты
+// С‚РѕС‡РЅС‹Рµ РѕС‚СЃС‡РµС‚С‹
 bool AccurInterval = false;
 
 //  aux plugIns
@@ -32,15 +32,15 @@ int m_AuxPlugInNum = 6;
 
 
 
-RECT sizeScrin; // размер окна в оконных координатах.
-				//при втором мониторе можгут быть отриц знач
+RECT sizeScrin; // СЂР°Р·РјРµСЂ РѕРєРЅР° РІ РѕРєРѕРЅРЅС‹С… РєРѕРѕСЂРґРёРЅР°С‚Р°С….
+				//РїСЂРё РІС‚РѕСЂРѕРј РјРѕРЅРёС‚РѕСЂРµ РјРѕР¶РіСѓС‚ Р±С‹С‚СЊ РѕС‚СЂРёС† Р·РЅР°С‡
 
-CString urlPic; // адрес картинки
+CString urlPic; // Р°РґСЂРµСЃ РєР°СЂС‚РёРЅРєРё
 
 extern void redrawPlugIn(CString urlPic);
 
 ASATest TestBody;
-// диалоговое окно ASADlg
+// РґРёР°Р»РѕРіРѕРІРѕРµ РѕРєРЅРѕ ASADlg
 
 IMPLEMENT_DYNAMIC(ASADlg, CDialogEx)
 
@@ -95,26 +95,26 @@ ON_WM_SHOWWINDOW()
 END_MESSAGE_MAP()
 
 
-// генерирование в момент нажатия
+// РіРµРЅРµСЂРёСЂРѕРІР°РЅРёРµ РІ РјРѕРјРµРЅС‚ РЅР°Р¶Р°С‚РёСЏ
 CString urlPicBuf;
 void GenNumPic()
 {
 	
 
-	urlPicBuf = TestBody.getUrlPic(); // буффер. генерируем номер стимула
-	urlPic = "PlugIns/TestASA/img/img" + urlPicBuf + ".jpg"; // получаем номер картинки и собираем адрес картинки
+	urlPicBuf = TestBody.getUrlPic(); // Р±СѓС„С„РµСЂ. РіРµРЅРµСЂРёСЂСѓРµРј РЅРѕРјРµСЂ СЃС‚РёРјСѓР»Р°
+	urlPic = "PlugIns/TestASA/img/img" + urlPicBuf + ".jpg"; // РїРѕР»СѓС‡Р°РµРј РЅРѕРјРµСЂ РєР°СЂС‚РёРЅРєРё Рё СЃРѕР±РёСЂР°РµРј Р°РґСЂРµСЃ РєР°СЂС‚РёРЅРєРё
 
-	UpdInfoVal.NumActualCard = TestBody.GetActualNumPic(); // сохраняем номер картинки в структуре, для записи в файл
+	UpdInfoVal.NumActualCard = TestBody.GetActualNumPic(); // СЃРѕС…СЂР°РЅСЏРµРј РЅРѕРјРµСЂ РєР°СЂС‚РёРЅРєРё РІ СЃС‚СЂСѓРєС‚СѓСЂРµ, РґР»СЏ Р·Р°РїРёСЃРё РІ С„Р°Р№Р»
 	
 	
 }
 
 
-void TrueOeFalseClickCard(char Card) // правильно ли выбрали карту
+void TrueOeFalseClickCard(char Card) // РїСЂР°РІРёР»СЊРЅРѕ Р»Рё РІС‹Р±СЂР°Р»Рё РєР°СЂС‚Сѓ
 {
-	if (Card == 'R') // всегда четн
+	if (Card == 'R') // РІСЃРµРіРґР° С‡РµС‚РЅ
 	{
-		// если выпало четно, те не 150 то показываем картинку, так как угодали. если выпало нечет, то не угалали
+		// РµСЃР»Рё РІС‹РїР°Р»Рѕ С‡РµС‚РЅРѕ, С‚Рµ РЅРµ 150 С‚Рѕ РїРѕРєР°Р·С‹РІР°РµРј РєР°СЂС‚РёРЅРєСѓ, С‚Р°Рє РєР°Рє СѓРіРѕРґР°Р»Рё. РµСЃР»Рё РІС‹РїР°Р»Рѕ РЅРµС‡РµС‚, С‚Рѕ РЅРµ СѓРіР°Р»Р°Р»Рё
 		
 		if (urlPicBuf != "150")
 		{
@@ -126,12 +126,12 @@ void TrueOeFalseClickCard(char Card) // правильно ли выбрали карту
 		}	
 
 	}
-	if (Card == 'L')// всегда не четн
+	if (Card == 'L')// РІСЃРµРіРґР° РЅРµ С‡РµС‚РЅ
 	{
-		// если выпало нечет, те 150, то показываем картинку, так как угодали. если выпало чет, то не угалали
+		// РµСЃР»Рё РІС‹РїР°Р»Рѕ РЅРµС‡РµС‚, С‚Рµ 150, С‚Рѕ РїРѕРєР°Р·С‹РІР°РµРј РєР°СЂС‚РёРЅРєСѓ, С‚Р°Рє РєР°Рє СѓРіРѕРґР°Р»Рё. РµСЃР»Рё РІС‹РїР°Р»Рѕ С‡РµС‚, С‚Рѕ РЅРµ СѓРіР°Р»Р°Р»Рё
 		if (urlPicBuf == "150")
 		{
-			urlPic = "PlugIns/TestASA/img/img" + TestBody.GetActualNumPic() + ".jpg"; // получаем номер картинки и собираем адрес картинки
+			urlPic = "PlugIns/TestASA/img/img" + TestBody.GetActualNumPic() + ".jpg"; // РїРѕР»СѓС‡Р°РµРј РЅРѕРјРµСЂ РєР°СЂС‚РёРЅРєРё Рё СЃРѕР±РёСЂР°РµРј Р°РґСЂРµСЃ РєР°СЂС‚РёРЅРєРё
 			UpdInfoVal.TruOrFalseCard = "True";
 		}
 		else
@@ -145,7 +145,7 @@ void TrueOeFalseClickCard(char Card) // правильно ли выбрали карту
 
 
 
-// обработчики сообщений ASADlg
+// РѕР±СЂР°Р±РѕС‚С‡РёРєРё СЃРѕРѕР±С‰РµРЅРёР№ ASADlg
 
 bool fullscr = false;
 
@@ -164,82 +164,82 @@ bool fullscr = false;
 //	m_Name.GetWindowTextA(UpdInfoVal.Name);
 //	m_SecName.GetWindowTextA(UpdInfoVal.SecName);*/
 //
-//	fullscr = false; // если эта кнопка видна, то это уже не полноэкранный режим
+//	fullscr = false; // РµСЃР»Рё СЌС‚Р° РєРЅРѕРїРєР° РІРёРґРЅР°, С‚Рѕ СЌС‚Рѕ СѓР¶Рµ РЅРµ РїРѕР»РЅРѕСЌРєСЂР°РЅРЅС‹Р№ СЂРµР¶РёРј
 //
 //	if (fullscr == false)
 //	{
-//		ModifyStyle(WS_CAPTION, 0);// скрываем поле заголовка окна
-//		ModifyStyle(WS_EX_DLGMODALFRAME, 0); // скрываем рамки окна
+//		ModifyStyle(WS_CAPTION, 0);// СЃРєСЂС‹РІР°РµРј РїРѕР»Рµ Р·Р°РіРѕР»РѕРІРєР° РѕРєРЅР°
+//		ModifyStyle(WS_EX_DLGMODALFRAME, 0); // СЃРєСЂС‹РІР°РµРј СЂР°РјРєРё РѕРєРЅР°
 //											 //ModifyStyle(WS_DLGFRAME, 0);
 //											 //AfxGetMainWnd()->SetWindowPos()
 //											 //this->SetWindowPos(NULL, 0, 0, GetSystemMetrics(SM_CXSCREEN), GetSystemMetrics(SM_CYSCREEN), WS_EX_TOPMOST);
 //											 //	this->SetWindowPos(NULL, 0, 0, GetSystemMetrics(SM_CXFULLSCREEN), GetSystemMetrics(SM_CYFULLSCREEN), WS_EX_TOPMOST);
 //
-//		AfxGetMainWnd()->ShowWindow(SW_SHOWMAXIMIZED); // разворачиваем окно
+//		AfxGetMainWnd()->ShowWindow(SW_SHOWMAXIMIZED); // СЂР°Р·РІРѕСЂР°С‡РёРІР°РµРј РѕРєРЅРѕ
 //		fullscr = true;
 //
 //
 //	}
-//	my_colorDlg.DeleteObject(); // удаляем старую кисть
-//	my_colorDlg.CreateSolidBrush(RGB(0, 0, 0));		// создать кисть для окраски окна
+//	my_colorDlg.DeleteObject(); // СѓРґР°Р»СЏРµРј СЃС‚Р°СЂСѓСЋ РєРёСЃС‚СЊ
+//	my_colorDlg.CreateSolidBrush(RGB(0, 0, 0));		// СЃРѕР·РґР°С‚СЊ РєРёСЃС‚СЊ РґР»СЏ РѕРєСЂР°СЃРєРё РѕРєРЅР°
 //
-//													// НЕ ЗАБЫТЬ РАСКОМЕНТИТЬ В РЕЛИЗЕ!!!!
-//													//SystemParametersInfo(SPI_SETMOUSESPEED, 0, (PVOID)1, 0); // устанавливаем минимальную скорость
+//													// РќР• Р—РђР‘Р«РўР¬ Р РђРЎРљРћРњР•РќРўРРўР¬ Р’ Р Р•Р›РР—Р•!!!!
+//													//SystemParametersInfo(SPI_SETMOUSESPEED, 0, (PVOID)1, 0); // СѓСЃС‚Р°РЅР°РІР»РёРІР°РµРј РјРёРЅРёРјР°Р»СЊРЅСѓСЋ СЃРєРѕСЂРѕСЃС‚СЊ
 //
 //
-//													//																												//загружаем картинку
+//													//																												//Р·Р°РіСЂСѓР¶Р°РµРј РєР°СЂС‚РёРЅРєСѓ
 //													//imgFon.Destroy();
 //													//imgFon.Load(_T("PlugIns/TestASA/fonASA.jpg"));
 //
 //
-//													// TODO: добавьте свой код обработчика уведомлений
-//													// TODO: добавьте свой код обработчика уведомлений
-//													// скрываем кнопку ОК
+//													// TODO: РґРѕР±Р°РІСЊС‚Рµ СЃРІРѕР№ РєРѕРґ РѕР±СЂР°Р±РѕС‚С‡РёРєР° СѓРІРµРґРѕРјР»РµРЅРёР№
+//													// TODO: РґРѕР±Р°РІСЊС‚Рµ СЃРІРѕР№ РєРѕРґ РѕР±СЂР°Р±РѕС‚С‡РёРєР° СѓРІРµРґРѕРјР»РµРЅРёР№
+//													// СЃРєСЂС‹РІР°РµРј РєРЅРѕРїРєСѓ РћРљ
 //	CWnd *hButOk = GetDlgItem(IDOK);
 //	hButOk->ModifyStyle(WS_VISIBLE, 0);
 //
-//	// скрываем кнопку Отмена
+//	// СЃРєСЂС‹РІР°РµРј РєРЅРѕРїРєСѓ РћС‚РјРµРЅР°
 //	CWnd *hButCan = GetDlgItem(IDCANCEL);
 //	hButCan->ModifyStyle(WS_VISIBLE, 0);
 //
 //
 //
-//	// скрываем первый текст
+//	// СЃРєСЂС‹РІР°РµРј РїРµСЂРІС‹Р№ С‚РµРєСЃС‚
 //	CWnd *hText1 = GetDlgItem(IDC_STATICTEXT1);
 //	hText1->ModifyStyle(WS_VISIBLE, 0);
 //
-//	// скрываем второй текст
+//	// СЃРєСЂС‹РІР°РµРј РІС‚РѕСЂРѕР№ С‚РµРєСЃС‚
 //	CWnd *hText2 = GetDlgItem(IDC_STATICTEXT2);
 //	hText2->ModifyStyle(WS_VISIBLE, 0);
 //
-//	// скрываем  текст "фамилия"
+//	// СЃРєСЂС‹РІР°РµРј  С‚РµРєСЃС‚ "С„Р°РјРёР»РёСЏ"
 //	CWnd *hTextFam = GetDlgItem(IDC_STATICFAM);
 //	hTextFam->ModifyStyle(WS_VISIBLE, 0);
 //
-//	// скрываем  текст "имя"
+//	// СЃРєСЂС‹РІР°РµРј  С‚РµРєСЃС‚ "РёРјСЏ"
 //	CWnd *hTextNam = GetDlgItem(IDC_STATICNAM);
 //	hTextNam->ModifyStyle(WS_VISIBLE, 0);
 //
-//	// скрываем  текст "Отчество"
+//	// СЃРєСЂС‹РІР°РµРј  С‚РµРєСЃС‚ "РћС‚С‡РµСЃС‚РІРѕ"
 //	CWnd *hTextSecNam = GetDlgItem(IDC_STATICSECNAM);
 //	hTextSecNam->ModifyStyle(WS_VISIBLE, 0);
 //
-//	// скрываем  текст "Вы"
+//	// СЃРєСЂС‹РІР°РµРј  С‚РµРєСЃС‚ "Р’С‹"
 //	CWnd *hTextYou = GetDlgItem(IDC_STATICYOU);
 //	hTextYou->ModifyStyle(WS_VISIBLE, 0);
 //
-//	// скрываем радиокнопки
+//	// СЃРєСЂС‹РІР°РµРј СЂР°РґРёРѕРєРЅРѕРїРєРё
 //	CWnd *hRadioMan = GetDlgItem(IDC_RADIO1);
 //	hRadioMan->ModifyStyle(WS_VISIBLE, 0);
 //
 //	CWnd *hRadioWoman = GetDlgItem(IDC_RADIO2);
 //	hRadioWoman->ModifyStyle(WS_VISIBLE, 0);
 //
-//	//Скрываем картинку предупреждения
+//	//РЎРєСЂС‹РІР°РµРј РєР°СЂС‚РёРЅРєСѓ РїСЂРµРґСѓРїСЂРµР¶РґРµРЅРёСЏ
 //	CWnd *hRadioWarning = GetDlgItem(IDC_WARNING);
 //	hRadioWarning->ModifyStyle(WS_VISIBLE, 0);
 //
-//	//Скрываем поля ввода
+//	//РЎРєСЂС‹РІР°РµРј РїРѕР»СЏ РІРІРѕРґР°
 //	CWnd *hEditFam = GetDlgItem(IDC_EDIT2);
 //	hEditFam->ModifyStyle(WS_VISIBLE, 0);
 //
@@ -250,25 +250,25 @@ bool fullscr = false;
 //	hEditSecNam->ModifyStyle(WS_VISIBLE, 0);
 //
 //
-//	// показываем карты и фон
+//	// РїРѕРєР°Р·С‹РІР°РµРј РєР°СЂС‚С‹ Рё С„РѕРЅ
 //	m_PicCard1.ModifyStyle(0, WS_VISIBLE);
 //	m_PicCard2.ModifyStyle(0, WS_VISIBLE);
 //
-//	// делаем видимым contrl фона
+//	// РґРµР»Р°РµРј РІРёРґРёРјС‹Рј contrl С„РѕРЅР°
 //	CWnd *hFonContrl = GetDlgItem(IDC_FON);
 //	hFonContrl->ModifyStyle(0, WS_VISIBLE);
 //
 //
 //	//m_PicFon.ModifyStyle(0, WS_VISIBLE);
-//	//обновляем экран
+//	//РѕР±РЅРѕРІР»СЏРµРј СЌРєСЂР°РЅ
 //	Invalidate();
 //	UpdateWindow();
 //
-//	TestBody.InitASATest(); // инициализируем тело ASA теста
+//	TestBody.InitASATest(); // РёРЅРёС†РёР°Р»РёР·РёСЂСѓРµРј С‚РµР»Рѕ ASA С‚РµСЃС‚Р°
 //
 //	if (GenNumPicBefore == true)
 //	{
-//		GenNumPic(); // генерирование номера картинки
+//		GenNumPic(); // РіРµРЅРµСЂРёСЂРѕРІР°РЅРёРµ РЅРѕРјРµСЂР° РєР°СЂС‚РёРЅРєРё
 //	}
 //
 //}
@@ -286,82 +286,82 @@ void ASADlg::OnBnClickedOk()
 	m_Name.GetWindowTextA(UpdInfoVal.Name);
 	m_SecName.GetWindowTextA(UpdInfoVal.SecName);*/
 
-	fullscr = false; // если эта кнопка видна, то это уже не полноэкранный режим
+	fullscr = false; // РµСЃР»Рё СЌС‚Р° РєРЅРѕРїРєР° РІРёРґРЅР°, С‚Рѕ СЌС‚Рѕ СѓР¶Рµ РЅРµ РїРѕР»РЅРѕСЌРєСЂР°РЅРЅС‹Р№ СЂРµР¶РёРј
 
 	if (fullscr == false)
 	{
-		ModifyStyle(WS_CAPTION, 0);// скрываем поле заголовка окна
-		ModifyStyle(WS_EX_DLGMODALFRAME, 0); // скрываем рамки окна
+		ModifyStyle(WS_CAPTION, 0);// СЃРєСЂС‹РІР°РµРј РїРѕР»Рµ Р·Р°РіРѕР»РѕРІРєР° РѕРєРЅР°
+		ModifyStyle(WS_EX_DLGMODALFRAME, 0); // СЃРєСЂС‹РІР°РµРј СЂР°РјРєРё РѕРєРЅР°
 											 //ModifyStyle(WS_DLGFRAME, 0);
 											 //AfxGetMainWnd()->SetWindowPos()
 											 //this->SetWindowPos(NULL, 0, 0, GetSystemMetrics(SM_CXSCREEN), GetSystemMetrics(SM_CYSCREEN), WS_EX_TOPMOST);
 											 //	this->SetWindowPos(NULL, 0, 0, GetSystemMetrics(SM_CXFULLSCREEN), GetSystemMetrics(SM_CYFULLSCREEN), WS_EX_TOPMOST);
 
-		AfxGetMainWnd()->ShowWindow(SW_SHOWMAXIMIZED); // разворачиваем окно
+		AfxGetMainWnd()->ShowWindow(SW_SHOWMAXIMIZED); // СЂР°Р·РІРѕСЂР°С‡РёРІР°РµРј РѕРєРЅРѕ
 		fullscr = true;
 		
 
 	}
-	my_colorDlg.DeleteObject(); // удаляем старую кисть
-	my_colorDlg.CreateSolidBrush(RGB(0, 0, 0));		// создать кисть для окраски окна
+	my_colorDlg.DeleteObject(); // СѓРґР°Р»СЏРµРј СЃС‚Р°СЂСѓСЋ РєРёСЃС‚СЊ
+	my_colorDlg.CreateSolidBrush(RGB(0, 0, 0));		// СЃРѕР·РґР°С‚СЊ РєРёСЃС‚СЊ РґР»СЏ РѕРєСЂР°СЃРєРё РѕРєРЅР°
 	
-	// НЕ ЗАБЫТЬ РАСКОМЕНТИТЬ В РЕЛИЗЕ!!!!
-	//SystemParametersInfo(SPI_SETMOUSESPEED, 0, (PVOID)1, 0); // устанавливаем минимальную скорость
+	// РќР• Р—РђР‘Р«РўР¬ Р РђРЎРљРћРњР•РќРўРРўР¬ Р’ Р Р•Р›РР—Р•!!!!
+	//SystemParametersInfo(SPI_SETMOUSESPEED, 0, (PVOID)1, 0); // СѓСЃС‚Р°РЅР°РІР»РёРІР°РµРј РјРёРЅРёРјР°Р»СЊРЅСѓСЋ СЃРєРѕСЂРѕСЃС‚СЊ
 	
 	
-	//																												//загружаем картинку
+	//																												//Р·Р°РіСЂСѓР¶Р°РµРј РєР°СЂС‚РёРЅРєСѓ
 	//imgFon.Destroy();
 	//imgFon.Load(_T("PlugIns/TestASA/fonASA.jpg"));
 
 
-	// TODO: добавьте свой код обработчика уведомлений
-	// TODO: добавьте свой код обработчика уведомлений
-	// скрываем кнопку ОК
+	// TODO: РґРѕР±Р°РІСЊС‚Рµ СЃРІРѕР№ РєРѕРґ РѕР±СЂР°Р±РѕС‚С‡РёРєР° СѓРІРµРґРѕРјР»РµРЅРёР№
+	// TODO: РґРѕР±Р°РІСЊС‚Рµ СЃРІРѕР№ РєРѕРґ РѕР±СЂР°Р±РѕС‚С‡РёРєР° СѓРІРµРґРѕРјР»РµРЅРёР№
+	// СЃРєСЂС‹РІР°РµРј РєРЅРѕРїРєСѓ РћРљ
 	CWnd *hButOk = GetDlgItem(IDOK);
 	hButOk->ModifyStyle(WS_VISIBLE, 0);
 
-	// скрываем кнопку Отмена
+	// СЃРєСЂС‹РІР°РµРј РєРЅРѕРїРєСѓ РћС‚РјРµРЅР°
 	CWnd *hButCan = GetDlgItem(IDCANCEL);
 	hButCan->ModifyStyle(WS_VISIBLE, 0);
 
 	
 
-	// скрываем первый текст
+	// СЃРєСЂС‹РІР°РµРј РїРµСЂРІС‹Р№ С‚РµРєСЃС‚
 	CWnd *hText1 = GetDlgItem(IDC_STATICTEXT1);
 	hText1->ModifyStyle(WS_VISIBLE, 0);
 
-	// скрываем второй текст
+	// СЃРєСЂС‹РІР°РµРј РІС‚РѕСЂРѕР№ С‚РµРєСЃС‚
 	CWnd *hText2 = GetDlgItem(IDC_STATICTEXT2);
 	hText2->ModifyStyle(WS_VISIBLE, 0);
 
-	// скрываем  текст "фамилия"
+	// СЃРєСЂС‹РІР°РµРј  С‚РµРєСЃС‚ "С„Р°РјРёР»РёСЏ"
 	CWnd *hTextFam = GetDlgItem(IDC_STATICFAM);
 	hTextFam->ModifyStyle(WS_VISIBLE, 0);
 
-	// скрываем  текст "имя"
+	// СЃРєСЂС‹РІР°РµРј  С‚РµРєСЃС‚ "РёРјСЏ"
 	CWnd *hTextNam = GetDlgItem(IDC_STATICNAM);
 	hTextNam->ModifyStyle(WS_VISIBLE, 0);
 
-	// скрываем  текст "Отчество"
+	// СЃРєСЂС‹РІР°РµРј  С‚РµРєСЃС‚ "РћС‚С‡РµСЃС‚РІРѕ"
 	CWnd *hTextSecNam = GetDlgItem(IDC_STATICSECNAM);
 	hTextSecNam->ModifyStyle(WS_VISIBLE, 0);
 
-	// скрываем  текст "Вы"
+	// СЃРєСЂС‹РІР°РµРј  С‚РµРєСЃС‚ "Р’С‹"
 	CWnd *hTextYou = GetDlgItem(IDC_STATICYOU);
 	hTextYou->ModifyStyle(WS_VISIBLE, 0);
 
-	// скрываем радиокнопки
+	// СЃРєСЂС‹РІР°РµРј СЂР°РґРёРѕРєРЅРѕРїРєРё
 	CWnd *hRadioMan = GetDlgItem(IDC_RADIO1);
 	hRadioMan->ModifyStyle(WS_VISIBLE, 0);
 
 	CWnd *hRadioWoman= GetDlgItem(IDC_RADIO2);
 	hRadioWoman->ModifyStyle(WS_VISIBLE, 0);
 
-	//Скрываем картинку предупреждения
+	//РЎРєСЂС‹РІР°РµРј РєР°СЂС‚РёРЅРєСѓ РїСЂРµРґСѓРїСЂРµР¶РґРµРЅРёСЏ
 	CWnd *hRadioWarning = GetDlgItem(IDC_WARNING);
 	hRadioWarning->ModifyStyle(WS_VISIBLE, 0);
 
-	//Скрываем поля ввода
+	//РЎРєСЂС‹РІР°РµРј РїРѕР»СЏ РІРІРѕРґР°
 	CWnd *hEditFam = GetDlgItem(IDC_EDIT2);
 	hEditFam->ModifyStyle(WS_VISIBLE, 0);
 
@@ -372,25 +372,25 @@ void ASADlg::OnBnClickedOk()
 	hEditSecNam->ModifyStyle(WS_VISIBLE, 0);
 
 
-	// показываем карты и фон
+	// РїРѕРєР°Р·С‹РІР°РµРј РєР°СЂС‚С‹ Рё С„РѕРЅ
 	m_PicCard1.ModifyStyle(0, WS_VISIBLE);
 	m_PicCard2.ModifyStyle(0, WS_VISIBLE);
 
-	// делаем видимым contrl фона
+	// РґРµР»Р°РµРј РІРёРґРёРјС‹Рј contrl С„РѕРЅР°
 	 CWnd *hFonContrl = GetDlgItem(IDC_FON);
 	 hFonContrl->ModifyStyle(0, WS_VISIBLE);
 
 
 	//m_PicFon.ModifyStyle(0, WS_VISIBLE);
-	//обновляем экран
+	//РѕР±РЅРѕРІР»СЏРµРј СЌРєСЂР°РЅ
 	Invalidate();
 	UpdateWindow();
 
-	TestBody.InitASATest(); // инициализируем тело ASA теста
+	TestBody.InitASATest(); // РёРЅРёС†РёР°Р»РёР·РёСЂСѓРµРј С‚РµР»Рѕ ASA С‚РµСЃС‚Р°
 
 	if (GenNumPicBefore == true)
 	{
-		GenNumPic(); // генерирование номера картинки
+		GenNumPic(); // РіРµРЅРµСЂРёСЂРѕРІР°РЅРёРµ РЅРѕРјРµСЂР° РєР°СЂС‚РёРЅРєРё
 	}
 
 	//CDialogEx::OnOK();
@@ -414,7 +414,7 @@ bool ASADlg::ShowASA()
 
 //BOOL ASADlg::PreTranslateMessage(MSG* pMsg)
 //{
-//	// TODO: добавьте специализированный код или вызов базового класса
+//	// TODO: РґРѕР±Р°РІСЊС‚Рµ СЃРїРµС†РёР°Р»РёР·РёСЂРѕРІР°РЅРЅС‹Р№ РєРѕРґ РёР»Рё РІС‹Р·РѕРІ Р±Р°Р·РѕРІРѕРіРѕ РєР»Р°СЃСЃР°
 //	if (pMsg->message == WM_KEYDOWN)
 //	AfxMessageBox("KEY PRESS!!!!!");
 //	return CDialogEx::PreTranslateMessage(pMsg);
@@ -424,14 +424,14 @@ bool ASADlg::ShowASA()
 
 BOOL ASADlg::PreTranslateMessage(MSG* pMsg)
 {
-	// TODO: добавьте специализированный код или вызов базового класса
+	// TODO: РґРѕР±Р°РІСЊС‚Рµ СЃРїРµС†РёР°Р»РёР·РёСЂРѕРІР°РЅРЅС‹Р№ РєРѕРґ РёР»Рё РІС‹Р·РѕРІ Р±Р°Р·РѕРІРѕРіРѕ РєР»Р°СЃСЃР°
 	if (pMsg->message == WM_KEYDOWN && (GetKeyState(VK_ESCAPE) & 0x8000))
 	{
 		fullscr = false;
-		my_colorDlg.DeleteObject(); // удаляем старую кисть
-		my_colorDlg.CreateSolidBrush(RGB(240, 240, 240));		// создать кисть для окраски окна в стандартный цвет
+		my_colorDlg.DeleteObject(); // СѓРґР°Р»СЏРµРј СЃС‚Р°СЂСѓСЋ РєРёСЃС‚СЊ
+		my_colorDlg.CreateSolidBrush(RGB(240, 240, 240));		// СЃРѕР·РґР°С‚СЊ РєРёСЃС‚СЊ РґР»СЏ РѕРєСЂР°СЃРєРё РѕРєРЅР° РІ СЃС‚Р°РЅРґР°СЂС‚РЅС‹Р№ С†РІРµС‚
 		//my_colorDlg.CreateSysColorBrush();
-		SystemParametersInfo(SPI_SETMOUSESPEED, 0, (PVOID)10, 0); // устанавливаем стандартную скорость
+		SystemParametersInfo(SPI_SETMOUSESPEED, 0, (PVOID)10, 0); // СѓСЃС‚Р°РЅР°РІР»РёРІР°РµРј СЃС‚Р°РЅРґР°СЂС‚РЅСѓСЋ СЃРєРѕСЂРѕСЃС‚СЊ
 	}
 
 	//if (pMsg->message == WM_KEYDOWN && (GetKeyState(VK_F7) & 0x8000))
@@ -439,7 +439,7 @@ BOOL ASADlg::PreTranslateMessage(MSG* pMsg)
 	//{	
 	//
 	//	FullScrAndStartTest();
-	//	SystemParametersInfo(SPI_SETMOUSESPEED, 0, (PVOID)10, 0); // устанавливаем стандартную скорость
+	//	SystemParametersInfo(SPI_SETMOUSESPEED, 0, (PVOID)10, 0); // СѓСЃС‚Р°РЅР°РІР»РёРІР°РµРј СЃС‚Р°РЅРґР°СЂС‚РЅСѓСЋ СЃРєРѕСЂРѕСЃС‚СЊ
 
 	//}
 	return CDialogEx::PreTranslateMessage(pMsg);
@@ -450,7 +450,7 @@ BOOL ASADlg::PreTranslateMessage(MSG* pMsg)
 
 void ASADlg::OnClose()
 {
-	// TODO: добавьте свой код обработчика сообщений или вызов стандартного
+	// TODO: РґРѕР±Р°РІСЊС‚Рµ СЃРІРѕР№ РєРѕРґ РѕР±СЂР°Р±РѕС‚С‡РёРєР° СЃРѕРѕР±С‰РµРЅРёР№ РёР»Рё РІС‹Р·РѕРІ СЃС‚Р°РЅРґР°СЂС‚РЅРѕРіРѕ
 
 	CDialogEx::OnClose();
 }
@@ -461,12 +461,12 @@ void ASADlg::OnPaint()
 {
 	
 	CPaintDC dc(this); // device context for painting
-					   // TODO: добавьте свой код обработчика сообщений
-					   // Не вызывать CDialogEx::OnPaint() для сообщений рисования
+					   // TODO: РґРѕР±Р°РІСЊС‚Рµ СЃРІРѕР№ РєРѕРґ РѕР±СЂР°Р±РѕС‚С‡РёРєР° СЃРѕРѕР±С‰РµРЅРёР№
+					   // РќРµ РІС‹Р·С‹РІР°С‚СЊ CDialogEx::OnPaint() РґР»СЏ СЃРѕРѕР±С‰РµРЅРёР№ СЂРёСЃРѕРІР°РЅРёСЏ
 	CRect rect;
 	
 	GetClientRect(&rect);
-//	imgFon.AlphaBlend(dc, 0, 0, rect.right, rect.bottom, 0, 0, imgFon.GetWidth(), imgFon.GetHeight()); // выводим изображение фона на окно
+//	imgFon.AlphaBlend(dc, 0, 0, rect.right, rect.bottom, 0, 0, imgFon.GetWidth(), imgFon.GetHeight()); // РІС‹РІРѕРґРёРј РёР·РѕР±СЂР°Р¶РµРЅРёРµ С„РѕРЅР° РЅР° РѕРєРЅРѕ
 	//sizeScrin = rect;
 	CWnd *hFonContrl = GetDlgItem(IDC_FON);
 	RECT FonContlSize = m_Fon.SetPosFon(rect);
@@ -474,18 +474,18 @@ void ASADlg::OnPaint()
 	m_Fon.SetWindowPos(hFonContrl, FonContlSize.left, FonContlSize.top, FonContlSize.right, FonContlSize.bottom, SWP_NOZORDER);
 
 	CRect rectCtl;
-	m_PicCard1.GetClientRect(&rectCtl); // получаем размеры picture control
+	m_PicCard1.GetClientRect(&rectCtl); // РїРѕР»СѓС‡Р°РµРј СЂР°Р·РјРµСЂС‹ picture control
 
 
-	m_PicCard1.MoveWindow(  150, rect.bottom / 2.0 - rectCtl.bottom / 2.0, rectCtl.right, rectCtl.bottom); // перемещаем контрол
+	m_PicCard1.MoveWindow(  150, rect.bottom / 2.0 - rectCtl.bottom / 2.0, rectCtl.right, rectCtl.bottom); // РїРµСЂРµРјРµС‰Р°РµРј РєРѕРЅС‚СЂРѕР»
 
-	m_PicCard2.MoveWindow(rect.right - rectCtl.right - 150, rect.bottom / 2.0 - rectCtl.bottom / 2.0, rectCtl.right, rectCtl.bottom); // перемещаем контрол
+	m_PicCard2.MoveWindow(rect.right - rectCtl.right - 150, rect.bottom / 2.0 - rectCtl.bottom / 2.0, rectCtl.right, rectCtl.bottom); // РїРµСЂРµРјРµС‰Р°РµРј РєРѕРЅС‚СЂРѕР»
 
 
-	// было расположение от центра
-	//m_PicCard1.MoveWindow(rect.right / 2.0 - rectCtl.right - 150, rect.bottom / 2.0 - rectCtl.bottom / 2.0, rectCtl.right, rectCtl.bottom); // перемещаем контрол
+	// Р±С‹Р»Рѕ СЂР°СЃРїРѕР»РѕР¶РµРЅРёРµ РѕС‚ С†РµРЅС‚СЂР°
+	//m_PicCard1.MoveWindow(rect.right / 2.0 - rectCtl.right - 150, rect.bottom / 2.0 - rectCtl.bottom / 2.0, rectCtl.right, rectCtl.bottom); // РїРµСЂРµРјРµС‰Р°РµРј РєРѕРЅС‚СЂРѕР»
 
-	//m_PicCard2.MoveWindow(rect.right / 2.0 + 150, rect.bottom / 2.0 - rectCtl.bottom / 2.0, rectCtl.right, rectCtl.bottom); // перемещаем контрол
+	//m_PicCard2.MoveWindow(rect.right / 2.0 + 150, rect.bottom / 2.0 - rectCtl.bottom / 2.0, rectCtl.right, rectCtl.bottom); // РїРµСЂРµРјРµС‰Р°РµРј РєРѕРЅС‚СЂРѕР»
 
 
 	//CDialogEx::OnPaint();
@@ -497,25 +497,25 @@ void ASADlg::OnPaint()
 CString SelCard;
 void ASADlg::OnStnClickedCard1()
 {	
-	UpdInfoVal.ChouseCard = "Left"; // Сохраняем информацию о выборе карты
-	UpdInfoVal.TimeInterval = "Before"; // отмечаем начало интервала
-	m_PicCard1.ModifyStyle(WS_VISIBLE, 0); // скрываем карту 1
-	m_PicCard2.ModifyStyle(WS_VISIBLE, 0); // скрываем карту 2
+	UpdInfoVal.ChouseCard = "Left"; // РЎРѕС…СЂР°РЅСЏРµРј РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ РІС‹Р±РѕСЂРµ РєР°СЂС‚С‹
+	UpdInfoVal.TimeInterval = "Before"; // РѕС‚РјРµС‡Р°РµРј РЅР°С‡Р°Р»Рѕ РёРЅС‚РµСЂРІР°Р»Р°
+	m_PicCard1.ModifyStyle(WS_VISIBLE, 0); // СЃРєСЂС‹РІР°РµРј РєР°СЂС‚Сѓ 1
+	m_PicCard2.ModifyStyle(WS_VISIBLE, 0); // СЃРєСЂС‹РІР°РµРј РєР°СЂС‚Сѓ 2
 	Invalidate(FALSE); 
 	UpdateWindow(); 
-	SelCard = "Selected left card"; // вывод на экран плагина (испытателя)
-	if (!BeforeTimer) // проверка работы таймера
+	SelCard = "Selected left card"; // РІС‹РІРѕРґ РЅР° СЌРєСЂР°РЅ РїР»Р°РіРёРЅР° (РёСЃРїС‹С‚Р°С‚РµР»СЏ)
+	if (!BeforeTimer) // РїСЂРѕРІРµСЂРєР° СЂР°Р±РѕС‚С‹ С‚Р°Р№РјРµСЂР°
 	{
-		SetTimer(1, m_BeforeShow, NULL); //установка таймера
-		BeforeTimer = true; // ключ таймера
+		SetTimer(1, m_BeforeShow, NULL); //СѓСЃС‚Р°РЅРѕРІРєР° С‚Р°Р№РјРµСЂР°
+		BeforeTimer = true; // РєР»СЋС‡ С‚Р°Р№РјРµСЂР°
 	}
-	if (GenNumPicBefore != true) // Проверка на выбор метода генерации
-	{					// если нет галочки на генерацию до выбора, то 
-		GenNumPic(); // генерирование номера картинки
+	if (GenNumPicBefore != true) // РџСЂРѕРІРµСЂРєР° РЅР° РІС‹Р±РѕСЂ РјРµС‚РѕРґР° РіРµРЅРµСЂР°С†РёРё
+	{					// РµСЃР»Рё РЅРµС‚ РіР°Р»РѕС‡РєРё РЅР° РіРµРЅРµСЂР°С†РёСЋ РґРѕ РІС‹Р±РѕСЂР°, С‚Рѕ 
+		GenNumPic(); // РіРµРЅРµСЂРёСЂРѕРІР°РЅРёРµ РЅРѕРјРµСЂР° РєР°СЂС‚РёРЅРєРё
 	}
 	else
 	{
-		TrueOeFalseClickCard('L'); // вспомогательная ф-я
+		TrueOeFalseClickCard('L'); // РІСЃРїРѕРјРѕРіР°С‚РµР»СЊРЅР°СЏ С„-СЏ
 	}
 
 }
@@ -525,7 +525,7 @@ void ASADlg::OnStnClickedCard2()
 {
 	UpdInfoVal.ChouseCard = "Right";
 	UpdInfoVal.TimeInterval = "Before";
-	// TODO: добавьте свой код обработчика уведомлений
+	// TODO: РґРѕР±Р°РІСЊС‚Рµ СЃРІРѕР№ РєРѕРґ РѕР±СЂР°Р±РѕС‚С‡РёРєР° СѓРІРµРґРѕРјР»РµРЅРёР№
 	m_PicCard1.ModifyStyle(WS_VISIBLE, 0);
 	m_PicCard2.ModifyStyle(WS_VISIBLE, 0);
 	Invalidate(FALSE);
@@ -538,7 +538,7 @@ void ASADlg::OnStnClickedCard2()
 	}
 	if (GenNumPicBefore != true)
 	{
-		GenNumPic(); // генерирование номера картинки
+		GenNumPic(); // РіРµРЅРµСЂРёСЂРѕРІР°РЅРёРµ РЅРѕРјРµСЂР° РєР°СЂС‚РёРЅРєРё
 	}
 	else
 	{
@@ -550,11 +550,11 @@ void ASADlg::OnStnClickedCard2()
 //PicFonContrl fonLoad;
 void ASADlg::OnTimer(UINT_PTR nIDEvent)
 {
-	// TODO: добавьте свой код обработчика сообщений или вызов стандартного
-	int sm = 0; // скорость мыши
-	switch (nIDEvent)//uTime - ID таймера
+	// TODO: РґРѕР±Р°РІСЊС‚Рµ СЃРІРѕР№ РєРѕРґ РѕР±СЂР°Р±РѕС‚С‡РёРєР° СЃРѕРѕР±С‰РµРЅРёР№ РёР»Рё РІС‹Р·РѕРІ СЃС‚Р°РЅРґР°СЂС‚РЅРѕРіРѕ
+	int sm = 0; // СЃРєРѕСЂРѕСЃС‚СЊ РјС‹С€Рё
+	switch (nIDEvent)//uTime - ID С‚Р°Р№РјРµСЂР°
 	{
-	case 1://timer1 срабатывает после указанного времени
+	case 1://timer1 СЃСЂР°Р±Р°С‚С‹РІР°РµС‚ РїРѕСЃР»Рµ СѓРєР°Р·Р°РЅРЅРѕРіРѕ РІСЂРµРјРµРЅРё
  	{
 		if (BeforeTimer)
 		{
@@ -563,15 +563,15 @@ void ASADlg::OnTimer(UINT_PTR nIDEvent)
 		}
 		
 
-		m_Fon.LoadImageFon(urlPic);// загружаем картинку в окно теста
-		redrawPlugIn(urlPic); // загружаем картинку в окно плагина
+		m_Fon.LoadImageFon(urlPic);// Р·Р°РіСЂСѓР¶Р°РµРј РєР°СЂС‚РёРЅРєСѓ РІ РѕРєРЅРѕ С‚РµСЃС‚Р°
+		redrawPlugIn(urlPic); // Р·Р°РіСЂСѓР¶Р°РµРј РєР°СЂС‚РёРЅРєСѓ РІ РѕРєРЅРѕ РїР»Р°РіРёРЅР°
 		
-		Invalidate(FALSE);// обновляем экран (без мерцания?)
+		Invalidate(FALSE);// РѕР±РЅРѕРІР»СЏРµРј СЌРєСЂР°РЅ (Р±РµР· РјРµСЂС†Р°РЅРёСЏ?)
 		UpdateWindow();
 
 		if (!ShowTimer)
 		{
-			SetTimer(2, m_ShowTime, NULL); // запускаем второй таймер
+			SetTimer(2, m_ShowTime, NULL); // Р·Р°РїСѓСЃРєР°РµРј РІС‚РѕСЂРѕР№ С‚Р°Р№РјРµСЂ
 			ShowTimer = true;
 		}
 
@@ -588,9 +588,9 @@ void ASADlg::OnTimer(UINT_PTR nIDEvent)
 	
 		m_Fon.LoadImageFon("PlugIns/TestASA/fonASA.jpg");
 		SelCard = "";
-		redrawPlugIn("PlugIns/TestASA/fonASA.jpg"); // загружаем картинку в окно плагина
+		redrawPlugIn("PlugIns/TestASA/fonASA.jpg"); // Р·Р°РіСЂСѓР¶Р°РµРј РєР°СЂС‚РёРЅРєСѓ РІ РѕРєРЅРѕ РїР»Р°РіРёРЅР°
 
-		Invalidate(FALSE);// обновляем экран (без мерцания?)
+		Invalidate(FALSE);// РѕР±РЅРѕРІР»СЏРµРј СЌРєСЂР°РЅ (Р±РµР· РјРµСЂС†Р°РЅРёСЏ?)
 		UpdateWindow();
 
 		if (ShowTimer)
@@ -617,15 +617,15 @@ void ASADlg::OnTimer(UINT_PTR nIDEvent)
 		UpdInfoVal.TruOrFalseCard = " ";
 	//	ClipCursor
 
-		// перемещаем указатель мыши в центр окна
+		// РїРµСЂРµРјРµС‰Р°РµРј СѓРєР°Р·Р°С‚РµР»СЊ РјС‹С€Рё РІ С†РµРЅС‚СЂ РѕРєРЅР°
 
 
 
 
 
-		GetWindowRect(&sizeScrin); // получаем оконные координаты окна
+		GetWindowRect(&sizeScrin); // РїРѕР»СѓС‡Р°РµРј РѕРєРѕРЅРЅС‹Рµ РєРѕРѕСЂРґРёРЅР°С‚С‹ РѕРєРЅР°
 
-		SetCursorPos(sizeScrin.left + (sizeScrin.right - sizeScrin.left) / 2.0, sizeScrin.top + (sizeScrin.bottom - sizeScrin.top) / 2.0); // изменяет положение курсора (X,Y)
+		SetCursorPos(sizeScrin.left + (sizeScrin.right - sizeScrin.left) / 2.0, sizeScrin.top + (sizeScrin.bottom - sizeScrin.top) / 2.0); // РёР·РјРµРЅСЏРµС‚ РїРѕР»РѕР¶РµРЅРёРµ РєСѓСЂСЃРѕСЂР° (X,Y)
 		if (AfterTimer)
 		{
 			KillTimer(3);
@@ -636,23 +636,23 @@ void ASADlg::OnTimer(UINT_PTR nIDEvent)
 		//	SetTimer(4, m_DelaySpeedMouse, NULL);
 		//	DelaySpeedMouseTimer = true;
 
-		//	SystemParametersInfo(SPI_GETMOUSESPEED, 0, &sm, 0); // запоминаем скорость мыши до изменения
-		//	SystemParametersInfo(SPI_SETMOUSESPEED, 0, (PVOID)1, 0); // устанавливаем минимальную скорость
-		//	SetCursorPos(sizeScrin.right/2.0, sizeScrin.bottom); // изменяет положение курсора (X,Y)
+		//	SystemParametersInfo(SPI_GETMOUSESPEED, 0, &sm, 0); // Р·Р°РїРѕРјРёРЅР°РµРј СЃРєРѕСЂРѕСЃС‚СЊ РјС‹С€Рё РґРѕ РёР·РјРµРЅРµРЅРёСЏ
+		//	SystemParametersInfo(SPI_SETMOUSESPEED, 0, (PVOID)1, 0); // СѓСЃС‚Р°РЅР°РІР»РёРІР°РµРј РјРёРЅРёРјР°Р»СЊРЅСѓСЋ СЃРєРѕСЂРѕСЃС‚СЊ
+		//	SetCursorPos(sizeScrin.right/2.0, sizeScrin.bottom); // РёР·РјРµРЅСЏРµС‚ РїРѕР»РѕР¶РµРЅРёРµ РєСѓСЂСЃРѕСЂР° (X,Y)
 		//}
 
-		// показываем карты
+		// РїРѕРєР°Р·С‹РІР°РµРј РєР°СЂС‚С‹
 		m_PicCard1.ModifyStyle(0, WS_VISIBLE); 
 		m_PicCard2.ModifyStyle(0, WS_VISIBLE);
 
-		Invalidate(FALSE);// обновляем экран (без мерцания?)
+		Invalidate(FALSE);// РѕР±РЅРѕРІР»СЏРµРј СЌРєСЂР°РЅ (Р±РµР· РјРµСЂС†Р°РЅРёСЏ?)
 		UpdateWindow();
 		
 		
 
 		if (GenNumPicBefore == true)
 		{
-			GenNumPic(); // генерирование номера картинки
+			GenNumPic(); // РіРµРЅРµСЂРёСЂРѕРІР°РЅРёРµ РЅРѕРјРµСЂР° РєР°СЂС‚РёРЅРєРё
 		}
 
 
@@ -661,14 +661,14 @@ void ASADlg::OnTimer(UINT_PTR nIDEvent)
 		if (TestBody.EndGenNum())
 		{
 			FullScrAndStartTest();
-			MessageBox("Тест пройден", "Info", MB_OK);
+			MessageBox("РўРµСЃС‚ РїСЂРѕР№РґРµРЅ", "Info", MB_OK);
 		}
 
 
 	}
 	break;
 
-	//case 4: // таймер на дадержку мыши
+	//case 4: // С‚Р°Р№РјРµСЂ РЅР° РґР°РґРµСЂР¶РєСѓ РјС‹С€Рё
 	//{	
 	//	SystemParametersInfo(SPI_SETMOUSESPEED, 0, (PVOID)10, 0);
 	//	if (DelaySpeedMouseTimer)
@@ -695,7 +695,7 @@ void ASADlg::OnSize(UINT nType, int cx, int cy)
 	CDialogEx::OnSize(nType, cx, cy);
 
 	
-	// TODO: добавьте свой код обработчика сообщений
+	// TODO: РґРѕР±Р°РІСЊС‚Рµ СЃРІРѕР№ РєРѕРґ РѕР±СЂР°Р±РѕС‚С‡РёРєР° СЃРѕРѕР±С‰РµРЅРёР№
 	//Invalidate();
 	//UpdateWindow();
 }
@@ -706,22 +706,22 @@ int ASADlg::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	if (CDialogEx::OnCreate(lpCreateStruct) == -1)
 		return -1;
 
-	// TODO:  Добавьте специализированный код создания
+	// TODO:  Р”РѕР±Р°РІСЊС‚Рµ СЃРїРµС†РёР°Р»РёР·РёСЂРѕРІР°РЅРЅС‹Р№ РєРѕРґ СЃРѕР·РґР°РЅРёСЏ
 	BeforeTimer = false;
 	ShowTimer = false;
 	AfterTimer = false;
 	//DelaySpeedMouseTimer = false;
 
-	my_colorDlg.DeleteObject(); // удаляем старую кисть
-	my_colorDlg.CreateSolidBrush(RGB(240, 240, 240));		// создать кисть для окраски окна в стандартный цвет
-	//TestBody.InitASATest(); // инициализируем тело ASA теста
+	my_colorDlg.DeleteObject(); // СѓРґР°Р»СЏРµРј СЃС‚Р°СЂСѓСЋ РєРёСЃС‚СЊ
+	my_colorDlg.CreateSolidBrush(RGB(240, 240, 240));		// СЃРѕР·РґР°С‚СЊ РєРёСЃС‚СЊ РґР»СЏ РѕРєСЂР°СЃРєРё РѕРєРЅР° РІ СЃС‚Р°РЅРґР°СЂС‚РЅС‹Р№ С†РІРµС‚
+	//TestBody.InitASATest(); // РёРЅРёС†РёР°Р»РёР·РёСЂСѓРµРј С‚РµР»Рѕ ASA С‚РµСЃС‚Р°
 	
 	UpdInfoVal.SumChouseTrue = 1;	
-	UpdInfoVal.SumChouseFalse = 1;// Время показа
+	UpdInfoVal.SumChouseFalse = 1;// Р’СЂРµРјСЏ РїРѕРєР°Р·Р°
 	//m_ShowTime = 1000;
-	//// Задержка до показа
+	//// Р—Р°РґРµСЂР¶РєР° РґРѕ РїРѕРєР°Р·Р°
 	//m_BeforeShow = 1000;
-	////  Задержка после показа
+	////  Р—Р°РґРµСЂР¶РєР° РїРѕСЃР»Рµ РїРѕРєР°Р·Р°
 	//m_AfterShow = 1000;
 	
 														//MessageBox("Create Press", "Info", MB_OK);
@@ -733,10 +733,10 @@ HBRUSH ASADlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 {
 	HBRUSH hbr = CDialogEx::OnCtlColor(pDC, pWnd, nCtlColor);
 
-	// TODO:  Измените любые атрибуты DC
+	// TODO:  РР·РјРµРЅРёС‚Рµ Р»СЋР±С‹Рµ Р°С‚СЂРёР±СѓС‚С‹ DC
 	switch (nCtlColor)
 	{
-	case CTLCOLOR_DLG: // изменяем только цвет диалога
+	case CTLCOLOR_DLG: // РёР·РјРµРЅСЏРµРј С‚РѕР»СЊРєРѕ С†РІРµС‚ РґРёР°Р»РѕРіР°
 	{
 		return my_colorDlg;
 	}
@@ -746,7 +746,7 @@ HBRUSH ASADlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 	}
 	//pDC->SetBkColor(RGB(240, 240, 240));pDC->
 	//pDC->SetTextColor(RGB(240, 240, 240));
-	// TODO:  Вернуть другое значение дескриптора кисти, если оно не определено по умолчанию
+	// TODO:  Р’РµСЂРЅСѓС‚СЊ РґСЂСѓРіРѕРµ Р·РЅР°С‡РµРЅРёРµ РґРµСЃРєСЂРёРїС‚РѕСЂР° РєРёСЃС‚Рё, РµСЃР»Рё РѕРЅРѕ РЅРµ РѕРїСЂРµРґРµР»РµРЅРѕ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 	//return my_colorDlg;
 	
 }
@@ -760,7 +760,7 @@ HBRUSH ASADlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 
 void ASADlg::RBtnClckForm()
 {
-	// TODO: добавьте свой код обработчика уведомлений
+	// TODO: РґРѕР±Р°РІСЊС‚Рµ СЃРІРѕР№ РєРѕРґ РѕР±СЂР°Р±РѕС‚С‡РёРєР° СѓРІРµРґРѕРјР»РµРЅРёР№
 	
 }
 
@@ -776,7 +776,7 @@ void ASADlg::SetTimersInterval()
 
 void ASADlg::OnStnClickedFon()
 {
-	// TODO: добавьте свой код обработчика уведомлений
+	// TODO: РґРѕР±Р°РІСЊС‚Рµ СЃРІРѕР№ РєРѕРґ РѕР±СЂР°Р±РѕС‚С‡РёРєР° СѓРІРµРґРѕРјР»РµРЅРёР№
 	if (m_EndShowByClick == true)
 	{
 		KillTimer(2);
@@ -788,20 +788,20 @@ void ASADlg::OnStnClickedFon()
 		UpdInfoVal.TruOrFalseCard = " ";
 
 		m_Fon.LoadImageFon("PlugIns/TestASA/fonASA.jpg");
-		// показываем карты
+		// РїРѕРєР°Р·С‹РІР°РµРј РєР°СЂС‚С‹
 		m_PicCard1.ModifyStyle(0, WS_VISIBLE);
 		m_PicCard2.ModifyStyle(0, WS_VISIBLE);
 
-		if (GenNumPicBefore == true) //если включена генерация до выбора
+		if (GenNumPicBefore == true) //РµСЃР»Рё РІРєР»СЋС‡РµРЅР° РіРµРЅРµСЂР°С†РёСЏ РґРѕ РІС‹Р±РѕСЂР°
 		{
-			GenNumPic(); // генерирование номера картинки
+			GenNumPic(); // РіРµРЅРµСЂРёСЂРѕРІР°РЅРёРµ РЅРѕРјРµСЂР° РєР°СЂС‚РёРЅРєРё
 		}
 
-		Invalidate(FALSE);// обновляем экран (без мерцания?)
+		Invalidate(FALSE);// РѕР±РЅРѕРІР»СЏРµРј СЌРєСЂР°РЅ (Р±РµР· РјРµСЂС†Р°РЅРёСЏ?)
 		UpdateWindow();
 
 		SelCard = "";
-		redrawPlugIn("PlugIns/TestASA/fonASA.jpg"); // загружаем картинку в окно плагина
+		redrawPlugIn("PlugIns/TestASA/fonASA.jpg"); // Р·Р°РіСЂСѓР¶Р°РµРј РєР°СЂС‚РёРЅРєСѓ РІ РѕРєРЅРѕ РїР»Р°РіРёРЅР°
 
 		//test
 
@@ -809,12 +809,12 @@ void ASADlg::OnStnClickedFon()
 }
 
 
-// Разворачивает(восстонавливает) окно и начинает(завершает) тест
+// Р Р°Р·РІРѕСЂР°С‡РёРІР°РµС‚(РІРѕСЃСЃС‚РѕРЅР°РІР»РёРІР°РµС‚) РѕРєРЅРѕ Рё РЅР°С‡РёРЅР°РµС‚(Р·Р°РІРµСЂС€Р°РµС‚) С‚РµСЃС‚
 void ASADlg::FullScrAndStartTest()
 {
 	if (fullscr == false)
 	{
-		//SystemParametersInfo(SPI_SETMOUSESPEED, 0, (PVOID)1, 0); // устанавливаем минимальную скорость
+		//SystemParametersInfo(SPI_SETMOUSESPEED, 0, (PVOID)1, 0); // СѓСЃС‚Р°РЅР°РІР»РёРІР°РµРј РјРёРЅРёРјР°Р»СЊРЅСѓСЋ СЃРєРѕСЂРѕСЃС‚СЊ
 
 		fullscr = true;
 		UpdateData(TRUE);
@@ -822,81 +822,81 @@ void ASADlg::FullScrAndStartTest()
 
 		if (GenNumPicBefore == true)
 		{
-			GenNumPic(); // генерирование номера картинки
+			GenNumPic(); // РіРµРЅРµСЂРёСЂРѕРІР°РЅРёРµ РЅРѕРјРµСЂР° РєР°СЂС‚РёРЅРєРё
 		}
 		//	m_PicFon.ModifyStyle(0, WS_VISIBLE);
-		my_colorDlg.DeleteObject(); // удаляем старую кисть
-		my_colorDlg.CreateSolidBrush(RGB(0, 0, 0));		// создать кисть для окраски окна
+		my_colorDlg.DeleteObject(); // СѓРґР°Р»СЏРµРј СЃС‚Р°СЂСѓСЋ РєРёСЃС‚СЊ
+		my_colorDlg.CreateSolidBrush(RGB(0, 0, 0));		// СЃРѕР·РґР°С‚СЊ РєРёСЃС‚СЊ РґР»СЏ РѕРєСЂР°СЃРєРё РѕРєРЅР°
 
-		ModifyStyle(WS_CAPTION, 0);// скрываем поле заголовка окна
-		ModifyStyle(WS_EX_DLGMODALFRAME, 0); // скрываем рамки окна
+		ModifyStyle(WS_CAPTION, 0);// СЃРєСЂС‹РІР°РµРј РїРѕР»Рµ Р·Р°РіРѕР»РѕРІРєР° РѕРєРЅР°
+		ModifyStyle(WS_EX_DLGMODALFRAME, 0); // СЃРєСЂС‹РІР°РµРј СЂР°РјРєРё РѕРєРЅР°
 											 //ModifyStyle(WS_DLGFRAME, 0);
 											 //AfxGetMainWnd()->SetWindowPos()
 											 //this->SetWindowPos(NULL, 0, 0, GetSystemMetrics(SM_CXSCREEN), GetSystemMetrics(SM_CYSCREEN), WS_EX_TOPMOST);
 											 //	this->SetWindowPos(NULL, 0, 0, GetSystemMetrics(SM_CXFULLSCREEN), GetSystemMetrics(SM_CYFULLSCREEN), WS_EX_TOPMOST);
 
-		AfxGetMainWnd()->ShowWindow(SW_SHOWMAXIMIZED); // разворачиваем окно
+		AfxGetMainWnd()->ShowWindow(SW_SHOWMAXIMIZED); // СЂР°Р·РІРѕСЂР°С‡РёРІР°РµРј РѕРєРЅРѕ
 
-													   // делаем видимым contrl фона
+													   // РґРµР»Р°РµРј РІРёРґРёРјС‹Рј contrl С„РѕРЅР°
 		CWnd *hFonContrl = GetDlgItem(IDC_FON);
 		hFonContrl->ModifyStyle(0, WS_VISIBLE);
 
-		// показываем карты и фон
+		// РїРѕРєР°Р·С‹РІР°РµРј РєР°СЂС‚С‹ Рё С„РѕРЅ
 		m_PicCard1.ModifyStyle(0, WS_VISIBLE);
 		m_PicCard2.ModifyStyle(0, WS_VISIBLE);
 
-		////загружаем картинку
+		////Р·Р°РіСЂСѓР¶Р°РµРј РєР°СЂС‚РёРЅРєСѓ
 		//imgFon.Destroy();
 		//imgFon.Load(_T("PlugIns/TestASA/fonASA.jpg"));
 
 
 
 
-		// скрываем кнопку ОК
+		// СЃРєСЂС‹РІР°РµРј РєРЅРѕРїРєСѓ РћРљ
 		CWnd *hButOk = GetDlgItem(IDOK);
 		hButOk->ModifyStyle(WS_VISIBLE, 0);
 
-		// скрываем кнопку Отмена
+		// СЃРєСЂС‹РІР°РµРј РєРЅРѕРїРєСѓ РћС‚РјРµРЅР°
 		CWnd *hButCan = GetDlgItem(IDCANCEL);
 		hButCan->ModifyStyle(WS_VISIBLE, 0);
 
 
 
-		// скрываем первый текст
+		// СЃРєСЂС‹РІР°РµРј РїРµСЂРІС‹Р№ С‚РµРєСЃС‚
 		CWnd *hText1 = GetDlgItem(IDC_STATICTEXT1);
 		hText1->ModifyStyle(WS_VISIBLE, 0);
 
-		// скрываем второй текст
+		// СЃРєСЂС‹РІР°РµРј РІС‚РѕСЂРѕР№ С‚РµРєСЃС‚
 		CWnd *hText2 = GetDlgItem(IDC_STATICTEXT2);
 		hText2->ModifyStyle(WS_VISIBLE, 0);
 
-		// скрываем  текст "фамилия"
+		// СЃРєСЂС‹РІР°РµРј  С‚РµРєСЃС‚ "С„Р°РјРёР»РёСЏ"
 		CWnd *hTextFam = GetDlgItem(IDC_STATICFAM);
 		hTextFam->ModifyStyle(WS_VISIBLE, 0);
 
-		// скрываем  текст "имя"
+		// СЃРєСЂС‹РІР°РµРј  С‚РµРєСЃС‚ "РёРјСЏ"
 		CWnd *hTextNam = GetDlgItem(IDC_STATICNAM);
 		hTextNam->ModifyStyle(WS_VISIBLE, 0);
 
-		// скрываем  текст "Отчество"
+		// СЃРєСЂС‹РІР°РµРј  С‚РµРєСЃС‚ "РћС‚С‡РµСЃС‚РІРѕ"
 		CWnd *hTextSecNam = GetDlgItem(IDC_STATICSECNAM);
 		hTextSecNam->ModifyStyle(WS_VISIBLE, 0);
 
-		// скрываем  текст "Вы"
+		// СЃРєСЂС‹РІР°РµРј  С‚РµРєСЃС‚ "Р’С‹"
 		CWnd *hTextYou = GetDlgItem(IDC_STATICYOU);
 		hTextYou->ModifyStyle(WS_VISIBLE, 0);
 
-		// скрываем радиокнопки
+		// СЃРєСЂС‹РІР°РµРј СЂР°РґРёРѕРєРЅРѕРїРєРё
 		CWnd *hRadioMan = GetDlgItem(IDC_RADIO1);
 		hRadioMan->ModifyStyle(WS_VISIBLE, 0);
 		CWnd *hRadioWoman = GetDlgItem(IDC_RADIO2);
 		hRadioWoman->ModifyStyle(WS_VISIBLE, 0);
 
-		//Скрываем картинку предупреждения
+		//РЎРєСЂС‹РІР°РµРј РєР°СЂС‚РёРЅРєСѓ РїСЂРµРґСѓРїСЂРµР¶РґРµРЅРёСЏ
 		CWnd *hRadioWarning = GetDlgItem(IDC_WARNING);
 		hRadioWarning->ModifyStyle(WS_VISIBLE, 0);
 
-		//Скрываем поля ввода
+		//РЎРєСЂС‹РІР°РµРј РїРѕР»СЏ РІРІРѕРґР°
 		CWnd *hEditFam = GetDlgItem(IDC_EDIT2);
 		hEditFam->ModifyStyle(WS_VISIBLE, 0);
 
@@ -912,80 +912,80 @@ void ASADlg::FullScrAndStartTest()
 
 		
 
-		TestBody.InitASATest(); // инициализируем тело ASA теста
+		TestBody.InitASATest(); // РёРЅРёС†РёР°Р»РёР·РёСЂСѓРµРј С‚РµР»Рѕ ASA С‚РµСЃС‚Р°
 		//CRect rectCtl;
-		//m_PicCard1.GetClientRect(&rectCtl); // получаем размеры picture control
+		//m_PicCard1.GetClientRect(&rectCtl); // РїРѕР»СѓС‡Р°РµРј СЂР°Р·РјРµСЂС‹ picture control
 
-		//m_PicCard1.MoveWindow(rect.right / 2.0 - rectCtl.right - 150, rect.bottom / 2.0 - rectCtl.bottom / 2.0, rectCtl.right, rectCtl.bottom); // перемещаем контрол
+		//m_PicCard1.MoveWindow(rect.right / 2.0 - rectCtl.right - 150, rect.bottom / 2.0 - rectCtl.bottom / 2.0, rectCtl.right, rectCtl.bottom); // РїРµСЂРµРјРµС‰Р°РµРј РєРѕРЅС‚СЂРѕР»
 
-		//m_PicCard2.MoveWindow(rect.right / 2.0 + 150, rect.bottom / 2.0 - rectCtl.bottom / 2.0, rectCtl.right, rectCtl.bottom); // перемещаем контрол
+		//m_PicCard2.MoveWindow(rect.right / 2.0 + 150, rect.bottom / 2.0 - rectCtl.bottom / 2.0, rectCtl.right, rectCtl.bottom); // РїРµСЂРµРјРµС‰Р°РµРј РєРѕРЅС‚СЂРѕР»
 
 	}
 
 	else
 	{
-		//SystemParametersInfo(SPI_SETMOUSESPEED, 0, (PVOID)10, 0); // устанавливаем минимальную скорость
+		//SystemParametersInfo(SPI_SETMOUSESPEED, 0, (PVOID)10, 0); // СѓСЃС‚Р°РЅР°РІР»РёРІР°РµРј РјРёРЅРёРјР°Р»СЊРЅСѓСЋ СЃРєРѕСЂРѕСЃС‚СЊ
 		fullscr = false;
-		my_colorDlg.DeleteObject(); // удаляем старую кисть
-		my_colorDlg.CreateSolidBrush(RGB(240, 240, 240));		// создать кисть для окраски окна в стандартный цвет
+		my_colorDlg.DeleteObject(); // СѓРґР°Р»СЏРµРј СЃС‚Р°СЂСѓСЋ РєРёСЃС‚СЊ
+		my_colorDlg.CreateSolidBrush(RGB(240, 240, 240));		// СЃРѕР·РґР°С‚СЊ РєРёСЃС‚СЊ РґР»СЏ РѕРєСЂР°СЃРєРё РѕРєРЅР° РІ СЃС‚Р°РЅРґР°СЂС‚РЅС‹Р№ С†РІРµС‚
 
 
-		ModifyStyle(0, WS_CAPTION);//WS_CAPTION // показываем поле заголовка окна
-		ModifyStyle(0, WS_EX_DLGMODALFRAME); // показываем рамку окна
+		ModifyStyle(0, WS_CAPTION);//WS_CAPTION // РїРѕРєР°Р·С‹РІР°РµРј РїРѕР»Рµ Р·Р°РіРѕР»РѕРІРєР° РѕРєРЅР°
+		ModifyStyle(0, WS_EX_DLGMODALFRAME); // РїРѕРєР°Р·С‹РІР°РµРј СЂР°РјРєСѓ РѕРєРЅР°
 											 //AfxGetMainWnd()->SetWindowPos()
 											 //this->SetWindowPos(NULL, 0, 0, GetSystemMetrics(SM_CXSCREEN), GetSystemMetrics(SM_CYSCREEN), WS_EX_TOPMOST);
 											 //	this->SetWindowPos(NULL, 0, 0, GetSystemMetrics(SM_CXFULLSCREEN), GetSystemMetrics(SM_CYFULLSCREEN), WS_EX_TOPMOST);
 
-		AfxGetMainWnd()->ShowWindow(SW_RESTORE); // возвращаем окно в исходное состояние
+		AfxGetMainWnd()->ShowWindow(SW_RESTORE); // РІРѕР·РІСЂР°С‰Р°РµРј РѕРєРЅРѕ РІ РёСЃС…РѕРґРЅРѕРµ СЃРѕСЃС‚РѕСЏРЅРёРµ
 
-												 //очищаем фон
+												 //РѕС‡РёС‰Р°РµРј С„РѕРЅ
 												 //imgFon.Destroy();
 
 
-												 // скрываем кнопку ОК
+												 // СЃРєСЂС‹РІР°РµРј РєРЅРѕРїРєСѓ РћРљ
 		CWnd *hButOk = GetDlgItem(IDOK);
 		hButOk->ModifyStyle(0, WS_VISIBLE);
 
-		// скрываем кнопку Отмена
+		// СЃРєСЂС‹РІР°РµРј РєРЅРѕРїРєСѓ РћС‚РјРµРЅР°
 		CWnd *hButCan = GetDlgItem(IDCANCEL);
 		hButCan->ModifyStyle(0, WS_VISIBLE);
 
-		// скрываем первый текст
+		// СЃРєСЂС‹РІР°РµРј РїРµСЂРІС‹Р№ С‚РµРєСЃС‚
 		CWnd *hText1 = GetDlgItem(IDC_STATICTEXT1);
 		hText1->ModifyStyle(0, WS_VISIBLE);
 
-		// скрываем второй текст
+		// СЃРєСЂС‹РІР°РµРј РІС‚РѕСЂРѕР№ С‚РµРєСЃС‚
 		CWnd *hText2 = GetDlgItem(IDC_STATICTEXT2);
 		hText2->ModifyStyle(0, WS_VISIBLE);
 
-		// скрываем  текст "фамилия"
+		// СЃРєСЂС‹РІР°РµРј  С‚РµРєСЃС‚ "С„Р°РјРёР»РёСЏ"
 		CWnd *hTextFam = GetDlgItem(IDC_STATICFAM);
 		hTextFam->ModifyStyle(0, WS_VISIBLE);
 
-		// скрываем  текст "имя"
+		// СЃРєСЂС‹РІР°РµРј  С‚РµРєСЃС‚ "РёРјСЏ"
 		CWnd *hTextNam = GetDlgItem(IDC_STATICNAM);
 		hTextNam->ModifyStyle(0, WS_VISIBLE);
 
-		// скрываем  текст "Отчество"
+		// СЃРєСЂС‹РІР°РµРј  С‚РµРєСЃС‚ "РћС‚С‡РµСЃС‚РІРѕ"
 		CWnd *hTextSecNam = GetDlgItem(IDC_STATICSECNAM);
 		hTextSecNam->ModifyStyle(0, WS_VISIBLE);
 
-		// скрываем  текст "Вы"
+		// СЃРєСЂС‹РІР°РµРј  С‚РµРєСЃС‚ "Р’С‹"
 		CWnd *hTextYou = GetDlgItem(IDC_STATICYOU);
 		hTextYou->ModifyStyle(0, WS_VISIBLE);
 
-		// скрываем радиокнопки
+		// СЃРєСЂС‹РІР°РµРј СЂР°РґРёРѕРєРЅРѕРїРєРё
 		CWnd *hRadioMan = GetDlgItem(IDC_RADIO1);
 		hRadioMan->ModifyStyle(0, WS_VISIBLE);
 
 		CWnd *hRadioWoman = GetDlgItem(IDC_RADIO2);
 		hRadioWoman->ModifyStyle(0, WS_VISIBLE);
 
-		//Скрываем картинку предупреждения
+		//РЎРєСЂС‹РІР°РµРј РєР°СЂС‚РёРЅРєСѓ РїСЂРµРґСѓРїСЂРµР¶РґРµРЅРёСЏ
 		CWnd *hRadioWarning = GetDlgItem(IDC_WARNING);
 		hRadioWarning->ModifyStyle(0, WS_VISIBLE);
 
-		//Скрываем поля ввода
+		//РЎРєСЂС‹РІР°РµРј РїРѕР»СЏ РІРІРѕРґР°
 		CWnd *hEditFam = GetDlgItem(IDC_EDIT2);
 		hEditFam->ModifyStyle(0, WS_VISIBLE);
 
@@ -996,10 +996,10 @@ void ASADlg::FullScrAndStartTest()
 		hEditSecNam->ModifyStyle(0, WS_VISIBLE);
 
 
-		// скрываем карты и фон
+		// СЃРєСЂС‹РІР°РµРј РєР°СЂС‚С‹ Рё С„РѕРЅ
 		m_PicCard1.ModifyStyle(WS_VISIBLE, 0);//(0, WS_VISIBLE);
 		m_PicCard2.ModifyStyle(WS_VISIBLE, 0);
-		// скрываем фон
+		// СЃРєСЂС‹РІР°РµРј С„РѕРЅ
 		CWnd *hFonContrl = GetDlgItem(IDC_FON);
 		hFonContrl->ModifyStyle(WS_VISIBLE, 0);
 
@@ -1009,11 +1009,11 @@ void ASADlg::FullScrAndStartTest()
 
 		fullscr = false;
 		//CRect rectCtl;
-		//m_PicCard1.GetClientRect(&rectCtl); // получаем размеры picture control
+		//m_PicCard1.GetClientRect(&rectCtl); // РїРѕР»СѓС‡Р°РµРј СЂР°Р·РјРµСЂС‹ picture control
 
-		//m_PicCard1.MoveWindow(rect.right / 2.0 - rectCtl.right - 150, rect.bottom / 2.0 - rectCtl.bottom / 2.0, rectCtl.right, rectCtl.bottom); // перемещаем контрол
+		//m_PicCard1.MoveWindow(rect.right / 2.0 - rectCtl.right - 150, rect.bottom / 2.0 - rectCtl.bottom / 2.0, rectCtl.right, rectCtl.bottom); // РїРµСЂРµРјРµС‰Р°РµРј РєРѕРЅС‚СЂРѕР»
 
-		//m_PicCard2.MoveWindow(rect.right / 2.0 + 150, rect.bottom / 2.0 - rectCtl.bottom / 2.0, rectCtl.right, rectCtl.bottom); // перемещаем контрол
+		//m_PicCard2.MoveWindow(rect.right / 2.0 + 150, rect.bottom / 2.0 - rectCtl.bottom / 2.0, rectCtl.right, rectCtl.bottom); // РїРµСЂРµРјРµС‰Р°РµРј РєРѕРЅС‚СЂРѕР»
 
 		
 	}
@@ -1022,7 +1022,7 @@ void ASADlg::FullScrAndStartTest()
 
 INT_PTR ASADlg::DoModal()
 {
-	// TODO: добавьте специализированный код или вызов базового класса
+	// TODO: РґРѕР±Р°РІСЊС‚Рµ СЃРїРµС†РёР°Р»РёР·РёСЂРѕРІР°РЅРЅС‹Р№ РєРѕРґ РёР»Рё РІС‹Р·РѕРІ Р±Р°Р·РѕРІРѕРіРѕ РєР»Р°СЃСЃР°
 	//Sleep(100);
 	
 	return CDialogEx::DoModal();
@@ -1034,7 +1034,7 @@ void ASADlg::OnShowWindow(BOOL bShow, UINT nStatus)
 {
 	CDialogEx::OnShowWindow(bShow, nStatus);
 	
-	// TODO: добавьте свой код обработчика сообщений
+	// TODO: РґРѕР±Р°РІСЊС‚Рµ СЃРІРѕР№ РєРѕРґ РѕР±СЂР°Р±РѕС‚С‡РёРєР° СЃРѕРѕР±С‰РµРЅРёР№
 	OnBnClickedOk();
 	//onBtnCloneFunc();	
 }

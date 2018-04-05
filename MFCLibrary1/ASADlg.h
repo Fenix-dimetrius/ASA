@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 
 #include "resource.h"
 #include "afxwin.h"
@@ -7,31 +7,32 @@
 #include "PicFonContrl.h"
 
 
-// диалоговое окно ASADlg
+
+// РґРёР°Р»РѕРіРѕРІРѕРµ РѕРєРЅРѕ ASADlg
 //extern bool m_EndShowByClick;
 
 
-// Время показа
+// Р’СЂРµРјСЏ РїРѕРєР°Р·Р°
 extern int m_ShowTime;
-// Задержка до показа
+// Р—Р°РґРµСЂР¶РєР° РґРѕ РїРѕРєР°Р·Р°
 extern int m_BeforeShow;
-//  Задержка после показа
+//  Р—Р°РґРµСЂР¶РєР° РїРѕСЃР»Рµ РїРѕРєР°Р·Р°
 extern int m_AfterShow;
 
-//  Задержка скорости перемещения мыши
+//  Р—Р°РґРµСЂР¶РєР° СЃРєРѕСЂРѕСЃС‚Рё РїРµСЂРµРјРµС‰РµРЅРёСЏ РјС‹С€Рё
 extern int m_DelaySpeedMouse;
 
 
-// завершить показ по клику
+// Р·Р°РІРµСЂС€РёС‚СЊ РїРѕРєР°Р· РїРѕ РєР»РёРєСѓ
 extern bool m_EndShowByClick;
 
-// генерация до выбора
+// РіРµРЅРµСЂР°С†РёСЏ РґРѕ РІС‹Р±РѕСЂР°
 extern bool GenNumPicBefore;
 
-// точные отсчеты
+// С‚РѕС‡РЅС‹Рµ РѕС‚СЃС‡РµС‚С‹
 extern bool AccurInterval;
 
-// интервал тиков таймера, для записи данных в файл
+// РёРЅС‚РµСЂРІР°Р» С‚РёРєРѕРІ С‚Р°Р№РјРµСЂР°, РґР»СЏ Р·Р°РїРёСЃРё РґР°РЅРЅС‹С… РІ С„Р°Р№Р»
 extern int measureInterval;
 
 extern int m_AuxPlugInNum;
@@ -41,28 +42,28 @@ extern int m_AuxPlugInNum;
 
 
 
-//std::vector <float> EpoImpos(2); // вектор для сохранения значения канала 0
-//std::vector <float> EpoImposBuf(2); // вектор для сохранения значения канала 0
-//extern std::vector <float> EpoImpos(2); // вектор для сохранения значения канала 0
-//extern std::vector <float> EpoImposBuf(2); // вектор для сохранения значения канала 0
+//std::vector <float> EpoImpos(2); // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 0
+//std::vector <float> EpoImposBuf(2); // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 0
+//extern std::vector <float> EpoImpos(2); // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 0
+//extern std::vector <float> EpoImposBuf(2); // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 0
 
 class ASADlg : public CDialogEx
 {
 	DECLARE_DYNAMIC(ASADlg)
 
 public:
-	ASADlg(CWnd* pParent = NULL);   // стандартный конструктор
+	ASADlg(CWnd* pParent = NULL);   // СЃС‚Р°РЅРґР°СЂС‚РЅС‹Р№ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 	virtual ~ASADlg();
 	
 
 	
-// Данные диалогового окна
+// Р”Р°РЅРЅС‹Рµ РґРёР°Р»РѕРіРѕРІРѕРіРѕ РѕРєРЅР°
 #ifdef AFX_DESIGN_TIME
 	enum { IDD = IDD_ASA };
 #endif
 
 protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // поддержка DDX/DDV
+	virtual void DoDataExchange(CDataExchange* pDX);    // РїРѕРґРґРµСЂР¶РєР° DDX/DDV
 
 	DECLARE_MESSAGE_MAP()
 public:
@@ -79,14 +80,14 @@ public:
 	afx_msg void OnClose();
 	
 	afx_msg void OnPaint();
-	//// Указывает, что вы - мужчина
+	//// РЈРєР°Р·С‹РІР°РµС‚, С‡С‚Рѕ РІС‹ - РјСѓР¶С‡РёРЅР°
 	//bool m_RadioMan;
-	//// Указывает, что вы - женщина
+	//// РЈРєР°Р·С‹РІР°РµС‚, С‡С‚Рѕ РІС‹ - Р¶РµРЅС‰РёРЅР°
 	//bool m_RadioWoman;
 	afx_msg void OnStnClickedCard2();
 	afx_msg void OnTimer(UINT_PTR nIDEvent);
 
-	void onBtnCloneFunc(); // копия функции нажатия кнопки. вызывается из dialogTest.cpp
+	void onBtnCloneFunc(); // РєРѕРїРёСЏ С„СѓРЅРєС†РёРё РЅР°Р¶Р°С‚РёСЏ РєРЅРѕРїРєРё. РІС‹Р·С‹РІР°РµС‚СЃСЏ РёР· dialogTest.cpp
 
 	bool BeforeTimer;
 	bool ShowTimer;
@@ -95,12 +96,12 @@ public:
 
 	afx_msg void OnSize(UINT nType, int cx, int cy);
 	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
-	// picture control для фона
+	// picture control РґР»СЏ С„РѕРЅР°
 	PicFonContrl m_Fon;
 
-	// отрисовка при изменении цвета окна
+	// РѕС‚СЂРёСЃРѕРІРєР° РїСЂРё РёР·РјРµРЅРµРЅРёРё С†РІРµС‚Р° РѕРєРЅР°
 	afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
-	// кисть для окрашивания окна
+	// РєРёСЃС‚СЊ РґР»СЏ РѕРєСЂР°С€РёРІР°РЅРёСЏ РѕРєРЅР°
 	CBrush my_colorDlg;
 //	afx_msg void OnStnClickedFon();
 
@@ -114,17 +115,17 @@ public:
 	afx_msg void OnStnClickedFon();
 
 	
-	// Разворачивает(восстонавливает) окно и начинает(завершает) тест
+	// Р Р°Р·РІРѕСЂР°С‡РёРІР°РµС‚(РІРѕСЃСЃС‚РѕРЅР°РІР»РёРІР°РµС‚) РѕРєРЅРѕ Рё РЅР°С‡РёРЅР°РµС‚(Р·Р°РІРµСЂС€Р°РµС‚) С‚РµСЃС‚
 	void FullScrAndStartTest();
-	// Фамилия
+	// Р¤Р°РјРёР»РёСЏ
 	CEdit m_SureName;
-	// имя
+	// РёРјСЏ
 	CEdit m_Name;
-	// отчество
+	// РѕС‚С‡РµСЃС‚РІРѕ
 	CEdit m_SecName;
 
 	
-	// Группа радиокнопок для определения пола
+	// Р“СЂСѓРїРїР° СЂР°РґРёРѕРєРЅРѕРїРѕРє РґР»СЏ РѕРїСЂРµРґРµР»РµРЅРёСЏ РїРѕР»Р°
 	BOOL m_ManWoman;
 	virtual INT_PTR DoModal();
 	afx_msg void OnShowWindow(BOOL bShow, UINT nStatus);

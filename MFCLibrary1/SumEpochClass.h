@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <vector>
 #include <atlstr.h>
 //#include <afxstr.h>
@@ -10,68 +10,68 @@ public:
 public:
 	
 
-	//float * TrueSumEpoChan0; // вектор для сохранения значения канала 0
-	//float * TrueSumEpoChan1; // вектор для сохранения значения канала 1
-	//float *  TrueSumEpoChan2; // вектор для сохранения значения канала 2
-	//float * TrueSumEpoChan3; // вектор для сохранения значения канала 3
+	//float * TrueSumEpoChan0; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 0
+	//float * TrueSumEpoChan1; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 1
+	//float *  TrueSumEpoChan2; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 2
+	//float * TrueSumEpoChan3; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 3
 
-	//float *  FalseSumEpoChan0; // вектор для сохранения значения канала 0
-	//float * FalseSumEpoChan1; // вектор для сохранения значения канала 1
-	//float * FalseSumEpoChan2; // вектор для сохранения значения канала 2
-	//float *  FalseSumEpoChan3; // вектор для сохранения значения канала 3
+	//float *  FalseSumEpoChan0; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 0
+	//float * FalseSumEpoChan1; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 1
+	//float * FalseSumEpoChan2; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 2
+	//float *  FalseSumEpoChan3; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 3
 							 
-	//int positionNum[50];// отгадано - 1; неотгадано - 2;
+	//int positionNum[50];// РѕС‚РіР°РґР°РЅРѕ - 1; РЅРµРѕС‚РіР°РґР°РЅРѕ - 2;
 struct MyStruct1
 	{
 
-		//std::vector <float> TrueSumEpoChan0; // вектор для сохранения значения канала 0
-		//std::vector <float> TrueSumEpoChan1; // вектор для сохранения значения канала 1
-		//std::vector <float> TrueSumEpoChan2; // вектор для сохранения значения канала 2
-		//std::vector <float> TrueSumEpoChan3; // вектор для сохранения значения канала 3
+		//std::vector <float> TrueSumEpoChan0; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 0
+		//std::vector <float> TrueSumEpoChan1; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 1
+		//std::vector <float> TrueSumEpoChan2; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 2
+		//std::vector <float> TrueSumEpoChan3; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 3
 
 		std::vector<std::vector<float>> TrueSumEpoChan;
 		std::vector<std::vector<float>> FalseSumEpoChan;
 
-		//std::vector <float> FalseSumEpoChan0; // вектор для сохранения значения канала 0
-		//std::vector <float> FalseSumEpoChan1; // вектор для сохранения значения канала 1
-		//std::vector <float> FalseSumEpoChan2; // вектор для сохранения значения канала 2
-		//std::vector <float> FalseSumEpoChan3; // вектор для сохранения значения канала 3
+		//std::vector <float> FalseSumEpoChan0; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 0
+		//std::vector <float> FalseSumEpoChan1; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 1
+		//std::vector <float> FalseSumEpoChan2; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 2
+		//std::vector <float> FalseSumEpoChan3; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 3
 
 
 
 
 
-		// стандартная ошибка
+		// СЃС‚Р°РЅРґР°СЂС‚РЅР°СЏ РѕС€РёР±РєР°
 		std::vector <float> STrue;
 		std::vector <float> SFalse;
-		// среднеквадратичное отклонение
+		// СЃСЂРµРґРЅРµРєРІР°РґСЂР°С‚РёС‡РЅРѕРµ РѕС‚РєР»РѕРЅРµРЅРёРµ
 		std::vector <float> SigmaTrue;
 		std::vector <float> SigmaFalse;
 
-		// вектора стандартных ошибок
+		// РІРµРєС‚РѕСЂР° СЃС‚Р°РЅРґР°СЂС‚РЅС‹С… РѕС€РёР±РѕРє
 		std::vector <float> SigmaTempChan;
-		std::vector <std::vector <float>> SigmaTrueChan; // вектор для сохранения значения каналов
-		std::vector <std::vector <float>> SigmaFalseChan; // вектор для сохранения значения канала 0
+		std::vector <std::vector <float>> SigmaTrueChan; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»РѕРІ
+		std::vector <std::vector <float>> SigmaFalseChan; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 0
 
-		//std::vector <float> SigmaTrueChan0; // вектор для сохранения значения канала 0
-		//std::vector <float> SigmaTrueChan1; // вектор для сохранения значения канала 1
-		//std::vector <float> SigmaTrueChan2; // вектор для сохранения значения канала 2
-		//std::vector <float> SigmaTrueChan3; // вектор для сохранения значения канала 3
+		//std::vector <float> SigmaTrueChan0; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 0
+		//std::vector <float> SigmaTrueChan1; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 1
+		//std::vector <float> SigmaTrueChan2; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 2
+		//std::vector <float> SigmaTrueChan3; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 3
 
-		//std::vector <float> SigmaFalseChan0; // вектор для сохранения значения канала 0
-		//std::vector <float> SigmaFalseChan1; // вектор для сохранения значения канала 1
-		//std::vector <float> SigmaFalseChan2; // вектор для сохранения значения канала 2
-		//std::vector <float> SigmaFalseChan3; // вектор для сохранения значения канала 3
+		//std::vector <float> SigmaFalseChan0; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 0
+		//std::vector <float> SigmaFalseChan1; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 1
+		//std::vector <float> SigmaFalseChan2; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 2
+		//std::vector <float> SigmaFalseChan3; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 3
 
 
-		// чистые значения эпох
+		// С‡РёСЃС‚С‹Рµ Р·РЅР°С‡РµРЅРёСЏ СЌРїРѕС…
 
-		std::vector< std::vector <std::vector <float>>> TrueOnlyEpoch; // трехмерный вектор необработанных эпох
-																//каналов. [k][j][i] по аналогии с книгой, где i - столбцы, j - строки, k - страницы
+		std::vector< std::vector <std::vector <float>>> TrueOnlyEpoch; // С‚СЂРµС…РјРµСЂРЅС‹Р№ РІРµРєС‚РѕСЂ РЅРµРѕР±СЂР°Р±РѕС‚Р°РЅРЅС‹С… СЌРїРѕС…
+																//РєР°РЅР°Р»РѕРІ. [k][j][i] РїРѕ Р°РЅР°Р»РѕРіРёРё СЃ РєРЅРёРіРѕР№, РіРґРµ i - СЃС‚РѕР»Р±С†С‹, j - СЃС‚СЂРѕРєРё, k - СЃС‚СЂР°РЅРёС†С‹
 
-		std::vector< std::vector <std::vector <float>>> FalseOnlyEpoch; // трехмерный вектор необработанных эпох
-																	   //каналов. [k][j][i] по аналогии с книгой, где i - столбцы, j - строки, k - страницы
-		// вектора для зранения выбранных карт
+		std::vector< std::vector <std::vector <float>>> FalseOnlyEpoch; // С‚СЂРµС…РјРµСЂРЅС‹Р№ РІРµРєС‚РѕСЂ РЅРµРѕР±СЂР°Р±РѕС‚Р°РЅРЅС‹С… СЌРїРѕС…
+																	   //РєР°РЅР°Р»РѕРІ. [k][j][i] РїРѕ Р°РЅР°Р»РѕРіРёРё СЃ РєРЅРёРіРѕР№, РіРґРµ i - СЃС‚РѕР»Р±С†С‹, j - СЃС‚СЂРѕРєРё, k - СЃС‚СЂР°РЅРёС†С‹
+		// РІРµРєС‚РѕСЂР° РґР»СЏ Р·СЂР°РЅРµРЅРёСЏ РІС‹Р±СЂР°РЅРЅС‹С… РєР°СЂС‚
 		std::vector <CString> TrueNumCard;
 		std::vector <CString> FalseNumCard;
 
@@ -92,7 +92,7 @@ private:
 
 	
 
-	void Sigma(int);// стандартная ошибка
+	void Sigma(int);// СЃС‚Р°РЅРґР°СЂС‚РЅР°СЏ РѕС€РёР±РєР°
 
 };
 

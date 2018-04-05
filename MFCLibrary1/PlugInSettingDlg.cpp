@@ -1,4 +1,4 @@
-// PlugInSettingDlg.cpp: файл реализации
+п»ї// PlugInSettingDlg.cpp: С„Р°Р№Р» СЂРµР°Р»РёР·Р°С†РёРё
 //
 
 #include "stdafx.h"
@@ -7,8 +7,8 @@
 #include "ASADlg.h"
 #include "DialogTest.h"
 #include "ASATest.h"
-// диалоговое окно PlugInSettingDlg
-//ASADlg AsaDlgClass; // экземпляр класса окна теста ASA
+// РґРёР°Р»РѕРіРѕРІРѕРµ РѕРєРЅРѕ PlugInSettingDlg
+//ASADlg AsaDlgClass; // СЌРєР·РµРјРїР»СЏСЂ РєР»Р°СЃСЃР° РѕРєРЅР° С‚РµСЃС‚Р° ASA
 IMPLEMENT_DYNAMIC(PlugInSettingDlg, CDialogEx)
 
 PlugInSettingDlg::PlugInSettingDlg(CWnd* pParent /*=NULL*/)
@@ -71,27 +71,27 @@ BEGIN_MESSAGE_MAP(PlugInSettingDlg, CDialogEx)
 END_MESSAGE_MAP()
 
 
-// обработчики сообщений PlugInSettingDlg
+// РѕР±СЂР°Р±РѕС‚С‡РёРєРё СЃРѕРѕР±С‰РµРЅРёР№ PlugInSettingDlg
 
 
 
 
 BOOL PlugInSettingDlg::PreTranslateMessage(MSG* pMsg)
 {
-	// TODO: добавьте специализированный код или вызов базового класса
+	// TODO: РґРѕР±Р°РІСЊС‚Рµ СЃРїРµС†РёР°Р»РёР·РёСЂРѕРІР°РЅРЅС‹Р№ РєРѕРґ РёР»Рё РІС‹Р·РѕРІ Р±Р°Р·РѕРІРѕРіРѕ РєР»Р°СЃСЃР°
 	//if (pMsg->message == WM_KEYDOWN)
 		//AfxMessageBox("KEY PRESS!!!!!");
 	return CDialogEx::PreTranslateMessage(pMsg);
 }
 
 
-//----------------определение колличества мониторов и их параметры-----------
+//----------------РѕРїСЂРµРґРµР»РµРЅРёРµ РєРѕР»Р»РёС‡РµСЃС‚РІР° РјРѕРЅРёС‚РѕСЂРѕРІ Рё РёС… РїР°СЂР°РјРµС‚СЂС‹-----------
 struct ENUM_DISP_ARG
 {
 	TCHAR msg[500];
-	int monId; // количество мониторов
-	HDC m_dcMon[4]; // контекст монитора
-	RECT m_pRcMon[4]; // прямоугольник монитора
+	int monId; // РєРѕР»РёС‡РµСЃС‚РІРѕ РјРѕРЅРёС‚РѕСЂРѕРІ
+	HDC m_dcMon[4]; // РєРѕРЅС‚РµРєСЃС‚ РјРѕРЅРёС‚РѕСЂР°
+	RECT m_pRcMon[4]; // РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРє РјРѕРЅРёС‚РѕСЂР°
 };
 ENUM_DISP_ARG* pArg;
 // callback function called by EnumDisplayMonitors for each enabled monitor
@@ -120,11 +120,11 @@ BOOL CALLBACK EnumDispProc(HMONITOR hMon, HDC dcMon, RECT* pRcMon, LPARAM lParam
 
 
 
-void PlugInSettingDlg::OnBnClickedButton1() // asa button - кнопка скрыта
-						// по хорошему это все нужно в другую функцию запихать,
-						// но мне уже надоело долбаться с этим проектом...
+void PlugInSettingDlg::OnBnClickedButton1() // asa button - РєРЅРѕРїРєР° СЃРєСЂС‹С‚Р°
+						// РїРѕ С…РѕСЂРѕС€РµРјСѓ СЌС‚Рѕ РІСЃРµ РЅСѓР¶РЅРѕ РІ РґСЂСѓРіСѓСЋ С„СѓРЅРєС†РёСЋ Р·Р°РїРёС…Р°С‚СЊ,
+						// РЅРѕ РјРЅРµ СѓР¶Рµ РЅР°РґРѕРµР»Рѕ РґРѕР»Р±Р°С‚СЊСЃСЏ СЃ СЌС‚РёРј РїСЂРѕРµРєС‚РѕРј...
 {
-	//UpdateData(TRUE); // передаем данные переменных в связанные элементы управления.
+	//UpdateData(TRUE); // РїРµСЂРµРґР°РµРј РґР°РЅРЅС‹Рµ РїРµСЂРµРјРµРЅРЅС‹С… РІ СЃРІСЏР·Р°РЅРЅС‹Рµ СЌР»РµРјРµРЅС‚С‹ СѓРїСЂР°РІР»РµРЅРёСЏ.
 	//if (m_EndShowCheck == true)
 	//{
 	//	m_EndShowByClick = true;
@@ -151,9 +151,9 @@ void PlugInSettingDlg::OnBnClickedButton1() // asa button - кнопка скрыта
 //bool m_EndShowByClick;
 void PlugInSettingDlg::OnBnClickedOk()
 {
-	// TODO: добавьте свой код обработчика уведомлений
+	// TODO: РґРѕР±Р°РІСЊС‚Рµ СЃРІРѕР№ РєРѕРґ РѕР±СЂР°Р±РѕС‚С‡РёРєР° СѓРІРµРґРѕРјР»РµРЅРёР№
 	
-	// передаем данные с полей ввода
+	// РїРµСЂРµРґР°РµРј РґР°РЅРЅС‹Рµ СЃ РїРѕР»РµР№ РІРІРѕРґР°
 	UpdateData(TRUE);
 	MenOrWomen = int(s_ManWoman);
 	
@@ -176,7 +176,7 @@ void PlugInSettingDlg::OnBnClickedOk()
 
 
 
-	//UpdateData(FALSE); // передаем данные переменных в связанные элементы управления.
+	//UpdateData(FALSE); // РїРµСЂРµРґР°РµРј РґР°РЅРЅС‹Рµ РїРµСЂРµРјРµРЅРЅС‹С… РІ СЃРІСЏР·Р°РЅРЅС‹Рµ СЌР»РµРјРµРЅС‚С‹ СѓРїСЂР°РІР»РµРЅРёСЏ.
 
 	m_DelaySpeedMouseEdit.GetWindowTextA(Temp);
 	m_DelaySpeedMouse = atoi(Temp);
@@ -199,7 +199,7 @@ void PlugInSettingDlg::OnBnClickedOk()
 	//AsaTestDlg.m_ShowTime = m_ShowTimeEdit;
 	//AsaTestDlg.m_BeforeShow = m_BeforeShowEdit;
 
-	// изменяем размер весторов
+	// РёР·РјРµРЅСЏРµРј СЂР°Р·РјРµСЂ РІРµСЃС‚РѕСЂРѕРІ
 	float VecSize = (m_AfterShow + m_ShowTime + m_BeforeShow) / (float)measureInterval;
 
 
@@ -210,16 +210,16 @@ void PlugInSettingDlg::OnBnClickedOk()
 
 	DialogTest hideFrame;
 	if (hideFrame) hideFrame.DestroyWindow();
-	hideFrame.Create(IDD_DIALOG1, GetDesktopWindow()); // создаем окно теста, но не показываем
+	hideFrame.Create(IDD_DIALOG1, GetDesktopWindow()); // СЃРѕР·РґР°РµРј РѕРєРЅРѕ С‚РµСЃС‚Р°, РЅРѕ РЅРµ РїРѕРєР°Р·С‹РІР°РµРј
 
 													   // 
-													   // информация о количестве дисплеев и их разрешении
+													   // РёРЅС„РѕСЂРјР°С†РёСЏ Рѕ РєРѕР»РёС‡РµСЃС‚РІРµ РґРёСЃРїР»РµРµРІ Рё РёС… СЂР°Р·СЂРµС€РµРЅРёРё
 	ENUM_DISP_ARG arg = { 0 };
 	arg.monId = 0;
 	EnumDisplayMonitors(0, 0, EnumDispProc, reinterpret_cast<LPARAM>(&arg));
 	int activeMon = 0;
 	int secMon = 0;
-	// определяем активны монитор
+	// РѕРїСЂРµРґРµР»СЏРµРј Р°РєС‚РёРІРЅС‹ РјРѕРЅРёС‚РѕСЂ
 	DISPLAY_DEVICE dd;
 
 	for (int i = 0;;++i)
@@ -242,17 +242,17 @@ void PlugInSettingDlg::OnBnClickedOk()
 	}
 
 
-	// перемещаем окно на второй монитор
-	if (pArg->m_pRcMon[secMon].left < 0) // если монитор слева
+	// РїРµСЂРµРјРµС‰Р°РµРј РѕРєРЅРѕ РЅР° РІС‚РѕСЂРѕР№ РјРѕРЅРёС‚РѕСЂ
+	if (pArg->m_pRcMon[secMon].left < 0) // РµСЃР»Рё РјРѕРЅРёС‚РѕСЂ СЃР»РµРІР°
 	{
 		hideFrame.SetWindowPos(&CWnd::wndTopMost, pArg->m_pRcMon[secMon].left / 2, 50, 0, 0, SWP_NOSIZE);//pArg->m_pRcMon[activeMon].top - pArg->m_pRcMon[secMon].bottom)/2
 	}
-	else // если справа
+	else // РµСЃР»Рё СЃРїСЂР°РІР°
 	{
 		hideFrame.SetWindowPos(&CWnd::wndTopMost, pArg->m_pRcMon[activeMon].right / 2 + pArg->m_pRcMon[secMon].right / 2, 50, 0, 0, SWP_NOSIZE);
 	}
 
-	// показываем окно теста
+	// РїРѕРєР°Р·С‹РІР°РµРј РѕРєРЅРѕ С‚РµСЃС‚Р°
 	hideFrame.ShowWindow(SW_SHOW);
 
 
@@ -271,38 +271,38 @@ void PlugInSettingDlg::OnSize(UINT nType, int cx, int cy)
 //	MessageBox("OnSize", "Info", MB_OK);
 
 	
-	// TODO: добавьте свой код обработчика сообщений
+	// TODO: РґРѕР±Р°РІСЊС‚Рµ СЃРІРѕР№ РєРѕРґ РѕР±СЂР°Р±РѕС‚С‡РёРєР° СЃРѕРѕР±С‰РµРЅРёР№
 }
 
 
 void PlugInSettingDlg::OnPaint()
 {
 	CPaintDC dc(this); // device context for painting
-					   // TODO: добавьте свой код обработчика сообщений
-					   // Не вызывать CDialogEx::OnPaint() для сообщений рисования
+					   // TODO: РґРѕР±Р°РІСЊС‚Рµ СЃРІРѕР№ РєРѕРґ РѕР±СЂР°Р±РѕС‚С‡РёРєР° СЃРѕРѕР±С‰РµРЅРёР№
+					   // РќРµ РІС‹Р·С‹РІР°С‚СЊ CDialogEx::OnPaint() РґР»СЏ СЃРѕРѕР±С‰РµРЅРёР№ СЂРёСЃРѕРІР°РЅРёСЏ
 	//ASADlg AsaTestDlg;
 	CString Temp;
 	//Temp.le
 
 
-	Temp.Format("\%i", m_DelaySpeedMouse); // перевод числа в строку.
+	Temp.Format("\%i", m_DelaySpeedMouse); // РїРµСЂРµРІРѕРґ С‡РёСЃР»Р° РІ СЃС‚СЂРѕРєСѓ.
 									 //	MessageBox(Temp, "Info", MB_OK);
-	m_DelaySpeedMouseEdit.SetWindowTextA(Temp); // вывод в edit
+	m_DelaySpeedMouseEdit.SetWindowTextA(Temp); // РІС‹РІРѕРґ РІ edit
 
 
-	Temp.Format("\%i", m_AfterShow); // перевод числа в строку.
+	Temp.Format("\%i", m_AfterShow); // РїРµСЂРµРІРѕРґ С‡РёСЃР»Р° РІ СЃС‚СЂРѕРєСѓ.
 									 //	MessageBox(Temp, "Info", MB_OK);
-	m_AfterShowEdit.SetWindowTextA(Temp); // вывод в edit
+	m_AfterShowEdit.SetWindowTextA(Temp); // РІС‹РІРѕРґ РІ edit
 
-	Temp.Format("\%i", m_ShowTime); // перевод числа в строку.
-	m_ShowTimeEdit.SetWindowTextA(Temp); // вывод в edit
+	Temp.Format("\%i", m_ShowTime); // РїРµСЂРµРІРѕРґ С‡РёСЃР»Р° РІ СЃС‚СЂРѕРєСѓ.
+	m_ShowTimeEdit.SetWindowTextA(Temp); // РІС‹РІРѕРґ РІ edit
 
-	Temp.Format("\%i", m_BeforeShow); // перевод числа в строку.
-	m_BeforeShowEdit.SetWindowTextA(Temp); // вывод в edit
+	Temp.Format("\%i", m_BeforeShow); // РїРµСЂРµРІРѕРґ С‡РёСЃР»Р° РІ СЃС‚СЂРѕРєСѓ.
+	m_BeforeShowEdit.SetWindowTextA(Temp); // РІС‹РІРѕРґ РІ edit
 
 	
-	Temp.Format("\%i", measureInterval); // перевод числа в строку.
-	m_TimeIntervalTick.SetWindowTextA(Temp); // вывод в edit
+	Temp.Format("\%i", measureInterval); // РїРµСЂРµРІРѕРґ С‡РёСЃР»Р° РІ СЃС‚СЂРѕРєСѓ.
+	m_TimeIntervalTick.SetWindowTextA(Temp); // РІС‹РІРѕРґ РІ edit
 
 	m_EndShow.SetCheck(m_EndShowByClick);
 

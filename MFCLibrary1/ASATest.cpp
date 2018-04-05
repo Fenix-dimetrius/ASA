@@ -1,4 +1,4 @@
-
+п»ї
 #include "stdafx.h"
 #include "ASATest.h"
 #include "ASADlg.h"
@@ -6,23 +6,23 @@
 #include <fstream>
 #include "SumEpochClass.h"
 
-std::vector<int> v_Available(150);// вектор сохранения вариантов ответов
+std::vector<int> v_Available(150);// РІРµРєС‚РѕСЂ СЃРѕС…СЂР°РЅРµРЅРёСЏ РІР°СЂРёР°РЅС‚РѕРІ РѕС‚РІРµС‚РѕРІ
 std::string file_nameEn;
 char * fileNameEn;
-FILE * recordEn; // файл для записи в него значений
-std::vector <__int64> tickVector(2); // вектор для сохранения значения тиков
+FILE * recordEn; // С„Р°Р№Р» РґР»СЏ Р·Р°РїРёСЃРё РІ РЅРµРіРѕ Р·РЅР°С‡РµРЅРёР№
+std::vector <__int64> tickVector(2); // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ С‚РёРєРѕРІ
 
 std::vector <float> tempFirstTick;
 std::vector <std::vector <float>> updInfVecChan;
 
 
-//std::vector <__int64> freqVector(2);// вектор сохранения частоты процессора
+//std::vector <__int64> freqVector(2);// РІРµРєС‚РѕСЂ СЃРѕС…СЂР°РЅРµРЅРёСЏ С‡Р°СЃС‚РѕС‚С‹ РїСЂРѕС†РµСЃСЃРѕСЂР°
 
-std::vector <CString> TimeInterval(2); // вектор для сохранения момента времени выбора карты
-std::vector <CString> ChouseCard(2); // вектор для сохранения выбора карты
+std::vector <CString> TimeInterval(2); // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ РјРѕРјРµРЅС‚Р° РІСЂРµРјРµРЅРё РІС‹Р±РѕСЂР° РєР°СЂС‚С‹
+std::vector <CString> ChouseCard(2); // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ РІС‹Р±РѕСЂР° РєР°СЂС‚С‹
 
-std::vector <CString> TruOrFalseCard(2); // вектор для сохранения ответа на выбор карт(верно или нет)
-std::vector <CString> NumActualCard(2); // вектор для сохранения текущей картинки
+std::vector <CString> TruOrFalseCard(2); // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ РѕС‚РІРµС‚Р° РЅР° РІС‹Р±РѕСЂ РєР°СЂС‚(РІРµСЂРЅРѕ РёР»Рё РЅРµС‚)
+std::vector <CString> NumActualCard(2); // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ С‚РµРєСѓС‰РµР№ РєР°СЂС‚РёРЅРєРё
 
 
 //int i001 = 0;
@@ -34,9 +34,9 @@ void testOut(DWORD dwObjectIndex, DWORD NumOfInstruments)
 	//out.close();
 }
 
-void ThreadTimerTick(void* pParams); // отдельный поток с таймером
+void ThreadTimerTick(void* pParams); // РѕС‚РґРµР»СЊРЅС‹Р№ РїРѕС‚РѕРє СЃ С‚Р°Р№РјРµСЂРѕРј
 
-//void ImposEpoFunc(); // метод наложения эпох
+//void ImposEpoFunc(); // РјРµС‚РѕРґ РЅР°Р»РѕР¶РµРЅРёСЏ СЌРїРѕС…
 
 ASATest::ASATest()
 	//: v_AllUrl(0)
@@ -48,62 +48,62 @@ ASATest::~ASATest()
 {
 }
 
-CString returnVal;// возвращает адрес картинки
+CString returnVal;// РІРѕР·РІСЂР°С‰Р°РµС‚ Р°РґСЂРµСЃ РєР°СЂС‚РёРЅРєРё
 
 CString ASATest::getUrlPic()
 {
-	int Rand1 = 0; // рандомный номер картинки
+	int Rand1 = 0; // СЂР°РЅРґРѕРјРЅС‹Р№ РЅРѕРјРµСЂ РєР°СЂС‚РёРЅРєРё
 	int xmin = 0;
 
-	LARGE_INTEGER NumTickProc; // переменная
-	QueryPerformanceCounter(&NumTickProc); // сохраняем значение тиков ЦП
+	LARGE_INTEGER NumTickProc; // РїРµСЂРµРјРµРЅРЅР°СЏ
+	QueryPerformanceCounter(&NumTickProc); // СЃРѕС…СЂР°РЅСЏРµРј Р·РЅР°С‡РµРЅРёРµ С‚РёРєРѕРІ Р¦Рџ
 	
 
-	if (v_Available.size() >= 2) // проверка вектора на длину
+	if (v_Available.size() >= 2) // РїСЂРѕРІРµСЂРєР° РІРµРєС‚РѕСЂР° РЅР° РґР»РёРЅСѓ
 	{
-		Rand1 = (rand() % (v_Available.size())); // генерируем рандомное число в пределах от 0 до размера вектора
+		Rand1 = (rand() % (v_Available.size())); // РіРµРЅРµСЂРёСЂСѓРµРј СЂР°РЅРґРѕРјРЅРѕРµ С‡РёСЃР»Рѕ РІ РїСЂРµРґРµР»Р°С… РѕС‚ 0 РґРѕ СЂР°Р·РјРµСЂР° РІРµРєС‚РѕСЂР°
 											
 	}
-	else // при длине вектора ==1
-	{	// присваеваем просто нуль
-		Rand1 = 0; // т.к. осталась всего одна ячейка в векторе
+	else // РїСЂРё РґР»РёРЅРµ РІРµРєС‚РѕСЂР° ==1
+	{	// РїСЂРёСЃРІР°РµРІР°РµРј РїСЂРѕСЃС‚Рѕ РЅСѓР»СЊ
+		Rand1 = 0; // С‚.Рє. РѕСЃС‚Р°Р»Р°СЃСЊ РІСЃРµРіРѕ РѕРґРЅР° СЏС‡РµР№РєР° РІ РІРµРєС‚РѕСЂРµ
 		EndGenNumPic = true;
 	}
 		
-	returnVal.Format("\%i", v_Available[Rand1]); //конвертируем число в ячейке вектора в строку
+	returnVal.Format("\%i", v_Available[Rand1]); //РєРѕРЅРІРµСЂС‚РёСЂСѓРµРј С‡РёСЃР»Рѕ РІ СЏС‡РµР№РєРµ РІРµРєС‚РѕСЂР° РІ СЃС‚СЂРѕРєСѓ
 
-	v_Available.erase(v_Available.begin() + Rand1); // удаляем ячейку по номером Rand1
-	std::vector<int>(v_Available).swap(v_Available); // обновляем вектор для изменения размера
+	v_Available.erase(v_Available.begin() + Rand1); // СѓРґР°Р»СЏРµРј СЏС‡РµР№РєСѓ РїРѕ РЅРѕРјРµСЂРѕРј Rand1
+	std::vector<int>(v_Available).swap(v_Available); // РѕР±РЅРѕРІР»СЏРµРј РІРµРєС‚РѕСЂ РґР»СЏ РёР·РјРµРЅРµРЅРёСЏ СЂР°Р·РјРµСЂР°
 		
 	
 												  
-	// Применим метод Таратухина.
+	// РџСЂРёРјРµРЅРёРј РјРµС‚РѕРґ РўР°СЂР°С‚СѓС…РёРЅР°.
 
 	int X1, X2;
 
-	X2 = NumTickProc.QuadPart % 10; // делим число на 10 и запоминаем остаток. Это первый знак с конца числа NumTickProc.QuadPart
+	X2 = NumTickProc.QuadPart % 10; // РґРµР»РёРј С‡РёСЃР»Рѕ РЅР° 10 Рё Р·Р°РїРѕРјРёРЅР°РµРј РѕСЃС‚Р°С‚РѕРє. Р­С‚Рѕ РїРµСЂРІС‹Р№ Р·РЅР°Рє СЃ РєРѕРЅС†Р° С‡РёСЃР»Р° NumTickProc.QuadPart
 
-	X1 = ((NumTickProc.QuadPart % 100) - X2) / 10; // делим число на 100, запоминаем остаток и вычитаем из него Х1
-												// После деления на 10 получим 2 знак с конца числа NumTickProc.QuadPart
+	X1 = ((NumTickProc.QuadPart % 100) - X2) / 10; // РґРµР»РёРј С‡РёСЃР»Рѕ РЅР° 100, Р·Р°РїРѕРјРёРЅР°РµРј РѕСЃС‚Р°С‚РѕРє Рё РІС‹С‡РёС‚Р°РµРј РёР· РЅРµРіРѕ РҐ1
+												// РџРѕСЃР»Рµ РґРµР»РµРЅРёСЏ РЅР° 10 РїРѕР»СѓС‡РёРј 2 Р·РЅР°Рє СЃ РєРѕРЅС†Р° С‡РёСЃР»Р° NumTickProc.QuadPart
 
 
-	if ((X1 + X2) % 2 == 0) // получаем число тиков процессора проверяем на четность
+	if ((X1 + X2) % 2 == 0) // РїРѕР»СѓС‡Р°РµРј С‡РёСЃР»Рѕ С‚РёРєРѕРІ РїСЂРѕС†РµСЃСЃРѕСЂР° РїСЂРѕРІРµСЂСЏРµРј РЅР° С‡РµС‚РЅРѕСЃС‚СЊ
 	{
 
-		if (GenNumPicBefore != true) // ключ метода генерации
+		if (GenNumPicBefore != true) // РєР»СЋС‡ РјРµС‚РѕРґР° РіРµРЅРµСЂР°С†РёРё
 		{
-			UpdInfoVal.TruOrFalseCard = "True"; // верно или неверно выбранна карта
+			UpdInfoVal.TruOrFalseCard = "True"; // РІРµСЂРЅРѕ РёР»Рё РЅРµРІРµСЂРЅРѕ РІС‹Р±СЂР°РЅРЅР° РєР°СЂС‚Р°
 		}
-		return returnVal; // если четно, то отправляем число, которое находится в сгенеренной ячейки
+		return returnVal; // РµСЃР»Рё С‡РµС‚РЅРѕ, С‚Рѕ РѕС‚РїСЂР°РІР»СЏРµРј С‡РёСЃР»Рѕ, РєРѕС‚РѕСЂРѕРµ РЅР°С…РѕРґРёС‚СЃСЏ РІ СЃРіРµРЅРµСЂРµРЅРЅРѕР№ СЏС‡РµР№РєРё
 	}
 	
-	else // если нечетно 
+	else // РµСЃР»Рё РЅРµС‡РµС‚РЅРѕ 
 	{
-		if (GenNumPicBefore != true)// ключ метода генерации
+		if (GenNumPicBefore != true)// РєР»СЋС‡ РјРµС‚РѕРґР° РіРµРЅРµСЂР°С†РёРё
 		{
-			UpdInfoVal.TruOrFalseCard = "False"; // верно или неверно выбранна карта
+			UpdInfoVal.TruOrFalseCard = "False"; // РІРµСЂРЅРѕ РёР»Рё РЅРµРІРµСЂРЅРѕ РІС‹Р±СЂР°РЅРЅР° РєР°СЂС‚Р°
 		}
-		return CString("150"); // если нет, то серый фон
+		return CString("150"); // РµСЃР»Рё РЅРµС‚, С‚Рѕ СЃРµСЂС‹Р№ С„РѕРЅ
 	}
 
 
@@ -111,12 +111,12 @@ CString ASATest::getUrlPic()
 
 
 
-// инициализация
+// РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ
 bool ASATest::InitASATest()
 {
 	LARGE_INTEGER NumTickProc;
 	QueryPerformanceCounter(&NumTickProc);
-	srand(NumTickProc.QuadPart); // автоматическая рандомизация	
+	srand(NumTickProc.QuadPart); // Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєР°СЏ СЂР°РЅРґРѕРјРёР·Р°С†РёСЏ	
 	v_Available.resize(150);
 	//AfxMessageBox("init compl");
 	EndGenNumPic = false;
@@ -128,17 +128,17 @@ bool ASATest::InitASATest()
 
 	//if (StartRecorPlay == true)
 	//{
-		_beginthread(ThreadTimerTick, 0, NULL);// таймер 
+		_beginthread(ThreadTimerTick, 0, NULL);// С‚Р°Р№РјРµСЂ 
 
 	//}
 	//else
 	//{
-	//	if (MessageBox(NULL, "Прибор не начал запись. Записывать данные в файл?", " ", MB_YESNO) == IDYES)
+	//	if (MessageBox(NULL, "РџСЂРёР±РѕСЂ РЅРµ РЅР°С‡Р°Р» Р·Р°РїРёСЃСЊ. Р—Р°РїРёСЃС‹РІР°С‚СЊ РґР°РЅРЅС‹Рµ РІ С„Р°Р№Р»?", " ", MB_YESNO) == IDYES)
 	//	{
-	//		_beginthread(ThreadTimerTick, 0, NULL);// таймер 
+	//		_beginthread(ThreadTimerTick, 0, NULL);// С‚Р°Р№РјРµСЂ 
 	//	}
 	//}
-	//std::vector <int> respOpt1(2);// вектор сохранения вариантов ответов
+	//std::vector <int> respOpt1(2);// РІРµРєС‚РѕСЂ СЃРѕС…СЂР°РЅРµРЅРёСЏ РІР°СЂРёР°РЅС‚РѕРІ РѕС‚РІРµС‚РѕРІ
 	return false;
 }
 
@@ -165,7 +165,7 @@ CString ASATest::GetActualNumPic()
 
 
 
-//===================================== Запись в файл ==========
+//===================================== Р—Р°РїРёСЃСЊ РІ С„Р°Р№Р» ==========
 
 
 
@@ -174,12 +174,12 @@ int MenOrWomen;
 
 
 
-double totalTime = 0; // суммарное время записи 
-SumEpochClass BufImposEpoch;// эро
+double totalTime = 0; // СЃСѓРјРјР°СЂРЅРѕРµ РІСЂРµРјСЏ Р·Р°РїРёСЃРё 
+SumEpochClass BufImposEpoch;// СЌСЂРѕ
 void ImposEpochOut()
 {
-	int timeEpo = - m_BeforeShow - m_DelaySpeedMouse; //отсчет. в начале равен ...
-	CString TimeIntervalEpo;// название временного интервала
+	int timeEpo = - m_BeforeShow - m_DelaySpeedMouse; //РѕС‚СЃС‡РµС‚. РІ РЅР°С‡Р°Р»Рµ СЂР°РІРµРЅ ...
+	CString TimeIntervalEpo;// РЅР°Р·РІР°РЅРёРµ РІСЂРµРјРµРЅРЅРѕРіРѕ РёРЅС‚РµСЂРІР°Р»Р°
 	
 	std::ofstream out;
 	out.open(fileNameEn, std::ios::app);
@@ -213,7 +213,7 @@ void ImposEpochOut()
 
 		out << timeEpo << ";" << TimeIntervalEpo << ";";
 
-		// выводим значения эпох в файл
+		// РІС‹РІРѕРґРёРј Р·РЅР°С‡РµРЅРёСЏ СЌРїРѕС… РІ С„Р°Р№Р»
 		//if(BufImposEpoch.ChanImpos.TrueSumEpoChan[0])
 		for (int f1 = 0; f1 <BufImposEpoch.ChanImpos.TrueSumEpoChan[0].size();f1++)
 		{
@@ -236,23 +236,23 @@ void ImposEpochOut()
 	}
 
 
-	// вывод необработанных эпох
+	// РІС‹РІРѕРґ РЅРµРѕР±СЂР°Р±РѕС‚Р°РЅРЅС‹С… СЌРїРѕС…
 
-	out << "\n" << "Необработанные эпохи:" << "\n";
+	out << "\n" << "РќРµРѕР±СЂР°Р±РѕС‚Р°РЅРЅС‹Рµ СЌРїРѕС…Рё:" << "\n";
 
-	out << "\n" << "Верно:" << "\n";
+	out << "\n" << "Р’РµСЂРЅРѕ:" << "\n";
 	
 
-	// цикл вывода выпавших номеров карт
+	// С†РёРєР» РІС‹РІРѕРґР° РІС‹РїР°РІС€РёС… РЅРѕРјРµСЂРѕРІ РєР°СЂС‚
 	int ch1 = 0;
-	if (BufImposEpoch.ChanImpos.TrueNumCard.empty() != true) // защита от пустого вектора. vec.size() == 0; vec[0] == err
+	if (BufImposEpoch.ChanImpos.TrueNumCard.empty() != true) // Р·Р°С‰РёС‚Р° РѕС‚ РїСѓСЃС‚РѕРіРѕ РІРµРєС‚РѕСЂР°. vec.size() == 0; vec[0] == err
 	{
 		for (int j2 = 0; j2 < BufImposEpoch.ChanImpos.TrueNumCard.size(); j2++)//size = 10;
 		{
 			out << ";" << BufImposEpoch.ChanImpos.TrueNumCard[j2];
 
-			for (int f1 = 0; f1 < BufImposEpoch.ChanImpos.TrueSumEpoChan[0].size() - 1; f1++) // -1 т.к. перед номером 
-																								//карты тоже есть ";"
+			for (int f1 = 0; f1 < BufImposEpoch.ChanImpos.TrueSumEpoChan[0].size() - 1; f1++) // -1 С‚.Рє. РїРµСЂРµРґ РЅРѕРјРµСЂРѕРј 
+																								//РєР°СЂС‚С‹ С‚РѕР¶Рµ РµСЃС‚СЊ ";"
 			{
 				out << ";" ;
 			}
@@ -260,30 +260,30 @@ void ImposEpochOut()
 
 		}
 		out << "\n";
-		// выводим название каналов
+		// РІС‹РІРѕРґРёРј РЅР°Р·РІР°РЅРёРµ РєР°РЅР°Р»РѕРІ
 
 		out << ";";
 		for (int j3 = 0; j3 < BufImposEpoch.ChanImpos.TrueNumCard.size() * UpdInfoVal.TextInfChan.size(); j3++)
-																	// умножаем кол-во каналов на кол-во ответов
+																	// СѓРјРЅРѕР¶Р°РµРј РєРѕР»-РІРѕ РєР°РЅР°Р»РѕРІ РЅР° РєРѕР»-РІРѕ РѕС‚РІРµС‚РѕРІ
 		{
 
 			out << UpdInfoVal.TextInfChan[ch1] << ";";
 			//out << NameChannel[ch1] << ";";
 
 			ch1++;
-			if (ch1 > (UpdInfoVal.TextInfChan.size() - 1)) ch1 = 0; // выводим кол-во каналов через каждое
-																	//число этих каналов =_= 
+			if (ch1 > (UpdInfoVal.TextInfChan.size() - 1)) ch1 = 0; // РІС‹РІРѕРґРёРј РєРѕР»-РІРѕ РєР°РЅР°Р»РѕРІ С‡РµСЂРµР· РєР°Р¶РґРѕРµ
+																	//С‡РёСЃР»Рѕ СЌС‚РёС… РєР°РЅР°Р»РѕРІ =_= 
 		}
 		out << "\n";
 	}
 	
 	else
 	{
-		out << "Нет верных ответов" << "\n";
+		out << "РќРµС‚ РІРµСЂРЅС‹С… РѕС‚РІРµС‚РѕРІ" << "\n";
 	}
 
 
-	// выводим название каналов
+	// РІС‹РІРѕРґРёРј РЅР°Р·РІР°РЅРёРµ РєР°РЅР°Р»РѕРІ
 	//int ch1 = 0;
 	//out << ";";
 	//for (int j3 = 0; j3 < BufImposEpoch.ChanImpos.TrueNumCard.size()*4; j3++)//size = 10;
@@ -297,17 +297,17 @@ void ImposEpochOut()
 	//out << "\n";
 	
 
-	timeEpo = -m_BeforeShow - m_DelaySpeedMouse; //отсчет. в начале равен ...
+	timeEpo = -m_BeforeShow - m_DelaySpeedMouse; //РѕС‚СЃС‡РµС‚. РІ РЅР°С‡Р°Р»Рµ СЂР°РІРµРЅ ...
 	
 	int k1 = 0;
-	if (BufImposEpoch.ChanImpos.TrueOnlyEpoch.empty() != true) // защита от пустого вектора. vec.size() == 0; vec[0] == err
+	if (BufImposEpoch.ChanImpos.TrueOnlyEpoch.empty() != true) // Р·Р°С‰РёС‚Р° РѕС‚ РїСѓСЃС‚РѕРіРѕ РІРµРєС‚РѕСЂР°. vec.size() == 0; vec[0] == err
 	{
 		
 
 
-		if (BufImposEpoch.ChanImpos.TrueOnlyEpoch[0].empty() != true) // защита от пустого вектора. vec[0].size() == 0; vec[0][0] == err
+		if (BufImposEpoch.ChanImpos.TrueOnlyEpoch[0].empty() != true) // Р·Р°С‰РёС‚Р° РѕС‚ РїСѓСЃС‚РѕРіРѕ РІРµРєС‚РѕСЂР°. vec[0].size() == 0; vec[0][0] == err
 		{
-			for (int j1 = 0; j1 < BufImposEpoch.ChanImpos.TrueOnlyEpoch[0].size(); j1++)// TrueOnlyEpoch[k].size() при любом k один размер
+			for (int j1 = 0; j1 < BufImposEpoch.ChanImpos.TrueOnlyEpoch[0].size(); j1++)// TrueOnlyEpoch[k].size() РїСЂРё Р»СЋР±РѕРј k РѕРґРёРЅ СЂР°Р·РјРµСЂ
 			{
 
 				for (k1 = 0; k1 < BufImposEpoch.ChanImpos.TrueOnlyEpoch.size(); k1++) // len = 3
@@ -315,7 +315,7 @@ void ImposEpochOut()
 
 					if (BufImposEpoch.ChanImpos.TrueOnlyEpoch[0][0].empty() != true)
 					{
-						for (int i1 = 0; i1 < BufImposEpoch.ChanImpos.TrueOnlyEpoch[0][0].size();i1++)// TrueOnlyEpoch[k][j].size() при любом k и j один размер
+						for (int i1 = 0; i1 < BufImposEpoch.ChanImpos.TrueOnlyEpoch[0][0].size();i1++)// TrueOnlyEpoch[k][j].size() РїСЂРё Р»СЋР±РѕРј k Рё j РѕРґРёРЅ СЂР°Р·РјРµСЂ
 						{
 							
 							if (i1 == 0 && k1 == 0)
@@ -329,8 +329,8 @@ void ImposEpochOut()
 						}
 					}
 					}
-				out << "\n"; // перевод на новую строку
-				if (k1 >= BufImposEpoch.ChanImpos.TrueOnlyEpoch.size()) k1 = 0; // какая то непонятная защита
+				out << "\n"; // РїРµСЂРµРІРѕРґ РЅР° РЅРѕРІСѓСЋ СЃС‚СЂРѕРєСѓ
+				if (k1 >= BufImposEpoch.ChanImpos.TrueOnlyEpoch.size()) k1 = 0; // РєР°РєР°СЏ С‚Рѕ РЅРµРїРѕРЅСЏС‚РЅР°СЏ Р·Р°С‰РёС‚Р°
 				
 			}
 		}
@@ -340,17 +340,17 @@ void ImposEpochOut()
 		out << "\n";
 	}
 
-	out << "\n" << "\n" << "Неверно:" << "\n";
+	out << "\n" << "\n" << "РќРµРІРµСЂРЅРѕ:" << "\n";
 
-	// цикл вывода выпавших номеров карт
-	if (BufImposEpoch.ChanImpos.FalseNumCard.empty() != true) // защита от пустого вектора. vec.size() == 0; vec[0] == err
+	// С†РёРєР» РІС‹РІРѕРґР° РІС‹РїР°РІС€РёС… РЅРѕРјРµСЂРѕРІ РєР°СЂС‚
+	if (BufImposEpoch.ChanImpos.FalseNumCard.empty() != true) // Р·Р°С‰РёС‚Р° РѕС‚ РїСѓСЃС‚РѕРіРѕ РІРµРєС‚РѕСЂР°. vec.size() == 0; vec[0] == err
 	{
 
 		for (int j2 = 0; j2 < BufImposEpoch.ChanImpos.FalseNumCard.size(); j2++)//size = 10;
 		{
 			out << ";" << BufImposEpoch.ChanImpos.FalseNumCard[j2];// << ";" << ";" << ";";
-			for (int f1 = 0; f1 < BufImposEpoch.ChanImpos.FalseSumEpoChan[0].size() - 1; f1++) // -1 т.к. перед номером 
-																							  //карты тоже есть ";"
+			for (int f1 = 0; f1 < BufImposEpoch.ChanImpos.FalseSumEpoChan[0].size() - 1; f1++) // -1 С‚.Рє. РїРµСЂРµРґ РЅРѕРјРµСЂРѕРј 
+																							  //РєР°СЂС‚С‹ С‚РѕР¶Рµ РµСЃС‚СЊ ";"
 			{
 				out << ";";
 			}
@@ -358,7 +358,7 @@ void ImposEpochOut()
 
 		out << "\n";
 
-		// выводим название каналов
+		// РІС‹РІРѕРґРёРј РЅР°Р·РІР°РЅРёРµ РєР°РЅР°Р»РѕРІ
 		ch1 = 0;
 		out << ";";
 
@@ -375,19 +375,19 @@ void ImposEpochOut()
 	}
 	else
 	{
-		out << "Нет неверных ответов" << "\n";
+		out << "РќРµС‚ РЅРµРІРµСЂРЅС‹С… РѕС‚РІРµС‚РѕРІ" << "\n";
 	}
 
 
-	timeEpo = -m_BeforeShow - m_DelaySpeedMouse; //отсчет. в начале равен ...
+	timeEpo = -m_BeforeShow - m_DelaySpeedMouse; //РѕС‚СЃС‡РµС‚. РІ РЅР°С‡Р°Р»Рµ СЂР°РІРµРЅ ...
 	
 	k1 = 0;
-	if (BufImposEpoch.ChanImpos.FalseOnlyEpoch.empty() != true) // защита от пустого вектора. vec.size() == 0; vec[0] == err
+	if (BufImposEpoch.ChanImpos.FalseOnlyEpoch.empty() != true) // Р·Р°С‰РёС‚Р° РѕС‚ РїСѓСЃС‚РѕРіРѕ РІРµРєС‚РѕСЂР°. vec.size() == 0; vec[0] == err
 	{	
 
-		if (BufImposEpoch.ChanImpos.FalseOnlyEpoch[0].empty() != true) // защита от пустого вектора. vec.size() == 0; vec[0] == err
+		if (BufImposEpoch.ChanImpos.FalseOnlyEpoch[0].empty() != true) // Р·Р°С‰РёС‚Р° РѕС‚ РїСѓСЃС‚РѕРіРѕ РІРµРєС‚РѕСЂР°. vec.size() == 0; vec[0] == err
 		{
-			for (int j1 = 0; j1 < BufImposEpoch.ChanImpos.FalseOnlyEpoch[0].size(); j1++)// TrueOnlyEpoch[k].size() при любом k один размер
+			for (int j1 = 0; j1 < BufImposEpoch.ChanImpos.FalseOnlyEpoch[0].size(); j1++)// TrueOnlyEpoch[k].size() РїСЂРё Р»СЋР±РѕРј k РѕРґРёРЅ СЂР°Р·РјРµСЂ
 			{
 
 				for (k1 = 0; k1 < BufImposEpoch.ChanImpos.FalseOnlyEpoch.size(); k1++) // len = 3
@@ -395,7 +395,7 @@ void ImposEpochOut()
 
 					if (BufImposEpoch.ChanImpos.FalseOnlyEpoch[0][0].empty() != true)
 					{
-						for (int i1 = 0; i1 < BufImposEpoch.ChanImpos.FalseOnlyEpoch[0][0].size();i1++)//  TrueOnlyEpoch[k][j].size() при любом k и j один размер
+						for (int i1 = 0; i1 < BufImposEpoch.ChanImpos.FalseOnlyEpoch[0][0].size();i1++)//  TrueOnlyEpoch[k][j].size() РїСЂРё Р»СЋР±РѕРј k Рё j РѕРґРёРЅ СЂР°Р·РјРµСЂ
 						{
 
 							if (i1 == 0 && k1 == 0)
@@ -409,7 +409,7 @@ void ImposEpochOut()
 					}
 
 				}
-				out << "\n"; // перевод на новую строку
+				out << "\n"; // РїРµСЂРµРІРѕРґ РЅР° РЅРѕРІСѓСЋ СЃС‚СЂРѕРєСѓ
 				if (k1 >= BufImposEpoch.ChanImpos.TrueOnlyEpoch.size()) k1 = 0;
 				
 			}
@@ -431,7 +431,7 @@ void dateTime2()
 	time_t seconds = time(NULL);
 	
 
-	tm* timeinfo = localtime(&seconds); // получаем системное время в секундах
+	tm* timeinfo = localtime(&seconds); // РїРѕР»СѓС‡Р°РµРј СЃРёСЃС‚РµРјРЅРѕРµ РІСЂРµРјСЏ РІ СЃРµРєСѓРЅРґР°С…
 	
 	//ASADlg dlg1;
 
@@ -454,14 +454,14 @@ void dateTime2()
 	
 	
 	//= "PlugIns/TestASA/Records/%Y.%m.%d(%H-%M-%S)En.csv";
-	strftime(buffer1, 80, format1, timeinfo); //переводим его в формат 2015.02.09(HH-MM-SS) и дописываем расширение ".csv"
-	std::string dataTimeStr1(buffer1, sizeof(buffer1)); // конвертируем char в string, получив, при этом, длину char
-	file_nameEn = dataTimeStr1; // присваеваем полученное имя файла промежуточной переменной. Для En Excel
-	fileNameEn = (char *)file_nameEn.c_str(); // создаем имя файла и при этом обратно конвертируем string в char
+	strftime(buffer1, 80, format1, timeinfo); //РїРµСЂРµРІРѕРґРёРј РµРіРѕ РІ С„РѕСЂРјР°С‚ 2015.02.09(HH-MM-SS) Рё РґРѕРїРёСЃС‹РІР°РµРј СЂР°СЃС€РёСЂРµРЅРёРµ ".csv"
+	std::string dataTimeStr1(buffer1, sizeof(buffer1)); // РєРѕРЅРІРµСЂС‚РёСЂСѓРµРј char РІ string, РїРѕР»СѓС‡РёРІ, РїСЂРё СЌС‚РѕРј, РґР»РёРЅСѓ char
+	file_nameEn = dataTimeStr1; // РїСЂРёСЃРІР°РµРІР°РµРј РїРѕР»СѓС‡РµРЅРЅРѕРµ РёРјСЏ С„Р°Р№Р»Р° РїСЂРѕРјРµР¶СѓС‚РѕС‡РЅРѕР№ РїРµСЂРµРјРµРЅРЅРѕР№. Р”Р»СЏ En Excel
+	fileNameEn = (char *)file_nameEn.c_str(); // СЃРѕР·РґР°РµРј РёРјСЏ С„Р°Р№Р»Р° Рё РїСЂРё СЌС‚РѕРј РѕР±СЂР°С‚РЅРѕ РєРѕРЅРІРµСЂС‚РёСЂСѓРµРј string РІ char
 
 
-	double val1 = 0; // переменная результата вычисления.
-	double val2 = 0; // переменная результата вычисления.
+	double val1 = 0; // РїРµСЂРµРјРµРЅРЅР°СЏ СЂРµР·СѓР»СЊС‚Р°С‚Р° РІС‹С‡РёСЃР»РµРЅРёСЏ.
+	double val2 = 0; // РїРµСЂРµРјРµРЅРЅР°СЏ СЂРµР·СѓР»СЊС‚Р°С‚Р° РІС‹С‡РёСЃР»РµРЅРёСЏ.
 					 // Open the PROPERTY configuration for this plugin
 					 //fp = fopen( g_csFileName.GetBuffer(-1),"wb" );
 
@@ -471,145 +471,145 @@ void dateTime2()
 	std::ofstream out;
 	out.open(fileNameEn, std::ios::app);
 	
-	format2 = "%Y.%m.%d;%H-%M-%S";// Перевод в формат 2015.02.09;HH-MM-SS для удобства вывода в csv файл
-	strftime(buffer2, 80, format2, timeinfo); //переводим его в формат 2015.02.09(HH-MM-SS) и дописываем расширение ".csv"
-	out << "Тест завершился в: " << ";" << buffer2 << "\n";
-	out <<"Студент:"<<"\n"<< UpdInfoVal.SureName << ";" << UpdInfoVal.Name <<";" << UpdInfoVal.SecName << "\n"<<"\n";
+	format2 = "%Y.%m.%d;%H-%M-%S";// РџРµСЂРµРІРѕРґ РІ С„РѕСЂРјР°С‚ 2015.02.09;HH-MM-SS РґР»СЏ СѓРґРѕР±СЃС‚РІР° РІС‹РІРѕРґР° РІ csv С„Р°Р№Р»
+	strftime(buffer2, 80, format2, timeinfo); //РїРµСЂРµРІРѕРґРёРј РµРіРѕ РІ С„РѕСЂРјР°С‚ 2015.02.09(HH-MM-SS) Рё РґРѕРїРёСЃС‹РІР°РµРј СЂР°СЃС€РёСЂРµРЅРёРµ ".csv"
+	out << "РўРµСЃС‚ Р·Р°РІРµСЂС€РёР»СЃСЏ РІ: " << ";" << buffer2 << "\n";
+	out <<"РЎС‚СѓРґРµРЅС‚:"<<"\n"<< UpdInfoVal.SureName << ";" << UpdInfoVal.Name <<";" << UpdInfoVal.SecName << "\n"<<"\n";
 	out.close();
 
 
 
 
 	// delete 
-	//======================================== Наложение эпох================================================
-	SumEpochClass EroImposEpoch;// эро
-	SumEpochClass NegImposEpoch;// негатив
-	SumEpochClass NeuImposEpoch;// нейтральные
+	//======================================== РќР°Р»РѕР¶РµРЅРёРµ СЌРїРѕС…================================================
+	SumEpochClass EroImposEpoch;// СЌСЂРѕ
+	SumEpochClass NegImposEpoch;// РЅРµРіР°С‚РёРІ
+	SumEpochClass NeuImposEpoch;// РЅРµР№С‚СЂР°Р»СЊРЅС‹Рµ
 
 	
-	//-----------------Эро------------------------
+	//-----------------Р­СЂРѕ------------------------
 	
-	EroImposEpoch.OutImposEpo(updInfVecChan, TruOrFalseCard, NumActualCard, 0, 49, "Эротические", fileNameEn); //, updInfVecChan1, updInfVecChan2, updInfVecChan3,
+	EroImposEpoch.OutImposEpo(updInfVecChan, TruOrFalseCard, NumActualCard, 0, 49, "Р­СЂРѕС‚РёС‡РµСЃРєРёРµ", fileNameEn); //, updInfVecChan1, updInfVecChan2, updInfVecChan3,
 
-	BufImposEpoch.ChanImpos = EroImposEpoch.ChanImpos; // присваеваем структуру с расчитанными векторами структуре 
+	BufImposEpoch.ChanImpos = EroImposEpoch.ChanImpos; // РїСЂРёСЃРІР°РµРІР°РµРј СЃС‚СЂСѓРєС‚СѓСЂСѓ СЃ СЂР°СЃС‡РёС‚Р°РЅРЅС‹РјРё РІРµРєС‚РѕСЂР°РјРё СЃС‚СЂСѓРєС‚СѓСЂРµ 
 
 	out.open(fileNameEn, std::ios::app);
-	out << "\n" << "Наложение эпох" << "\n" << "\n";
-	out << "Эротические" << "\n";
+	out << "\n" << "РќР°Р»РѕР¶РµРЅРёРµ СЌРїРѕС…" << "\n" << "\n";
+	out << "Р­СЂРѕС‚РёС‡РµСЃРєРёРµ" << "\n";
 
 
-	out << "Верно:" << BufImposEpoch.ChanImpos.TrueNumCard.size()<<";";
+	out << "Р’РµСЂРЅРѕ:" << BufImposEpoch.ChanImpos.TrueNumCard.size()<<";";
 	for (int i1 = 0; i1 < UpdInfoVal.TextInfChan.size()*2; i1++)// 
 	{
 		out << ";" << " ";
 	}
-	out << ";" <<"Неверно:" << BufImposEpoch.ChanImpos.FalseNumCard.size()<<";"<<"\n";
+	out << ";" <<"РќРµРІРµСЂРЅРѕ:" << BufImposEpoch.ChanImpos.FalseNumCard.size()<<";"<<"\n";
 
 	
 
-	// шапки названий каналов
+	// С€Р°РїРєРё РЅР°Р·РІР°РЅРёР№ РєР°РЅР°Р»РѕРІ
 	out << "Time, ms" << ";" << "Time interval";
 	for (int i1 = 0; i1 < UpdInfoVal.TextInfChan.size()*2; i1++)// 
 	{
 		if (i1 == UpdInfoVal.TextInfChan.size() ) out << ";"<<"	";
-		out << ";" << UpdInfoVal.TextInfChan[i1<UpdInfoVal.TextInfChan.size() ? i1 : (int)(i1/2.0)] << ";" << "Стандартная ошибка";
+		out << ";" << UpdInfoVal.TextInfChan[i1<UpdInfoVal.TextInfChan.size() ? i1 : (int)(i1/2.0)] << ";" << "РЎС‚Р°РЅРґР°СЂС‚РЅР°СЏ РѕС€РёР±РєР°";
 	}
 	out << "\n";
 
-	out.close(); // закрываем вывод в файл, тк в него же выводится данные из функции 	ImposEpochOut()	
+	out.close(); // Р·Р°РєСЂС‹РІР°РµРј РІС‹РІРѕРґ РІ С„Р°Р№Р», С‚Рє РІ РЅРµРіРѕ Р¶Рµ РІС‹РІРѕРґРёС‚СЃСЏ РґР°РЅРЅС‹Рµ РёР· С„СѓРЅРєС†РёРё 	ImposEpochOut()	
 	
-	ImposEpochOut();// сбствн вывод в файл. Делаем так, для уменьшения кода
+	ImposEpochOut();// СЃР±СЃС‚РІРЅ РІС‹РІРѕРґ РІ С„Р°Р№Р». Р”РµР»Р°РµРј С‚Р°Рє, РґР»СЏ СѓРјРµРЅСЊС€РµРЅРёСЏ РєРѕРґР°
 				
-	// деструкторы
+	// РґРµСЃС‚СЂСѓРєС‚РѕСЂС‹
 	
 	EroImposEpoch.~SumEpochClass();
 
 
-	////-----------------------Негативные----------------
+	////-----------------------РќРµРіР°С‚РёРІРЅС‹Рµ----------------
 
-	NegImposEpoch.OutImposEpo(updInfVecChan, TruOrFalseCard, NumActualCard, 50, 99, "Негативные", fileNameEn); //, updInfVecChan1, updInfVecChan2, updInfVecChan3,
+	NegImposEpoch.OutImposEpo(updInfVecChan, TruOrFalseCard, NumActualCard, 50, 99, "РќРµРіР°С‚РёРІРЅС‹Рµ", fileNameEn); //, updInfVecChan1, updInfVecChan2, updInfVecChan3,
 
-	BufImposEpoch.ChanImpos = NegImposEpoch.ChanImpos; // присваеваем структуру с расчитанными векторами структуре 
+	BufImposEpoch.ChanImpos = NegImposEpoch.ChanImpos; // РїСЂРёСЃРІР°РµРІР°РµРј СЃС‚СЂСѓРєС‚СѓСЂСѓ СЃ СЂР°СЃС‡РёС‚Р°РЅРЅС‹РјРё РІРµРєС‚РѕСЂР°РјРё СЃС‚СЂСѓРєС‚СѓСЂРµ 
 
 	out.open(fileNameEn, std::ios::app);
-	out << "\n" << "Наложение эпох" << "\n" << "\n";
-	out << "Негативные" << "\n";
+	out << "\n" << "РќР°Р»РѕР¶РµРЅРёРµ СЌРїРѕС…" << "\n" << "\n";
+	out << "РќРµРіР°С‚РёРІРЅС‹Рµ" << "\n";
 
 
-	out << "Верно:" << BufImposEpoch.ChanImpos.TrueNumCard.size() << ";";
+	out << "Р’РµСЂРЅРѕ:" << BufImposEpoch.ChanImpos.TrueNumCard.size() << ";";
 	for (int i1 = 0; i1 < UpdInfoVal.TextInfChan.size() * 2; i1++)// 
 	{
 		out << ";" << " ";
 	}
-	out << ";" << "Неверно:" << BufImposEpoch.ChanImpos.FalseNumCard.size() << ";" << "\n";
+	out << ";" << "РќРµРІРµСЂРЅРѕ:" << BufImposEpoch.ChanImpos.FalseNumCard.size() << ";" << "\n";
 
 
 
-	// шапки названий каналов
+	// С€Р°РїРєРё РЅР°Р·РІР°РЅРёР№ РєР°РЅР°Р»РѕРІ
 	out << "Time, ms" << ";" << "Time interval";
 	for (int i1 = 0; i1 < UpdInfoVal.TextInfChan.size() * 2; i1++)// 
 	{
 		if (i1 == UpdInfoVal.TextInfChan.size()) out << ";" << "	";
-		out << ";" << UpdInfoVal.TextInfChan[i1<UpdInfoVal.TextInfChan.size() ? i1 : (int)(i1 / 2.0)] << ";" << "Стандартная ошибка";
+		out << ";" << UpdInfoVal.TextInfChan[i1<UpdInfoVal.TextInfChan.size() ? i1 : (int)(i1 / 2.0)] << ";" << "РЎС‚Р°РЅРґР°СЂС‚РЅР°СЏ РѕС€РёР±РєР°";
 	}
 	out << "\n";
 	
 
-	out.close(); // закрываем вывод в файл, тк в него же выводится данные из функции 	ImposEpochOut()	
+	out.close(); // Р·Р°РєСЂС‹РІР°РµРј РІС‹РІРѕРґ РІ С„Р°Р№Р», С‚Рє РІ РЅРµРіРѕ Р¶Рµ РІС‹РІРѕРґРёС‚СЃСЏ РґР°РЅРЅС‹Рµ РёР· С„СѓРЅРєС†РёРё 	ImposEpochOut()	
 
-	ImposEpochOut();// сбствн вывод в файл. Делаем так, для уменьшения кода
+	ImposEpochOut();// СЃР±СЃС‚РІРЅ РІС‹РІРѕРґ РІ С„Р°Р№Р». Р”РµР»Р°РµРј С‚Р°Рє, РґР»СЏ СѓРјРµРЅСЊС€РµРЅРёСЏ РєРѕРґР°
 
 					
 	NegImposEpoch.~SumEpochClass();
 
 
 
-					////------------------------Нейтральные--------------
+					////------------------------РќРµР№С‚СЂР°Р»СЊРЅС‹Рµ--------------
 
-	NeuImposEpoch.OutImposEpo(updInfVecChan, TruOrFalseCard, NumActualCard, 100, 149, "Нейтральные", fileNameEn); //, updInfVecChan1, updInfVecChan2, updInfVecChan3,
+	NeuImposEpoch.OutImposEpo(updInfVecChan, TruOrFalseCard, NumActualCard, 100, 149, "РќРµР№С‚СЂР°Р»СЊРЅС‹Рµ", fileNameEn); //, updInfVecChan1, updInfVecChan2, updInfVecChan3,
 
-	BufImposEpoch.ChanImpos = NeuImposEpoch.ChanImpos; // присваеваем структуру с расчитанными векторами структуре буфферного класса.
+	BufImposEpoch.ChanImpos = NeuImposEpoch.ChanImpos; // РїСЂРёСЃРІР°РµРІР°РµРј СЃС‚СЂСѓРєС‚СѓСЂСѓ СЃ СЂР°СЃС‡РёС‚Р°РЅРЅС‹РјРё РІРµРєС‚РѕСЂР°РјРё СЃС‚СЂСѓРєС‚СѓСЂРµ Р±СѓС„С„РµСЂРЅРѕРіРѕ РєР»Р°СЃСЃР°.
 
 	out.open(fileNameEn, std::ios::app);
-	out << "\n" << "Наложение эпох" << "\n" << "\n";
-	out << "Нейтральные" << "\n";
+	out << "\n" << "РќР°Р»РѕР¶РµРЅРёРµ СЌРїРѕС…" << "\n" << "\n";
+	out << "РќРµР№С‚СЂР°Р»СЊРЅС‹Рµ" << "\n";
 
 
-	out << "Верно:" << BufImposEpoch.ChanImpos.TrueNumCard.size() << ";";
+	out << "Р’РµСЂРЅРѕ:" << BufImposEpoch.ChanImpos.TrueNumCard.size() << ";";
 	for (int i1 = 0; i1 < UpdInfoVal.TextInfChan.size() * 2; i1++)// 
 	{
 		out << ";" << " ";
 	}
-	out << ";" << "Неверно:" << BufImposEpoch.ChanImpos.FalseNumCard.size() << ";" << "\n";
+	out << ";" << "РќРµРІРµСЂРЅРѕ:" << BufImposEpoch.ChanImpos.FalseNumCard.size() << ";" << "\n";
 
 
 
-	// шапки названий каналов
+	// С€Р°РїРєРё РЅР°Р·РІР°РЅРёР№ РєР°РЅР°Р»РѕРІ
 	out << "Time, ms" << ";" << "Time interval";
 	for (int i1 = 0; i1 < UpdInfoVal.TextInfChan.size() * 2; i1++)// 
 	{
 		if (i1 == UpdInfoVal.TextInfChan.size()) out << ";" << "	";
-		out << ";" << UpdInfoVal.TextInfChan[i1<UpdInfoVal.TextInfChan.size() ? i1 : (int)(i1 / 2.0)] << ";" << "Стандартная ошибка";
+		out << ";" << UpdInfoVal.TextInfChan[i1<UpdInfoVal.TextInfChan.size() ? i1 : (int)(i1 / 2.0)] << ";" << "РЎС‚Р°РЅРґР°СЂС‚РЅР°СЏ РѕС€РёР±РєР°";
 	}
 	out << "\n";
 	
 
-	out.close(); // закрываем вывод в файл, тк в него же выводится данные из функции 	ImposEpochOut()	
+	out.close(); // Р·Р°РєСЂС‹РІР°РµРј РІС‹РІРѕРґ РІ С„Р°Р№Р», С‚Рє РІ РЅРµРіРѕ Р¶Рµ РІС‹РІРѕРґРёС‚СЃСЏ РґР°РЅРЅС‹Рµ РёР· С„СѓРЅРєС†РёРё 	ImposEpochOut()	
 
-	ImposEpochOut();// сбствн вывод в файл. Делаем так, для уменьшения кода
+	ImposEpochOut();// СЃР±СЃС‚РІРЅ РІС‹РІРѕРґ РІ С„Р°Р№Р». Р”РµР»Р°РµРј С‚Р°Рє, РґР»СЏ СѓРјРµРЅСЊС€РµРЅРёСЏ РєРѕРґР°
 
-					// деструкторы
+					// РґРµСЃС‚СЂСѓРєС‚РѕСЂС‹
 	BufImposEpoch.~SumEpochClass();
 	NeuImposEpoch.~SumEpochClass();
 
 
 
 
-	// открываем файл для вывода необработанных значений
+	// РѕС‚РєСЂС‹РІР°РµРј С„Р°Р№Р» РґР»СЏ РІС‹РІРѕРґР° РЅРµРѕР±СЂР°Р±РѕС‚Р°РЅРЅС‹С… Р·РЅР°С‡РµРЅРёР№
 	out.open(fileNameEn, std::ios::app);
 	
 	
-	out << "\n" << "\n" << "Необработанные значения:" << "\n";
+	out << "\n" << "\n" << "РќРµРѕР±СЂР°Р±РѕС‚Р°РЅРЅС‹Рµ Р·РЅР°С‡РµРЅРёСЏ:" << "\n";
 
 	out << "Time, ms" ;
 	for (int i1 = 0; i1 < UpdInfoVal.TextInfChan.size(); i1++)
@@ -624,16 +624,16 @@ void dateTime2()
 
 		//val1 = tickVector[j]*1000.0/(double)freqVector[j];
 	
-		// выводим время
+		// РІС‹РІРѕРґРёРј РІСЂРµРјСЏ
 		out << tickVector[j];
 
-		//выводим показания каналов
+		//РІС‹РІРѕРґРёРј РїРѕРєР°Р·Р°РЅРёСЏ РєР°РЅР°Р»РѕРІ
 		for (int i1 = 0; i1 < UpdInfoVal.updInfChan.size();i1++)
 		{
 			out << ";" << updInfVecChan[j][i1];
 		}
 		
-		// выводим инфу о времени, выбранной карте, верном\неверном ответе, номере выпавшей карты
+		// РІС‹РІРѕРґРёРј РёРЅС„Сѓ Рѕ РІСЂРµРјРµРЅРё, РІС‹Р±СЂР°РЅРЅРѕР№ РєР°СЂС‚Рµ, РІРµСЂРЅРѕРј\РЅРµРІРµСЂРЅРѕРј РѕС‚РІРµС‚Рµ, РЅРѕРјРµСЂРµ РІС‹РїР°РІС€РµР№ РєР°СЂС‚С‹
 		 out << ";" << TimeInterval[j] << ";" << ChouseCard[j] << ";" << TruOrFalseCard[j] << ";" << NumActualCard[j] << "\n";
 		//out << "\n";
 
@@ -643,7 +643,7 @@ void dateTime2()
 	out << "\n" << "ALL Time: " << totalTime << "\n";
 	out.close();
 
-	// сбрасываем массивы
+	// СЃР±СЂР°СЃС‹РІР°РµРј РјР°СЃСЃРёРІС‹
 
 
 	if (!updInfVecChan.empty())
@@ -680,11 +680,11 @@ void dateTime2()
 	ChouseCard.shrink_to_fit();
 
 
-//	TruOrFalseCard.resize(2); // вектор для сохранения ответа на выбор карт(верно или нет)
+//	TruOrFalseCard.resize(2); // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ РѕС‚РІРµС‚Р° РЅР° РІС‹Р±РѕСЂ РєР°СЂС‚(РІРµСЂРЅРѕ РёР»Рё РЅРµС‚)
 	TruOrFalseCard.clear();
 	TruOrFalseCard.shrink_to_fit();
 
-	//NumActualCard.resize(2); // вектор для сохранения текущей картинки
+	//NumActualCard.resize(2); // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ С‚РµРєСѓС‰РµР№ РєР°СЂС‚РёРЅРєРё
 	NumActualCard.clear();
 	NumActualCard.shrink_to_fit();
 
@@ -700,17 +700,17 @@ void ThreadTimerTick(void* pParams)
 {
 	double n1 = 1;
 
-	TimerCls mytimer;// инициализируем таймер
+	TimerCls mytimer;// РёРЅРёС†РёР°Р»РёР·РёСЂСѓРµРј С‚Р°Р№РјРµСЂ
 
-	LARGE_INTEGER Frequency, StartingTime, EndingTime;  // кол во тиков процессора
+	LARGE_INTEGER Frequency, StartingTime, EndingTime;  // РєРѕР» РІРѕ С‚РёРєРѕРІ РїСЂРѕС†РµСЃСЃРѕСЂР°
 
 	DWORD_PTR oldMask2;
 
-	oldMask2 = SetThreadAffinityMask(GetCurrentThread(), 1); // разрешаем использовать только второе ядро процессора
+	oldMask2 = SetThreadAffinityMask(GetCurrentThread(), 1); // СЂР°Р·СЂРµС€Р°РµРј РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ С‚РѕР»СЊРєРѕ РІС‚РѕСЂРѕРµ СЏРґСЂРѕ РїСЂРѕС†РµСЃСЃРѕСЂР°
 	
-	QueryPerformanceCounter(&StartingTime);		// задаем начальное значение тиков
+	QueryPerformanceCounter(&StartingTime);		// Р·Р°РґР°РµРј РЅР°С‡Р°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ С‚РёРєРѕРІ
 
-	mytimer.startTimer();        //старт таймера с указанным временем
+	mytimer.startTimer();        //СЃС‚Р°СЂС‚ С‚Р°Р№РјРµСЂР° СЃ СѓРєР°Р·Р°РЅРЅС‹Рј РІСЂРµРјРµРЅРµРј
 	
 	int kTrue = 0;
 	int kFalse = 0;
@@ -718,12 +718,12 @@ void ThreadTimerTick(void* pParams)
 	while (fullscr != false)
 	{
 
-		if (mytimer.readTimer() >= n1 * measureInterval) // выполняем через шаг n1
+		if (mytimer.readTimer() >= n1 * measureInterval) // РІС‹РїРѕР»РЅСЏРµРј С‡РµСЂРµР· С€Р°Рі n1
 		{
 			//cout <<mytimer.read_timer()<<"		"<< n1 << "\n";
 
-			//tickVector[n1 - 1] = mytimer.readTimer(); //  записываем набежавшее количество тиков в вектор.
-			//tickVector.resize(tickVector.size() + 1);  // увеличиваем размер веркотора на единицу.
+			//tickVector[n1 - 1] = mytimer.readTimer(); //  Р·Р°РїРёСЃС‹РІР°РµРј РЅР°Р±РµР¶Р°РІС€РµРµ РєРѕР»РёС‡РµСЃС‚РІРѕ С‚РёРєРѕРІ РІ РІРµРєС‚РѕСЂ.
+			//tickVector.resize(tickVector.size() + 1);  // СѓРІРµР»РёС‡РёРІР°РµРј СЂР°Р·РјРµСЂ РІРµСЂРєРѕС‚РѕСЂР° РЅР° РµРґРёРЅРёС†Сѓ.
 			tickVector.push_back(mytimer.readTimer());
 
 				updInfVecChan.push_back(UpdInfoVal.updInfChan);
@@ -743,7 +743,7 @@ void ThreadTimerTick(void* pParams)
 
 
 
-			n1 += 1; //длительность шага
+			n1 += 1; //РґР»РёС‚РµР»СЊРЅРѕСЃС‚СЊ С€Р°РіР°
 		}
 
 		if (AccurInterval != true)
@@ -755,20 +755,20 @@ void ThreadTimerTick(void* pParams)
 
 
 	}
-	mytimer.stopTimer();          //остановка таймера
+	mytimer.stopTimer();          //РѕСЃС‚Р°РЅРѕРІРєР° С‚Р°Р№РјРµСЂР°
 
-	QueryPerformanceCounter(&EndingTime); // обновляем количество тиков
-	QueryPerformanceFrequency(&Frequency); // обновляем частоту
-	SetThreadAffinityMask(GetCurrentThread(), oldMask2);   //восстановить маску использования ядер процессора  
-	totalTime = 1000 * (EndingTime.QuadPart - StartingTime.QuadPart) / Frequency.QuadPart;	 // вычисляем ms с момента старта
+	QueryPerformanceCounter(&EndingTime); // РѕР±РЅРѕРІР»СЏРµРј РєРѕР»РёС‡РµСЃС‚РІРѕ С‚РёРєРѕРІ
+	QueryPerformanceFrequency(&Frequency); // РѕР±РЅРѕРІР»СЏРµРј С‡Р°СЃС‚РѕС‚Сѓ
+	SetThreadAffinityMask(GetCurrentThread(), oldMask2);   //РІРѕСЃСЃС‚Р°РЅРѕРІРёС‚СЊ РјР°СЃРєСѓ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ СЏРґРµСЂ РїСЂРѕС†РµСЃСЃРѕСЂР°  
+	totalTime = 1000 * (EndingTime.QuadPart - StartingTime.QuadPart) / Frequency.QuadPart;	 // РІС‹С‡РёСЃР»СЏРµРј ms СЃ РјРѕРјРµРЅС‚Р° СЃС‚Р°СЂС‚Р°
 	
 
-	// высчитываем средние значения для наложения эпох
+	// РІС‹СЃС‡РёС‚С‹РІР°РµРј СЃСЂРµРґРЅРёРµ Р·РЅР°С‡РµРЅРёСЏ РґР»СЏ РЅР°Р»РѕР¶РµРЅРёСЏ СЌРїРѕС…
 
 	
 
 	mytimer.~TimerCls();
-	dateTime2(); // запись из векторов в файл
+	dateTime2(); // Р·Р°РїРёСЃСЊ РёР· РІРµРєС‚РѕСЂРѕРІ РІ С„Р°Р№Р»
 
 	_endthread();
 }

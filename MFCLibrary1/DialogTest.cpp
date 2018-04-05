@@ -1,4 +1,4 @@
-// DialogTest.cpp: файл реализации
+п»ї// DialogTest.cpp: С„Р°Р№Р» СЂРµР°Р»РёР·Р°С†РёРё
 //
 
 #include "stdafx.h"
@@ -6,7 +6,7 @@
 #include "afxdialogex.h"
 
 
-// диалоговое окно DialogTest
+// РґРёР°Р»РѕРіРѕРІРѕРµ РѕРєРЅРѕ DialogTest
 
 IMPLEMENT_DYNAMIC(DialogTest, CDialogEx)
 
@@ -37,12 +37,12 @@ ON_WM_SHOWWINDOW()
 END_MESSAGE_MAP()
 
 
-// обработчики сообщений DialogTest
+// РѕР±СЂР°Р±РѕС‚С‡РёРєРё СЃРѕРѕР±С‰РµРЅРёР№ DialogTest
 
 
 BOOL DialogTest::PreTranslateMessage(MSG* pMsg)
 {
-	// TODO: добавьте специализированный код или вызов базового класса
+	// TODO: РґРѕР±Р°РІСЊС‚Рµ СЃРїРµС†РёР°Р»РёР·РёСЂРѕРІР°РЅРЅС‹Р№ РєРѕРґ РёР»Рё РІС‹Р·РѕРІ Р±Р°Р·РѕРІРѕРіРѕ РєР»Р°СЃСЃР°
 	if (pMsg->message == WM_KEYDOWN)
 		AfxMessageBox("DialogTest KEY PRESS!!!!!");
 	return CDialogEx::PreTranslateMessage(pMsg);
@@ -61,13 +61,13 @@ BOOL DialogTest::ShowASADlg()
 //{
 //	CDialogEx::OnDestroy();
 //	AfxMessageBox("OnDestroy KEY PRESS!!!!!");
-//	// TODO: добавьте свой код обработчика сообщений
+//	// TODO: РґРѕР±Р°РІСЊС‚Рµ СЃРІРѕР№ РєРѕРґ РѕР±СЂР°Р±РѕС‚С‡РёРєР° СЃРѕРѕР±С‰РµРЅРёР№
 //}
 
 
 //void DialogTest::OnClose()
 //{
-//	// TODO: добавьте свой код обработчика сообщений или вызов стандартного
+//	// TODO: РґРѕР±Р°РІСЊС‚Рµ СЃРІРѕР№ РєРѕРґ РѕР±СЂР°Р±РѕС‚С‡РёРєР° СЃРѕРѕР±С‰РµРЅРёР№ РёР»Рё РІС‹Р·РѕРІ СЃС‚Р°РЅРґР°СЂС‚РЅРѕРіРѕ
 //	AfxMessageBox("OnClose KEY PRESS!!!!!");
 //	CDialogEx::OnClose();
 //}
@@ -78,7 +78,7 @@ BOOL DialogTest::ShowASADlg()
 //	if (CDialogEx::OnCreate(lpCreateStruct) == -1)
 //		return -1;
 //
-//	// TODO:  Добавьте специализированный код создания
+//	// TODO:  Р”РѕР±Р°РІСЊС‚Рµ СЃРїРµС†РёР°Р»РёР·РёСЂРѕРІР°РЅРЅС‹Р№ РєРѕРґ СЃРѕР·РґР°РЅРёСЏ
 //	ASADlg dlg;
 //	dlg.DoModal();
 //	return 0;
@@ -89,10 +89,10 @@ BOOL DialogTest::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
 
-	// TODO:  Добавить дополнительную инициализацию
+	// TODO:  Р”РѕР±Р°РІРёС‚СЊ РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅСѓСЋ РёРЅРёС†РёР°Р»РёР·Р°С†РёСЋ
 	
 	return TRUE;  // return TRUE unless you set the focus to a control
-				  // Исключение: страница свойств OCX должна возвращать значение FALSE
+				  // РСЃРєР»СЋС‡РµРЅРёРµ: СЃС‚СЂР°РЅРёС†Р° СЃРІРѕР№СЃС‚РІ OCX РґРѕР»Р¶РЅР° РІРѕР·РІСЂР°С‰Р°С‚СЊ Р·РЅР°С‡РµРЅРёРµ FALSE
 }
 
 
@@ -106,7 +106,7 @@ void DialogTest::OnShowWindow(BOOL bShow, UINT nStatus)
 	//dlg.OnBnClickedOk();
 	//dlg.onBtnCloneFunc();
 	
-	// TODO: добавьте свой код обработчика сообщений
+	// TODO: РґРѕР±Р°РІСЊС‚Рµ СЃРІРѕР№ РєРѕРґ РѕР±СЂР°Р±РѕС‚С‡РёРєР° СЃРѕРѕР±С‰РµРЅРёР№
 }
 
 void DialogTest::fulscr()

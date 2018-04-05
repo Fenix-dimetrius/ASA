@@ -1,4 +1,4 @@
-#include "stdafx.h"
+п»ї#include "stdafx.h"
 #include "PicCardContrl1.h"
 
 CImage imgCard;
@@ -19,10 +19,10 @@ END_MESSAGE_MAP()
 void PicCardContrl1::OnPaint()
 {
 	CPaintDC dc(this); // device context for painting
-					   // TODO: добавьте свой код обработчика сообщений
-					   // Не вызывать CStatic::OnPaint() для сообщений рисования
+					   // TODO: РґРѕР±Р°РІСЊС‚Рµ СЃРІРѕР№ РєРѕРґ РѕР±СЂР°Р±РѕС‚С‡РёРєР° СЃРѕРѕР±С‰РµРЅРёР№
+					   // РќРµ РІС‹Р·С‹РІР°С‚СЊ CStatic::OnPaint() РґР»СЏ СЃРѕРѕР±С‰РµРЅРёР№ СЂРёСЃРѕРІР°РЅРёСЏ
 	CRect rect;
 	GetClientRect(&rect);
-	imgCard.AlphaBlend(dc, 0, 0, rect.right, rect.bottom, 0, 0, imgCard.GetWidth(), imgCard.GetHeight()); // выводим изображение фона на окно
+	imgCard.AlphaBlend(dc, 0, 0, rect.right, rect.bottom, 0, 0, imgCard.GetWidth(), imgCard.GetHeight()); // РІС‹РІРѕРґРёРј РёР·РѕР±СЂР°Р¶РµРЅРёРµ С„РѕРЅР° РЅР° РѕРєРЅРѕ
 
 }

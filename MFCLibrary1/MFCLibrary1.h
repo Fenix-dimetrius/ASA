@@ -1,22 +1,22 @@
-// MFCLibrary1.h: главный файл заголовка для DLL MFCLibrary1
+п»ї// MFCLibrary1.h: РіР»Р°РІРЅС‹Р№ С„Р°Р№Р» Р·Р°РіРѕР»РѕРІРєР° РґР»СЏ DLL MFCLibrary1
 //
 
 #pragma once
 
 #ifndef __AFXWIN_H__
-	#error "включить stdafx.h до включения этого файла в PCH"
+	#error "РІРєР»СЋС‡РёС‚СЊ stdafx.h РґРѕ РІРєР»СЋС‡РµРЅРёСЏ СЌС‚РѕРіРѕ С„Р°Р№Р»Р° РІ PCH"
 #endif
 
-#include "resource.h"		// основные символы
+#include "resource.h"		// РѕСЃРЅРѕРІРЅС‹Рµ СЃРёРјРІРѕР»С‹
 #include <vector>
 
-struct NameInstrument // структура, которая принимается из вспомогательных dll
+struct NameInstrument // СЃС‚СЂСѓРєС‚СѓСЂР°, РєРѕС‚РѕСЂР°СЏ РїСЂРёРЅРёРјР°РµС‚СЃСЏ РёР· РІСЃРїРѕРјРѕРіР°С‚РµР»СЊРЅС‹С… dll
 {
 	
 	//double *ArrVal;
-	bool isInclude; // подключе и показывается ли плагин на экране
-	std::vector <CString> TextInfCh; // названия каналов
-	std::vector <float> valChannel; // значнения каналов
+	bool isInclude; // РїРѕРґРєР»СЋС‡Рµ Рё РїРѕРєР°Р·С‹РІР°РµС‚СЃСЏ Р»Рё РїР»Р°РіРёРЅ РЅР° СЌРєСЂР°РЅРµ
+	std::vector <CString> TextInfCh; // РЅР°Р·РІР°РЅРёСЏ РєР°РЅР°Р»РѕРІ
+	std::vector <float> valChannel; // Р·РЅР°С‡РЅРµРЅРёСЏ РєР°РЅР°Р»РѕРІ
 
 	
 	int LinkInstr;
@@ -26,7 +26,7 @@ struct NameInstrument // структура, которая принимается из вспомогательных dll
 };
 
 // CMFCLibrary1App
-// Про реализацию данного класса см. MFCLibrary1.cpp
+// РџСЂРѕ СЂРµР°Р»РёР·Р°С†РёСЋ РґР°РЅРЅРѕРіРѕ РєР»Р°СЃСЃР° СЃРј. MFCLibrary1.cpp
 //
 
 class CMFCLibrary1App : public CWinApp
@@ -34,7 +34,7 @@ class CMFCLibrary1App : public CWinApp
 public:
 	CMFCLibrary1App();
 
-// Переопределение
+// РџРµСЂРµРѕРїСЂРµРґРµР»РµРЅРёРµ
 public:
 	virtual BOOL InitInstance();
 

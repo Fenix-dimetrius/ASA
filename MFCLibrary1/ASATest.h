@@ -1,74 +1,74 @@
-#pragma once
+п»ї#pragma once
 #include <vector>
 
-extern bool StartRecorPlay; // проверка на запуск записи
-extern bool fullscr; // показывает, начат ли тест
+extern bool StartRecorPlay; // РїСЂРѕРІРµСЂРєР° РЅР° Р·Р°РїСѓСЃРє Р·Р°РїРёСЃРё
+extern bool fullscr; // РїРѕРєР°Р·С‹РІР°РµС‚, РЅР°С‡Р°С‚ Р»Рё С‚РµСЃС‚
 
 //
-//					 // наложение эпох при верных ответах
-//extern std::vector <float> TrueEpoImposChan0; // вектор для сохранения значения канала 0
-//extern std::vector <float> TrueEpoImposBufChan0; // вектор для сохранения значения канала 0
+//					 // РЅР°Р»РѕР¶РµРЅРёРµ СЌРїРѕС… РїСЂРё РІРµСЂРЅС‹С… РѕС‚РІРµС‚Р°С…
+//extern std::vector <float> TrueEpoImposChan0; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 0
+//extern std::vector <float> TrueEpoImposBufChan0; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 0
 //
-//extern std::vector <float> TrueEpoImposChan1; // вектор для сохранения значения канала 1
-//extern std::vector <float> TrueEpoImposBufChan1; // вектор для сохранения значения канала 1
+//extern std::vector <float> TrueEpoImposChan1; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 1
+//extern std::vector <float> TrueEpoImposBufChan1; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 1
 //
-//extern std::vector <float> TrueEpoImposChan2; // вектор для сохранения значения канала 2
-//extern std::vector <float> TrueEpoImposBufChan2; // вектор для сохранения значения канала 2
+//extern std::vector <float> TrueEpoImposChan2; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 2
+//extern std::vector <float> TrueEpoImposBufChan2; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 2
 //
-//extern std::vector <float> TrueEpoImposChan3; // вектор для сохранения значения канала 3
-//extern std::vector <float> TrueEpoImposBufChan3; // вектор для сохранения значения канала 3
-//
-//
-//					// наложение эпох при НЕверных ответах
-//extern std::vector <float> FalseEpoImposChan0; // вектор для сохранения значения канала 0
-//extern std::vector <float> FalseEpoImposBufChan0; // вектор для сохранения значения канала 0
-//
-//extern std::vector <float> FalseEpoImposChan1; // вектор для сохранения значения канала 1
-//extern std::vector <float> FalseEpoImposBufChan1; // вектор для сохранения значения канала 1
-//
-//extern std::vector <float> FalseEpoImposChan2; // вектор для сохранения значения канала 2
-//extern std::vector <float> FalseEpoImposBufChan2; // вектор для сохранения значения канала 2
-//
-//extern std::vector <float> FalseEpoImposChan3; // вектор для сохранения значения канала 3
-//extern std::vector <float> FalseEpoImposBufChan3; // вектор для сохранения значения канала 3
+//extern std::vector <float> TrueEpoImposChan3; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 3
+//extern std::vector <float> TrueEpoImposBufChan3; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 3
 //
 //
-//// вектора вероятности ответов. развер вектора - количество выпавших номеров из интервала. 1 в ячейке - правильно отгадано, 0 - нет
-//extern std::vector <float> Number049; // вектор для сохранения значения канала 3
-//extern std::vector <float> Number5099; // вектор для сохранения значения канала 3
-//extern std::vector <float> Number100149; // вектор для сохранения значения канала 3
+//					// РЅР°Р»РѕР¶РµРЅРёРµ СЌРїРѕС… РїСЂРё РќР•РІРµСЂРЅС‹С… РѕС‚РІРµС‚Р°С…
+//extern std::vector <float> FalseEpoImposChan0; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 0
+//extern std::vector <float> FalseEpoImposBufChan0; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 0
+//
+//extern std::vector <float> FalseEpoImposChan1; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 1
+//extern std::vector <float> FalseEpoImposBufChan1; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 1
+//
+//extern std::vector <float> FalseEpoImposChan2; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 2
+//extern std::vector <float> FalseEpoImposBufChan2; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 2
+//
+//extern std::vector <float> FalseEpoImposChan3; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 3
+//extern std::vector <float> FalseEpoImposBufChan3; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 3
+//
+//
+//// РІРµРєС‚РѕСЂР° РІРµСЂРѕСЏС‚РЅРѕСЃС‚Рё РѕС‚РІРµС‚РѕРІ. СЂР°Р·РІРµСЂ РІРµРєС‚РѕСЂР° - РєРѕР»РёС‡РµСЃС‚РІРѕ РІС‹РїР°РІС€РёС… РЅРѕРјРµСЂРѕРІ РёР· РёРЅС‚РµСЂРІР°Р»Р°. 1 РІ СЏС‡РµР№РєРµ - РїСЂР°РІРёР»СЊРЅРѕ РѕС‚РіР°РґР°РЅРѕ, 0 - РЅРµС‚
+//extern std::vector <float> Number049; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 3
+//extern std::vector <float> Number5099; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 3
+//extern std::vector <float> Number100149; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 3
 
 extern void testOut(DWORD dwObjectIndex, DWORD NumOfInstruments);
-//extern std::vector <CString> TruOrFalseCardEPO; // вектор для сохранения ответа на выбор карт(верно или нет) для наложения эпох
+//extern std::vector <CString> TruOrFalseCardEPO; // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ РѕС‚РІРµС‚Р° РЅР° РІС‹Р±РѕСЂ РєР°СЂС‚(РІРµСЂРЅРѕ РёР»Рё РЅРµС‚) РґР»СЏ РЅР°Р»РѕР¶РµРЅРёСЏ СЌРїРѕС…
 
 class ASATest
 {
 public:
 	ASATest();
 	virtual ~ASATest();
-	// возвращает адрес картинки
+	// РІРѕР·РІСЂР°С‰Р°РµС‚ Р°РґСЂРµСЃ РєР°СЂС‚РёРЅРєРё
 	CString getUrlPic();
 private:
-	//  содержит номера картинок
+	//  СЃРѕРґРµСЂР¶РёС‚ РЅРѕРјРµСЂР° РєР°СЂС‚РёРЅРѕРє
 //	std::vector<int> v_AvailableUrl;
-//	std::vector <int> respOpt1(2);// вектор сохранения вариантов ответов
+//	std::vector <int> respOpt1(2);// РІРµРєС‚РѕСЂ СЃРѕС…СЂР°РЅРµРЅРёСЏ РІР°СЂРёР°РЅС‚РѕРІ РѕС‚РІРµС‚РѕРІ
 	bool EndGenNumPic;
 	
 public:
-	// инициализация
+	// РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ
 	bool InitASATest();
 	bool EndGenNum();
 	int GetSizeVec();
 	CString GetActualNumPic();
 
 	
-	// наложение эпох
+	// РЅР°Р»РѕР¶РµРЅРёРµ СЌРїРѕС…
 	//void ImposEpo(CString);
 };
 
 struct MyStruct
 {
-	// значения в каналах
+	// Р·РЅР°С‡РµРЅРёСЏ РІ РєР°РЅР°Р»Р°С…
 	/*float updInfChan0;
 	float updInfChan1;
 	float updInfChan2;
@@ -78,7 +78,7 @@ struct MyStruct
 	std::vector <float> updInfChan;
 
 
-	// наименование каналов
+	// РЅР°РёРјРµРЅРѕРІР°РЅРёРµ РєР°РЅР°Р»РѕРІ
 	//CString TextInfChan0;
 	//CString TextInfChan1;
 	//CString TextInfChan2;
@@ -87,28 +87,28 @@ struct MyStruct
 	//CString TextInfChan[4];
 
 	std::vector <CString> TextInfChan;
-	//выбранная карта
+	//РІС‹Р±СЂР°РЅРЅР°СЏ РєР°СЂС‚Р°
 	CString ChouseCard;
 
-	//Номер текущей картинки
+	//РќРѕРјРµСЂ С‚РµРєСѓС‰РµР№ РєР°СЂС‚РёРЅРєРё
 	CString NumActualCard;
 
-	//отгадана картинка?
+	//РѕС‚РіР°РґР°РЅР° РєР°СЂС‚РёРЅРєР°?
 	CString TruOrFalseCard;
 
-	// Интервал времени
+	// РРЅС‚РµСЂРІР°Р» РІСЂРµРјРµРЅРё
 	CString TimeInterval;
 
 
-	//Фамилия, имя, отчество
+	//Р¤Р°РјРёР»РёСЏ, РёРјСЏ, РѕС‚С‡РµСЃС‚РІРѕ
 	CString SureName;
 	CString Name;
 	CString SecName;
 
 	int SumChouseTrue;
 	int SumChouseFalse;
-	//std::vector <float> EpoImpos(2); // вектор для сохранения значения канала 0
-	//std::vector <float> EpoImposBuf(2); // вектор для сохранения значения канала 0
+	//std::vector <float> EpoImpos(2); // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 0
+	//std::vector <float> EpoImposBuf(2); // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 0
 
 };
 

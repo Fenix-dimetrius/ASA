@@ -1,4 +1,4 @@
-#include "stdafx.h"
+п»ї#include "stdafx.h"
 #include "SumEpochClass.h"
 #include "ASADlg.h"
 #include <fstream>
@@ -15,7 +15,7 @@ SumEpochClass::~SumEpochClass()
 {
 	ChanImpos.ClearVec();
 
-	//освобождение векторов среднего значения, отклонения и ошибки
+	//РѕСЃРІРѕР±РѕР¶РґРµРЅРёРµ РІРµРєС‚РѕСЂРѕРІ СЃСЂРµРґРЅРµРіРѕ Р·РЅР°С‡РµРЅРёСЏ, РѕС‚РєР»РѕРЅРµРЅРёСЏ Рё РѕС€РёР±РєРё
 	averageXFalse.clear();
 	averageXFalse.shrink_to_fit();
 
@@ -71,7 +71,7 @@ SumEpochClass::~SumEpochClass()
 void SumEpochClass::OutImposEpo( std::vector<std::vector<float>> Chan, std::vector<CString> truOrFalseCard, std::vector<CString> numActualCard, int firstNum, int lastNum, CString categoryName, char * FileName)
 {
 
-			averageXTrue.resize(Chan[0].size()); // 4 канала
+			averageXTrue.resize(Chan[0].size()); // 4 РєР°РЅР°Р»Р°
 		averageXFalse.resize(Chan[0].size());
 
 		ChanImpos.SigmaFalse.resize(Chan[0].size());
@@ -82,15 +82,15 @@ void SumEpochClass::OutImposEpo( std::vector<std::vector<float>> Chan, std::vect
 
 		
 
-		int vecSize = (m_AfterShow + m_ShowTime + m_BeforeShow + m_DelaySpeedMouse) / (float)measureInterval; // размер вектора эпохи - число строк эпохи =  его время.
+		int vecSize = (m_AfterShow + m_ShowTime + m_BeforeShow + m_DelaySpeedMouse) / (float)measureInterval; // СЂР°Р·РјРµСЂ РІРµРєС‚РѕСЂР° СЌРїРѕС…Рё - С‡РёСЃР»Рѕ СЃС‚СЂРѕРє СЌРїРѕС…Рё =  РµРіРѕ РІСЂРµРјСЏ.
 		int k1 = 0;
 	
 		
 		
 		//MyStruct1 ChanVec;
 	
-		ChanImpos.TrueNumEpoch = 0; // количество эпох правильных выборов
-		ChanImpos.FalseNumEpoch = 0; // количество эпох неправильных выборов
+		ChanImpos.TrueNumEpoch = 0; // РєРѕР»РёС‡РµСЃС‚РІРѕ СЌРїРѕС… РїСЂР°РІРёР»СЊРЅС‹С… РІС‹Р±РѕСЂРѕРІ
+		ChanImpos.FalseNumEpoch = 0; // РєРѕР»РёС‡РµСЃС‚РІРѕ СЌРїРѕС… РЅРµРїСЂР°РІРёР»СЊРЅС‹С… РІС‹Р±РѕСЂРѕРІ
 	
 	
 		// resize new vector for sum epo ChanImpos.TrueSumEpoChan[k1-1][f1]
@@ -104,13 +104,13 @@ void SumEpochClass::OutImposEpo( std::vector<std::vector<float>> Chan, std::vect
 			}
 
 		//SetSizeVec(vecSize);
-		//ChanImpos.ResizeVec(vecSize+1 ); // задаем размер векторов, учитывая интервал предзаписи. 
+		//ChanImpos.ResizeVec(vecSize+1 ); // Р·Р°РґР°РµРј СЂР°Р·РјРµСЂ РІРµРєС‚РѕСЂРѕРІ, СѓС‡РёС‚С‹РІР°СЏ РёРЅС‚РµСЂРІР°Р» РїСЂРµРґР·Р°РїРёСЃРё. 
 
-		std::vector  <float> Truetemp0; // временный массив
-		std::vector  <std::vector  <float>> Truetemp1; // временный массив
+		std::vector  <float> Truetemp0; // РІСЂРµРјРµРЅРЅС‹Р№ РјР°СЃСЃРёРІ
+		std::vector  <std::vector  <float>> Truetemp1; // РІСЂРµРјРµРЅРЅС‹Р№ РјР°СЃСЃРёРІ
 
-		std::vector  <float> Falsetemp0; // временный массив
-		std::vector  <std::vector  <float>> Falsetemp1; // временный массив
+		std::vector  <float> Falsetemp0; // РІСЂРµРјРµРЅРЅС‹Р№ РјР°СЃСЃРёРІ
+		std::vector  <std::vector  <float>> Falsetemp1; // РІСЂРµРјРµРЅРЅС‹Р№ РјР°СЃСЃРёРІ
 		bool isTrueAns;
 //
 		//std::vector<float> TempTrueSum;//(Chan[0].size());
@@ -121,8 +121,8 @@ void SumEpochClass::OutImposEpo( std::vector<std::vector<float>> Chan, std::vect
 		for (int i1 = 0; i1 < truOrFalseCard.size(); i1++)//Chan.size(); i1++)
 		{
 			
-			//std::vector  <float> Truetemp0; // временный массив
-			// находим сумму моментов времени каждой эпохи
+			//std::vector  <float> Truetemp0; // РІСЂРµРјРµРЅРЅС‹Р№ РјР°СЃСЃРёРІ
+			// РЅР°С…РѕРґРёРј СЃСѓРјРјСѓ РјРѕРјРµРЅС‚РѕРІ РІСЂРµРјРµРЅРё РєР°Р¶РґРѕР№ СЌРїРѕС…Рё
 			if (truOrFalseCard[i1] != " " && firstNum <= atoi(numActualCard[i1]) && atoi(numActualCard[i1]) <= lastNum && k1 <= vecSize)
 			{
 				
@@ -133,12 +133,12 @@ void SumEpochClass::OutImposEpo( std::vector<std::vector<float>> Chan, std::vect
 						if (k1 == 0)
 						{
 							ChanImpos.TrueNumEpoch++;
-							// сохраняем номер выбранной карты
+							// СЃРѕС…СЂР°РЅСЏРµРј РЅРѕРјРµСЂ РІС‹Р±СЂР°РЅРЅРѕР№ РєР°СЂС‚С‹
 							ChanImpos.TrueNumCard.push_back(numActualCard[i1]);
 							isTrueAns = true;
 
-							// Реализация предзаписи
-							// вычисляем кол-во отсчетов времени предзаписи
+							// Р РµР°Р»РёР·Р°С†РёСЏ РїСЂРµРґР·Р°РїРёСЃРё
+							// РІС‹С‡РёСЃР»СЏРµРј РєРѕР»-РІРѕ РѕС‚СЃС‡РµС‚РѕРІ РІСЂРµРјРµРЅРё РїСЂРµРґР·Р°РїРёСЃРё
 						//	nBefRec = m_DelaySpeedMouse/(float)measureInterval;
 
 							for (int t1 = nBefRec; t1 > 0;t1--)
@@ -160,7 +160,7 @@ void SumEpochClass::OutImposEpo( std::vector<std::vector<float>> Chan, std::vect
 									// summ all epo in category before chouse
 									ChanImpos.TrueSumEpoChan[k1][f1] = ChanImpos.TrueSumEpoChan[k1][f1] + Chan[i1 - t1][f1];
 
-									// необработанные эпохи
+									// РЅРµРѕР±СЂР°Р±РѕС‚Р°РЅРЅС‹Рµ СЌРїРѕС…Рё
 									Truetemp0.push_back(Chan[i1 - t1][f1]);
 
 
@@ -170,9 +170,9 @@ void SumEpochClass::OutImposEpo( std::vector<std::vector<float>> Chan, std::vect
 								//TempTrueSum.clear();
 								//TempTrueSum.shrink_to_fit();
 
-								// и прибавляем строку
+								// Рё РїСЂРёР±Р°РІР»СЏРµРј СЃС‚СЂРѕРєСѓ
 								Truetemp1.push_back(Truetemp0);
-								// очистка одномерного временного массива
+								// РѕС‡РёСЃС‚РєР° РѕРґРЅРѕРјРµСЂРЅРѕРіРѕ РІСЂРµРјРµРЅРЅРѕРіРѕ РјР°СЃСЃРёРІР°
 								Truetemp0.clear();
 								Truetemp0.shrink_to_fit();
 								k1++;
@@ -180,14 +180,14 @@ void SumEpochClass::OutImposEpo( std::vector<std::vector<float>> Chan, std::vect
 							}
 						}
 					
-					for (int f1 = 0; f1 < Chan[0].size();f1++) // чет не доходит до сюда
+					for (int f1 = 0; f1 < Chan[0].size();f1++) // С‡РµС‚ РЅРµ РґРѕС…РѕРґРёС‚ РґРѕ СЃСЋРґР°
 					{
 
 					
 						//TempTrueSum.push_back(ChanImpos.TrueSumEpoChan[k1-1][f1] + Chan[i1][f1]);
 						// summ epo all category after chouse
 						ChanImpos.TrueSumEpoChan[k1][f1] = ChanImpos.TrueSumEpoChan[k1][f1] + Chan[i1][f1];
-						//заполняем столбцы каналов
+						//Р·Р°РїРѕР»РЅСЏРµРј СЃС‚РѕР»Р±С†С‹ РєР°РЅР°Р»РѕРІ
 						Truetemp0.push_back(Chan[i1][f1]);
 					}
 
@@ -196,20 +196,20 @@ void SumEpochClass::OutImposEpo( std::vector<std::vector<float>> Chan, std::vect
 					//TempTrueSum.clear();
 					//TempTrueSum.shrink_to_fit();
 
-					// и прибавляем строку
+					// Рё РїСЂРёР±Р°РІР»СЏРµРј СЃС‚СЂРѕРєСѓ
 					Truetemp1.push_back(Truetemp0);
 					
-					// добавляется двумерный массив в трехмерный (добавляем лист)
+					// РґРѕР±Р°РІР»СЏРµС‚СЃСЏ РґРІСѓРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ РІ С‚СЂРµС…РјРµСЂРЅС‹Р№ (РґРѕР±Р°РІР»СЏРµРј Р»РёСЃС‚)
 					if (k1 == vecSize)
 					{
 						ChanImpos.TrueOnlyEpoch.push_back(Truetemp1);
 
-						// очистка временного двумерного массива
+						// РѕС‡РёСЃС‚РєР° РІСЂРµРјРµРЅРЅРѕРіРѕ РґРІСѓРјРµСЂРЅРѕРіРѕ РјР°СЃСЃРёРІР°
 						Truetemp1.clear();
 						Truetemp1.shrink_to_fit();
 					}
 
-					// очистка одномерного временного массива
+					// РѕС‡РёСЃС‚РєР° РѕРґРЅРѕРјРµСЂРЅРѕРіРѕ РІСЂРµРјРµРЅРЅРѕРіРѕ РјР°СЃСЃРёРІР°
 					Truetemp0.clear();
 					Truetemp0.shrink_to_fit();
 				}
@@ -220,11 +220,11 @@ void SumEpochClass::OutImposEpo( std::vector<std::vector<float>> Chan, std::vect
 					if (k1 == 0)
 					{
 						ChanImpos.FalseNumEpoch++;
-						// сохраняем номер выбранной карты
+						// СЃРѕС…СЂР°РЅСЏРµРј РЅРѕРјРµСЂ РІС‹Р±СЂР°РЅРЅРѕР№ РєР°СЂС‚С‹
 						ChanImpos.FalseNumCard.push_back(numActualCard[i1]);
 						isTrueAns = false;
-						// Реализация предзаписи
-						// вычисляем кол-во отсчетов времени предзаписи
+						// Р РµР°Р»РёР·Р°С†РёСЏ РїСЂРµРґР·Р°РїРёСЃРё
+						// РІС‹С‡РёСЃР»СЏРµРј РєРѕР»-РІРѕ РѕС‚СЃС‡РµС‚РѕРІ РІСЂРµРјРµРЅРё РїСЂРµРґР·Р°РїРёСЃРё
 						//nBefRec = m_DelaySpeedMouse / (float)measureInterval;
 
 						for (int t1 = nBefRec; t1 > 0; t1--)
@@ -247,7 +247,7 @@ void SumEpochClass::OutImposEpo( std::vector<std::vector<float>> Chan, std::vect
 
 								ChanImpos.FalseSumEpoChan[k1][f1] = ChanImpos.FalseSumEpoChan[k1][f1] + Chan[i1 - t1][f1];
 
-								// необработанные эпохи
+								// РЅРµРѕР±СЂР°Р±РѕС‚Р°РЅРЅС‹Рµ СЌРїРѕС…Рё
 								Falsetemp0.push_back(Chan[i1 - t1][f1]);
 
 								
@@ -256,9 +256,9 @@ void SumEpochClass::OutImposEpo( std::vector<std::vector<float>> Chan, std::vect
 							//TempFalseSum.clear();
 							//TempFalseSum.shrink_to_fit();
 
-							// и прибавляем строку
+							// Рё РїСЂРёР±Р°РІР»СЏРµРј СЃС‚СЂРѕРєСѓ
 							Falsetemp1.push_back(Falsetemp0);
-							// очистка одномерного временного массива
+							// РѕС‡РёСЃС‚РєР° РѕРґРЅРѕРјРµСЂРЅРѕРіРѕ РІСЂРµРјРµРЅРЅРѕРіРѕ РјР°СЃСЃРёРІР°
 							Falsetemp0.clear();
 							Falsetemp0.shrink_to_fit();
 							k1++;
@@ -276,8 +276,8 @@ void SumEpochClass::OutImposEpo( std::vector<std::vector<float>> Chan, std::vect
 						//TempFalseSum.push_back(ChanImpos.FalseSumEpoChan[k1 - 1][f1 ] + Chan[i1][f1]);
 						
 						ChanImpos.FalseSumEpoChan[k1][f1] = ChanImpos.FalseSumEpoChan[k1][f1] + Chan[i1][f1];
-						// необработанные эпохи
-						//заполняем столбцы каналов
+						// РЅРµРѕР±СЂР°Р±РѕС‚Р°РЅРЅС‹Рµ СЌРїРѕС…Рё
+						//Р·Р°РїРѕР»РЅСЏРµРј СЃС‚РѕР»Р±С†С‹ РєР°РЅР°Р»РѕРІ
 						Falsetemp0.push_back(Chan[i1][f1]);
 					}
 
@@ -286,20 +286,20 @@ void SumEpochClass::OutImposEpo( std::vector<std::vector<float>> Chan, std::vect
 					//TempFalseSum.clear();
 					//TempFalseSum.shrink_to_fit();
 
-					// для вывода необработанных эпох
-					// и прибавляем строку
+					// РґР»СЏ РІС‹РІРѕРґР° РЅРµРѕР±СЂР°Р±РѕС‚Р°РЅРЅС‹С… СЌРїРѕС…
+					// Рё РїСЂРёР±Р°РІР»СЏРµРј СЃС‚СЂРѕРєСѓ
 					Falsetemp1.push_back(Falsetemp0);
 				
-					// добавляем двумерный массив в трехмерный (добавляем лист)
+					// РґРѕР±Р°РІР»СЏРµРј РґРІСѓРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ РІ С‚СЂРµС…РјРµСЂРЅС‹Р№ (РґРѕР±Р°РІР»СЏРµРј Р»РёСЃС‚)
 					if (k1 == vecSize)
 					{
 						ChanImpos.FalseOnlyEpoch.push_back(Falsetemp1);
 
-						// очистка временного двумерного массива
+						// РѕС‡РёСЃС‚РєР° РІСЂРµРјРµРЅРЅРѕРіРѕ РґРІСѓРјРµСЂРЅРѕРіРѕ РјР°СЃСЃРёРІР°
 						Falsetemp1.clear();
 						Falsetemp1.shrink_to_fit();
 					}
-					// очистка одномерного временного массива
+					// РѕС‡РёСЃС‚РєР° РѕРґРЅРѕРјРµСЂРЅРѕРіРѕ РІСЂРµРјРµРЅРЅРѕРіРѕ РјР°СЃСЃРёРІР°
 					Falsetemp0.clear();
 					Falsetemp0.shrink_to_fit();
 				}
@@ -314,7 +314,7 @@ void SumEpochClass::OutImposEpo( std::vector<std::vector<float>> Chan, std::vect
 						
 		}
 	
-		// делим сумму значений эпох на общее 
+		// РґРµР»РёРј СЃСѓРјРјСѓ Р·РЅР°С‡РµРЅРёР№ СЌРїРѕС… РЅР° РѕР±С‰РµРµ 
 	
 		for (int i2 = 0; i2 < ChanImpos.TrueSumEpoChan.size(); i2++)
 		{
@@ -337,7 +337,7 @@ void SumEpochClass::OutImposEpo( std::vector<std::vector<float>> Chan, std::vect
 
 				//if (ChanImpos.FalseNumEpoch != 0 && !ChanImpos.FalseSumEpoChan.empty())
 				//{
-				//	ChanImpos.FalseSumEpoChan[i2][f1] /= (float)ChanImpos.FalseNumEpoch; // может быть /0
+				//	ChanImpos.FalseSumEpoChan[i2][f1] /= (float)ChanImpos.FalseNumEpoch; // РјРѕР¶РµС‚ Р±С‹С‚СЊ /0
 				//}
 				//else
 				//{
@@ -370,7 +370,7 @@ void SumEpochClass::OutImposEpo( std::vector<std::vector<float>> Chan, std::vect
 
 			}	
 			
-				Sigma(i2);//расчет стандартной ошибки
+				Sigma(i2);//СЂР°СЃС‡РµС‚ СЃС‚Р°РЅРґР°СЂС‚РЅРѕР№ РѕС€РёР±РєРё
 			
 		}
 
@@ -394,34 +394,34 @@ void SumEpochClass::Sigma(int j2)
 {
 
 	//int j0 = 0;
-	// среднеквадратичное отклонение
+	// СЃСЂРµРґРЅРµРєРІР°РґСЂР°С‚РёС‡РЅРѕРµ РѕС‚РєР»РѕРЅРµРЅРёРµ
 
 	if (ChanImpos.TrueOnlyEpoch.empty() != true)
 	{
 
-		// находим сумму квадратов. СУММ по k0( Xk(j2) - Xcp(j2)), где k0 - номер эпохи(по счету ответ), j2 - отсчет момента времени
-		for (int k0 = 0; k0 < ChanImpos.TrueOnlyEpoch.size(); k0++) //ChanImpos.TrueOnlyEpoch.size() - кол-во ответов в данной категории.
-																	//ChanImpos.TrueOnlyEpoch[].size() - кол-во отсчетов времени в данной категории и равно vecSize.
-																	//ChanImpos.TrueOnlyEpoch[][].size() - кол-во каналов.
+		// РЅР°С…РѕРґРёРј СЃСѓРјРјСѓ РєРІР°РґСЂР°С‚РѕРІ. РЎРЈРњРњ РїРѕ k0( Xk(j2) - Xcp(j2)), РіРґРµ k0 - РЅРѕРјРµСЂ СЌРїРѕС…Рё(РїРѕ СЃС‡РµС‚Сѓ РѕС‚РІРµС‚), j2 - РѕС‚СЃС‡РµС‚ РјРѕРјРµРЅС‚Р° РІСЂРµРјРµРЅРё
+		for (int k0 = 0; k0 < ChanImpos.TrueOnlyEpoch.size(); k0++) //ChanImpos.TrueOnlyEpoch.size() - РєРѕР»-РІРѕ РѕС‚РІРµС‚РѕРІ РІ РґР°РЅРЅРѕР№ РєР°С‚РµРіРѕСЂРёРё.
+																	//ChanImpos.TrueOnlyEpoch[].size() - РєРѕР»-РІРѕ РѕС‚СЃС‡РµС‚РѕРІ РІСЂРµРјРµРЅРё РІ РґР°РЅРЅРѕР№ РєР°С‚РµРіРѕСЂРёРё Рё СЂР°РІРЅРѕ vecSize.
+																	//ChanImpos.TrueOnlyEpoch[][].size() - РєРѕР»-РІРѕ РєР°РЅР°Р»РѕРІ.
 		{
 
 			for (int f1 = 0; f1 < ChanImpos.SigmaTrue.size();f1++)
 			{
-				ChanImpos.SigmaTrue[f1] += (ChanImpos.TrueOnlyEpoch[k0][j2][f1] - ChanImpos.TrueSumEpoChan[j2][f1])*(ChanImpos.TrueOnlyEpoch[k0][j2][f1] - ChanImpos.TrueSumEpoChan[j2][f1]); // возводим в квадрат и суммируем
+				ChanImpos.SigmaTrue[f1] += (ChanImpos.TrueOnlyEpoch[k0][j2][f1] - ChanImpos.TrueSumEpoChan[j2][f1])*(ChanImpos.TrueOnlyEpoch[k0][j2][f1] - ChanImpos.TrueSumEpoChan[j2][f1]); // РІРѕР·РІРѕРґРёРј РІ РєРІР°РґСЂР°С‚ Рё СЃСѓРјРјРёСЂСѓРµРј
 			}
 
-			//ChanImpos.SigmaTrue[0] += (ChanImpos.TrueOnlyEpoch[k0][j2][0] - ChanImpos.TrueSumEpoChan0[j2])*(ChanImpos.TrueOnlyEpoch[k0][j2][0] - ChanImpos.TrueSumEpoChan0[j2]); // возводим в квадрат и суммируем
-			//ChanImpos.SigmaTrue[1] += (ChanImpos.TrueOnlyEpoch[k0][j2][1] - ChanImpos.TrueSumEpoChan1[j2])*(ChanImpos.TrueOnlyEpoch[k0][j2][1] - ChanImpos.TrueSumEpoChan1[j2]); // возводим в квадрат и суммируем
-			//ChanImpos.SigmaTrue[2] += (ChanImpos.TrueOnlyEpoch[k0][j2][2] - ChanImpos.TrueSumEpoChan2[j2])*(ChanImpos.TrueOnlyEpoch[k0][j2][2] - ChanImpos.TrueSumEpoChan2[j2]); // возводим в квадрат и суммируем
-			//ChanImpos.SigmaTrue[3] += (ChanImpos.TrueOnlyEpoch[k0][j2][3] - ChanImpos.TrueSumEpoChan3[j2])*(ChanImpos.TrueOnlyEpoch[k0][j2][3] - ChanImpos.TrueSumEpoChan3[j2]); // возводим в квадрат и суммируем
+			//ChanImpos.SigmaTrue[0] += (ChanImpos.TrueOnlyEpoch[k0][j2][0] - ChanImpos.TrueSumEpoChan0[j2])*(ChanImpos.TrueOnlyEpoch[k0][j2][0] - ChanImpos.TrueSumEpoChan0[j2]); // РІРѕР·РІРѕРґРёРј РІ РєРІР°РґСЂР°С‚ Рё СЃСѓРјРјРёСЂСѓРµРј
+			//ChanImpos.SigmaTrue[1] += (ChanImpos.TrueOnlyEpoch[k0][j2][1] - ChanImpos.TrueSumEpoChan1[j2])*(ChanImpos.TrueOnlyEpoch[k0][j2][1] - ChanImpos.TrueSumEpoChan1[j2]); // РІРѕР·РІРѕРґРёРј РІ РєРІР°РґСЂР°С‚ Рё СЃСѓРјРјРёСЂСѓРµРј
+			//ChanImpos.SigmaTrue[2] += (ChanImpos.TrueOnlyEpoch[k0][j2][2] - ChanImpos.TrueSumEpoChan2[j2])*(ChanImpos.TrueOnlyEpoch[k0][j2][2] - ChanImpos.TrueSumEpoChan2[j2]); // РІРѕР·РІРѕРґРёРј РІ РєРІР°РґСЂР°С‚ Рё СЃСѓРјРјРёСЂСѓРµРј
+			//ChanImpos.SigmaTrue[3] += (ChanImpos.TrueOnlyEpoch[k0][j2][3] - ChanImpos.TrueSumEpoChan3[j2])*(ChanImpos.TrueOnlyEpoch[k0][j2][3] - ChanImpos.TrueSumEpoChan3[j2]); // РІРѕР·РІРѕРґРёРј РІ РєРІР°РґСЂР°С‚ Рё СЃСѓРјРјРёСЂСѓРµРј
 
 		}
 
 
-		// берем корень из полученного результата
-		int k1 = (ChanImpos.TrueOnlyEpoch.size()*(ChanImpos.TrueOnlyEpoch.size() - 1));// по формуле: (n(n-1)), где n - кол-во эпох
+		// Р±РµСЂРµРј РєРѕСЂРµРЅСЊ РёР· РїРѕР»СѓС‡РµРЅРЅРѕРіРѕ СЂРµР·СѓР»СЊС‚Р°С‚Р°
+		int k1 = (ChanImpos.TrueOnlyEpoch.size()*(ChanImpos.TrueOnlyEpoch.size() - 1));// РїРѕ С„РѕСЂРјСѓР»Рµ: (n(n-1)), РіРґРµ n - РєРѕР»-РІРѕ СЌРїРѕС…
 		
-		if (k1 != 0) // защита от -nan в файле на выходе
+		if (k1 != 0) // Р·Р°С‰РёС‚Р° РѕС‚ -nan РІ С„Р°Р№Р»Рµ РЅР° РІС‹С…РѕРґРµ
 		{
 			try
 			{
@@ -442,7 +442,7 @@ void SumEpochClass::Sigma(int j2)
 
 			
 
-			//ChanImpos.SigmaTrueChan0[j2] = sqrt(ChanImpos.SigmaTrue[0] / k1);  // ChanImpos.SigmaTrue[0] - содержит формулу СУММ по k0( Xk(j2) - Xcp(j2)), где k0 - номер эпохи(по счету ответ), j2 - отсчет момента времени
+			//ChanImpos.SigmaTrueChan0[j2] = sqrt(ChanImpos.SigmaTrue[0] / k1);  // ChanImpos.SigmaTrue[0] - СЃРѕРґРµСЂР¶РёС‚ С„РѕСЂРјСѓР»Сѓ РЎРЈРњРњ РїРѕ k0( Xk(j2) - Xcp(j2)), РіРґРµ k0 - РЅРѕРјРµСЂ СЌРїРѕС…Рё(РїРѕ СЃС‡РµС‚Сѓ РѕС‚РІРµС‚), j2 - РѕС‚СЃС‡РµС‚ РјРѕРјРµРЅС‚Р° РІСЂРµРјРµРЅРё
 			//ChanImpos.SigmaTrueChan1[j2] = sqrt(ChanImpos.SigmaTrue[1] / k1);
 			//ChanImpos.SigmaTrueChan2[j2] = sqrt(ChanImpos.SigmaTrue[2] / k1);
 			//ChanImpos.SigmaTrueChan3[j2] = sqrt(ChanImpos.SigmaTrue[3] / k1);
@@ -464,8 +464,8 @@ void SumEpochClass::Sigma(int j2)
 			ChanImpos.SigmaTrueChan2[j2] = 0;
 			ChanImpos.SigmaTrueChan3[j2] = 0;*/
 		}
-		// обнуляем вектора среднеквадр отклонения, сохраняя
-		//размерность
+		// РѕР±РЅСѓР»СЏРµРј РІРµРєС‚РѕСЂР° СЃСЂРµРґРЅРµРєРІР°РґСЂ РѕС‚РєР»РѕРЅРµРЅРёСЏ, СЃРѕС…СЂР°РЅСЏСЏ
+		//СЂР°Р·РјРµСЂРЅРѕСЃС‚СЊ
 		
 		int tempSize = ChanImpos.SigmaTrue.size();
 		ChanImpos.SigmaTrue.clear();
@@ -496,32 +496,32 @@ void SumEpochClass::Sigma(int j2)
 	if (ChanImpos.FalseOnlyEpoch.empty() != true)
 	{
 
-		// находим сумму квадратов. СУММ по k0( Xk(j2) - Xcp(j2)), где k0 - номер эпохи(по счету ответ), j2 - отсчет момента времени
-		for (int k0 = 0; k0 < ChanImpos.FalseOnlyEpoch.size(); k0++) //ChanImpos.TrueOnlyEpoch.size() - кол-во ответов в данной категории.
-																	//ChanImpos.TrueOnlyEpoch[].size() - кол-во отсчетов времени в данной категории и равно vecSize.
-																	//ChanImpos.TrueOnlyEpoch[][].size() - кол-во каналов.
+		// РЅР°С…РѕРґРёРј СЃСѓРјРјСѓ РєРІР°РґСЂР°С‚РѕРІ. РЎРЈРњРњ РїРѕ k0( Xk(j2) - Xcp(j2)), РіРґРµ k0 - РЅРѕРјРµСЂ СЌРїРѕС…Рё(РїРѕ СЃС‡РµС‚Сѓ РѕС‚РІРµС‚), j2 - РѕС‚СЃС‡РµС‚ РјРѕРјРµРЅС‚Р° РІСЂРµРјРµРЅРё
+		for (int k0 = 0; k0 < ChanImpos.FalseOnlyEpoch.size(); k0++) //ChanImpos.TrueOnlyEpoch.size() - РєРѕР»-РІРѕ РѕС‚РІРµС‚РѕРІ РІ РґР°РЅРЅРѕР№ РєР°С‚РµРіРѕСЂРёРё.
+																	//ChanImpos.TrueOnlyEpoch[].size() - РєРѕР»-РІРѕ РѕС‚СЃС‡РµС‚РѕРІ РІСЂРµРјРµРЅРё РІ РґР°РЅРЅРѕР№ РєР°С‚РµРіРѕСЂРёРё Рё СЂР°РІРЅРѕ vecSize.
+																	//ChanImpos.TrueOnlyEpoch[][].size() - РєРѕР»-РІРѕ РєР°РЅР°Р»РѕРІ.
 		{
 			
 			for (int f1 = 0; f1 < ChanImpos.SigmaFalse.size();f1++)
 			{
-				//ChanImpos.SigmaFalse[f1] += (ChanImpos.FalseOnlyEpoch[k0][j2][0] - ChanImpos.TrueSumEpoChan[j2][f1])*(ChanImpos.TrueOnlyEpoch[k0][j2][0] - ChanImpos.TrueSumEpoChan[j2][f1]); // возводим в квадрат и суммируем
-				ChanImpos.SigmaFalse[f1] += (ChanImpos.FalseOnlyEpoch[k0][j2][f1] - ChanImpos.FalseSumEpoChan[j2][f1])*(ChanImpos.FalseOnlyEpoch[k0][j2][f1] - ChanImpos.FalseSumEpoChan[j2][f1]); // возводим в квадрат и суммируем
+				//ChanImpos.SigmaFalse[f1] += (ChanImpos.FalseOnlyEpoch[k0][j2][0] - ChanImpos.TrueSumEpoChan[j2][f1])*(ChanImpos.TrueOnlyEpoch[k0][j2][0] - ChanImpos.TrueSumEpoChan[j2][f1]); // РІРѕР·РІРѕРґРёРј РІ РєРІР°РґСЂР°С‚ Рё СЃСѓРјРјРёСЂСѓРµРј
+				ChanImpos.SigmaFalse[f1] += (ChanImpos.FalseOnlyEpoch[k0][j2][f1] - ChanImpos.FalseSumEpoChan[j2][f1])*(ChanImpos.FalseOnlyEpoch[k0][j2][f1] - ChanImpos.FalseSumEpoChan[j2][f1]); // РІРѕР·РІРѕРґРёРј РІ РєРІР°РґСЂР°С‚ Рё СЃСѓРјРјРёСЂСѓРµРј
 			}
 
-			//ChanImpos.SigmaFalse[0] += (ChanImpos.FalseOnlyEpoch[k0][j2][0] - ChanImpos.FalseSumEpoChan0[j2])*(ChanImpos.FalseOnlyEpoch[k0][j2][0] - ChanImpos.FalseSumEpoChan0[j2]); // возводим в квадрат и суммируем
-			//ChanImpos.SigmaFalse[1] += (ChanImpos.FalseOnlyEpoch[k0][j2][1] - ChanImpos.FalseSumEpoChan1[j2])*(ChanImpos.FalseOnlyEpoch[k0][j2][1] - ChanImpos.FalseSumEpoChan1[j2]); // возводим в квадрат и суммируем
-			//ChanImpos.SigmaFalse[2] += (ChanImpos.FalseOnlyEpoch[k0][j2][2] - ChanImpos.FalseSumEpoChan2[j2])*(ChanImpos.FalseOnlyEpoch[k0][j2][2] - ChanImpos.FalseSumEpoChan2[j2]); // возводим в квадрат и суммируем
-			//ChanImpos.SigmaFalse[3] += (ChanImpos.FalseOnlyEpoch[k0][j2][3] - ChanImpos.FalseSumEpoChan3[j2])*(ChanImpos.FalseOnlyEpoch[k0][j2][3] - ChanImpos.FalseSumEpoChan3[j2]); // возводим в квадрат и суммируем
+			//ChanImpos.SigmaFalse[0] += (ChanImpos.FalseOnlyEpoch[k0][j2][0] - ChanImpos.FalseSumEpoChan0[j2])*(ChanImpos.FalseOnlyEpoch[k0][j2][0] - ChanImpos.FalseSumEpoChan0[j2]); // РІРѕР·РІРѕРґРёРј РІ РєРІР°РґСЂР°С‚ Рё СЃСѓРјРјРёСЂСѓРµРј
+			//ChanImpos.SigmaFalse[1] += (ChanImpos.FalseOnlyEpoch[k0][j2][1] - ChanImpos.FalseSumEpoChan1[j2])*(ChanImpos.FalseOnlyEpoch[k0][j2][1] - ChanImpos.FalseSumEpoChan1[j2]); // РІРѕР·РІРѕРґРёРј РІ РєРІР°РґСЂР°С‚ Рё СЃСѓРјРјРёСЂСѓРµРј
+			//ChanImpos.SigmaFalse[2] += (ChanImpos.FalseOnlyEpoch[k0][j2][2] - ChanImpos.FalseSumEpoChan2[j2])*(ChanImpos.FalseOnlyEpoch[k0][j2][2] - ChanImpos.FalseSumEpoChan2[j2]); // РІРѕР·РІРѕРґРёРј РІ РєРІР°РґСЂР°С‚ Рё СЃСѓРјРјРёСЂСѓРµРј
+			//ChanImpos.SigmaFalse[3] += (ChanImpos.FalseOnlyEpoch[k0][j2][3] - ChanImpos.FalseSumEpoChan3[j2])*(ChanImpos.FalseOnlyEpoch[k0][j2][3] - ChanImpos.FalseSumEpoChan3[j2]); // РІРѕР·РІРѕРґРёРј РІ РєРІР°РґСЂР°С‚ Рё СЃСѓРјРјРёСЂСѓРµРј
 
 
 		}
 
 
-		// берем корень из полученного результата
-		int k1 = (ChanImpos.FalseOnlyEpoch.size()*(ChanImpos.FalseOnlyEpoch.size() - 1));// по формуле: (n(n-1)), где n - кол-во эпох
+		// Р±РµСЂРµРј РєРѕСЂРµРЅСЊ РёР· РїРѕР»СѓС‡РµРЅРЅРѕРіРѕ СЂРµР·СѓР»СЊС‚Р°С‚Р°
+		int k1 = (ChanImpos.FalseOnlyEpoch.size()*(ChanImpos.FalseOnlyEpoch.size() - 1));// РїРѕ С„РѕСЂРјСѓР»Рµ: (n(n-1)), РіРґРµ n - РєРѕР»-РІРѕ СЌРїРѕС…
 
-		// ChanImpos.SigmaTrue[0] - содержит формулу СУММ по k0( Xk(j2) - Xcp(j2)), где k0 - номер эпохи(по счету ответ), j2 - отсчет момента времени
-		if (k1 != 0) // защита от -nan в файле на выходе
+		// ChanImpos.SigmaTrue[0] - СЃРѕРґРµСЂР¶РёС‚ С„РѕСЂРјСѓР»Сѓ РЎРЈРњРњ РїРѕ k0( Xk(j2) - Xcp(j2)), РіРґРµ k0 - РЅРѕРјРµСЂ СЌРїРѕС…Рё(РїРѕ СЃС‡РµС‚Сѓ РѕС‚РІРµС‚), j2 - РѕС‚СЃС‡РµС‚ РјРѕРјРµРЅС‚Р° РІСЂРµРјРµРЅРё
+		if (k1 != 0) // Р·Р°С‰РёС‚Р° РѕС‚ -nan РІ С„Р°Р№Р»Рµ РЅР° РІС‹С…РѕРґРµ
 		{
 			for (int f1 = 0; f1 < ChanImpos.SigmaTrue.size();f1++)
 			{
@@ -557,8 +557,8 @@ void SumEpochClass::Sigma(int j2)
 			ChanImpos.SigmaFalseChan2[j2] = 0;
 			ChanImpos.SigmaFalseChan3[j2] = 0;*/
 		}
-		// обнуляем вектора среднеквадр отклонения, сохраняя
-		//размерность
+		// РѕР±РЅСѓР»СЏРµРј РІРµРєС‚РѕСЂР° СЃСЂРµРґРЅРµРєРІР°РґСЂ РѕС‚РєР»РѕРЅРµРЅРёСЏ, СЃРѕС…СЂР°РЅСЏСЏ
+		//СЂР°Р·РјРµСЂРЅРѕСЃС‚СЊ
 		
 		int tempSize = ChanImpos.SigmaFalse.size();
 		ChanImpos.SigmaFalse.clear();
@@ -592,28 +592,28 @@ void SumEpochClass::Sigma(int j2)
 
 void SumEpochClass::MyStruct1::ClearVec()
 {
-	// очистка векторов
-	TrueSumEpoChan.clear(); // вектор для сохранения значения канала 0
-	//TrueSumEpoChan1.clear(); // вектор для сохранения значения канала 1
-	//TrueSumEpoChan2.clear(); // вектор для сохранения значения канала 2
-	//TrueSumEpoChan3.clear(); // вектор для сохранения значения канала 3
+	// РѕС‡РёСЃС‚РєР° РІРµРєС‚РѕСЂРѕРІ
+	TrueSumEpoChan.clear(); // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 0
+	//TrueSumEpoChan1.clear(); // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 1
+	//TrueSumEpoChan2.clear(); // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 2
+	//TrueSumEpoChan3.clear(); // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 3
 
-	FalseSumEpoChan.clear(); // вектор для сохранения значения канала 0
-	//FalseSumEpoChan1.clear();// вектор для сохранения значения канала 1
-	//FalseSumEpoChan2.clear(); // вектор для сохранения значения канала 2
-	//FalseSumEpoChan3.clear(); // вектор для сохранения значения канала 3
+	FalseSumEpoChan.clear(); // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 0
+	//FalseSumEpoChan1.clear();// РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 1
+	//FalseSumEpoChan2.clear(); // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 2
+	//FalseSumEpoChan3.clear(); // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 3
 
 
-							  // освобождения мощностей
-	TrueSumEpoChan.shrink_to_fit(); // вектор для сохранения значения канала 0
-	//TrueSumEpoChan1.shrink_to_fit(); // вектор для сохранения значения канала 1
-	//TrueSumEpoChan2.shrink_to_fit(); // вектор для сохранения значения канала 2
-	//TrueSumEpoChan3.shrink_to_fit(); // вектор для сохранения значения канала 3
+							  // РѕСЃРІРѕР±РѕР¶РґРµРЅРёСЏ РјРѕС‰РЅРѕСЃС‚РµР№
+	TrueSumEpoChan.shrink_to_fit(); // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 0
+	//TrueSumEpoChan1.shrink_to_fit(); // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 1
+	//TrueSumEpoChan2.shrink_to_fit(); // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 2
+	//TrueSumEpoChan3.shrink_to_fit(); // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 3
 
-	FalseSumEpoChan.shrink_to_fit(); // вектор для сохранения значения канала 0
-	//FalseSumEpoChan1.shrink_to_fit();// вектор для сохранения значения канала 1
-	//FalseSumEpoChan2.shrink_to_fit(); // вектор для сохранения значения канала 2
-	//FalseSumEpoChan3.shrink_to_fit(); // вектор для сохранения значения канала 3
+	FalseSumEpoChan.shrink_to_fit(); // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 0
+	//FalseSumEpoChan1.shrink_to_fit();// РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 1
+	//FalseSumEpoChan2.shrink_to_fit(); // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 2
+	//FalseSumEpoChan3.shrink_to_fit(); // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 3
 
 
 
@@ -647,15 +647,15 @@ void SumEpochClass::MyStruct1::ClearVec()
 
 void SumEpochClass::MyStruct1::ResizeVec(int SizeVec)
 {
-	//TrueSumEpoChan0.resize(SizeVec); // вектор для сохранения значения канала 0
-	//TrueSumEpoChan1.resize(SizeVec); // вектор для сохранения значения канала 1
-	//TrueSumEpoChan2.resize(SizeVec); // вектор для сохранения значения канала 2
-	//TrueSumEpoChan3.resize(SizeVec); // вектор для сохранения значения канала 3
+	//TrueSumEpoChan0.resize(SizeVec); // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 0
+	//TrueSumEpoChan1.resize(SizeVec); // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 1
+	//TrueSumEpoChan2.resize(SizeVec); // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 2
+	//TrueSumEpoChan3.resize(SizeVec); // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 3
 
-	//FalseSumEpoChan0.resize(SizeVec); // вектор для сохранения значения канала 0
-	//FalseSumEpoChan1.resize(SizeVec); // вектор для сохранения значения канала 1
-	//FalseSumEpoChan2.resize(SizeVec); // вектор для сохранения значения канала 2
-	//FalseSumEpoChan3.resize(SizeVec); // вектор для сохранения значения канала 3
+	//FalseSumEpoChan0.resize(SizeVec); // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 0
+	//FalseSumEpoChan1.resize(SizeVec); // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 1
+	//FalseSumEpoChan2.resize(SizeVec); // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 2
+	//FalseSumEpoChan3.resize(SizeVec); // РІРµРєС‚РѕСЂ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєР°РЅР°Р»Р° 3
 
 	//SigmaTrueChan.resize(SizeVec);
 	//SigmaFalseChan.resize(SizeVec);
@@ -672,11 +672,11 @@ void SumEpochClass::MyStruct1::ResizeVec(int SizeVec)
 	SigmaFalseChan3.resize(SizeVec);
 */
 
-//// изменяем размер двумерного вектора
-//	OnlyEpoch.resize(4); // по столбцам
+//// РёР·РјРµРЅСЏРµРј СЂР°Р·РјРµСЂ РґРІСѓРјРµСЂРЅРѕРіРѕ РІРµРєС‚РѕСЂР°
+//	OnlyEpoch.resize(4); // РїРѕ СЃС‚РѕР»Р±С†Р°Рј
 //	for (int i1 = 0; i1 < OnlyEpoch.size();i1++)
 //	{
-//		OnlyEpoch[i1].resize(SizeVec);// по строкам
+//		OnlyEpoch[i1].resize(SizeVec);// РїРѕ СЃС‚СЂРѕРєР°Рј
 //	}
 //
 	//OnlyEpoch.resize(4);

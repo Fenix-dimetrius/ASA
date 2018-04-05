@@ -1,4 +1,4 @@
-// MFCLibrary1.cpp: определяет процедуры инициализации для DLL.
+п»ї// MFCLibrary1.cpp: РѕРїСЂРµРґРµР»СЏРµС‚ РїСЂРѕС†РµРґСѓСЂС‹ РёРЅРёС†РёР°Р»РёР·Р°С†РёРё РґР»СЏ DLL.
 //
 //#define _CRT_SECURE_NO_WARNINGS
 #include "stdafx.h"
@@ -17,28 +17,28 @@ ASATest TestBody2;
 #endif
 
 //
-//TODO: если эта библиотека DLL динамически связана с библиотеками DLL MFC,
-//		все функции, экспортированные из данной DLL-библиотеки, которые выполняют вызовы к
-//		MFC, должны содержать макрос AFX_MANAGE_STATE в
-//		самое начало функции.
+//TODO: РµСЃР»Рё СЌС‚Р° Р±РёР±Р»РёРѕС‚РµРєР° DLL РґРёРЅР°РјРёС‡РµСЃРєРё СЃРІСЏР·Р°РЅР° СЃ Р±РёР±Р»РёРѕС‚РµРєР°РјРё DLL MFC,
+//		РІСЃРµ С„СѓРЅРєС†РёРё, СЌРєСЃРїРѕСЂС‚РёСЂРѕРІР°РЅРЅС‹Рµ РёР· РґР°РЅРЅРѕР№ DLL-Р±РёР±Р»РёРѕС‚РµРєРё, РєРѕС‚РѕСЂС‹Рµ РІС‹РїРѕР»РЅСЏСЋС‚ РІС‹Р·РѕРІС‹ Рє
+//		MFC, РґРѕР»Р¶РЅС‹ СЃРѕРґРµСЂР¶Р°С‚СЊ РјР°РєСЂРѕСЃ AFX_MANAGE_STATE РІ
+//		СЃР°РјРѕРµ РЅР°С‡Р°Р»Рѕ С„СѓРЅРєС†РёРё.
 //
-//		Например:
+//		РќР°РїСЂРёРјРµСЂ:
 //
 //		extern "C" BOOL PASCAL EXPORT ExportedFunction()
 //		{
 //			AFX_MANAGE_STATE(AfxGetStaticModuleState());
-//			// тело нормальной функции
+//			// С‚РµР»Рѕ РЅРѕСЂРјР°Р»СЊРЅРѕР№ С„СѓРЅРєС†РёРё
 //		}
 //
-//		Важно, чтобы данный макрос был представлен в каждой
-//		функции до вызова MFC.  Это означает, что
-//		он должен быть первым оператором 
-//		функции и предшествовать даже любым объявлениям переменных объекта,
-//		поскольку их конструкторы могут выполнять вызовы к MFC
+//		Р’Р°Р¶РЅРѕ, С‡С‚РѕР±С‹ РґР°РЅРЅС‹Р№ РјР°РєСЂРѕСЃ Р±С‹Р» РїСЂРµРґСЃС‚Р°РІР»РµРЅ РІ РєР°Р¶РґРѕР№
+//		С„СѓРЅРєС†РёРё РґРѕ РІС‹Р·РѕРІР° MFC.  Р­С‚Рѕ РѕР·РЅР°С‡Р°РµС‚, С‡С‚Рѕ
+//		РѕРЅ РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ РїРµСЂРІС‹Рј РѕРїРµСЂР°С‚РѕСЂРѕРј 
+//		С„СѓРЅРєС†РёРё Рё РїСЂРµРґС€РµСЃС‚РІРѕРІР°С‚СЊ РґР°Р¶Рµ Р»СЋР±С‹Рј РѕР±СЉСЏРІР»РµРЅРёСЏРј РїРµСЂРµРјРµРЅРЅС‹С… РѕР±СЉРµРєС‚Р°,
+//		РїРѕСЃРєРѕР»СЊРєСѓ РёС… РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂС‹ РјРѕРіСѓС‚ РІС‹РїРѕР»РЅСЏС‚СЊ РІС‹Р·РѕРІС‹ Рє MFC
 //		DLL.
 //
-//		В Технических указаниях MFC 33 и 58 содержатся более
-//		подробные сведения.
+//		Р’ РўРµС…РЅРёС‡РµСЃРєРёС… СѓРєР°Р·Р°РЅРёСЏС… MFC 33 Рё 58 СЃРѕРґРµСЂР¶Р°С‚СЃСЏ Р±РѕР»РµРµ
+//		РїРѕРґСЂРѕР±РЅС‹Рµ СЃРІРµРґРµРЅРёСЏ.
 //
 
 
@@ -78,7 +78,7 @@ struct UpdateInfo
 	DWORD		dwReserved1;	// Reserved for future use
 	DWORD		dwReserved2;
 };
-// создание CMFCLibrary1App
+// СЃРѕР·РґР°РЅРёРµ CMFCLibrary1App
 
 
 // Global WINDOW handles:
@@ -86,34 +86,34 @@ HWND	g_hWnd;
 
 CMFCLibrary1App::CMFCLibrary1App()
 {
-	// TODO: добавьте код создания,
-	// Размещает весь важный код инициализации в InitInstance
+	// TODO: РґРѕР±Р°РІСЊС‚Рµ РєРѕРґ СЃРѕР·РґР°РЅРёСЏ,
+	// Р Р°Р·РјРµС‰Р°РµС‚ РІРµСЃСЊ РІР°Р¶РЅС‹Р№ РєРѕРґ РёРЅРёС†РёР°Р»РёР·Р°С†РёРё РІ InitInstance
 	
 }
 
 
-// Единственный объект CMFCLibrary1App
+// Р•РґРёРЅСЃС‚РІРµРЅРЅС‹Р№ РѕР±СЉРµРєС‚ CMFCLibrary1App
 
 CMFCLibrary1App theApp;
 
 
-// инициализация CMFCLibrary1App
+// РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ CMFCLibrary1App
 
 BOOL CMFCLibrary1App::InitInstance()
 {
 	CWinApp::InitInstance();
 
-	// Время показа
+	// Р’СЂРµРјСЏ РїРѕРєР°Р·Р°
 	m_ShowTime = 1000;
-	// Задержка до показа
+	// Р—Р°РґРµСЂР¶РєР° РґРѕ РїРѕРєР°Р·Р°
 	m_BeforeShow = 1000;
-	//  Задержка после показа
+	//  Р—Р°РґРµСЂР¶РєР° РїРѕСЃР»Рµ РїРѕРєР°Р·Р°
 	m_AfterShow = 1000;
 
-	//  Задержка после показа
+	//  Р—Р°РґРµСЂР¶РєР° РїРѕСЃР»Рµ РїРѕРєР°Р·Р°
 	m_DelaySpeedMouse = 500;
 
-	// завершить показ по клику
+	// Р·Р°РІРµСЂС€РёС‚СЊ РїРѕРєР°Р· РїРѕ РєР»РёРєСѓ
 	m_EndShowByClick = false;
 	imgPlugIn.Load(_T("PlugIns/TestASA/fonASA.jpg"));
 
@@ -141,8 +141,8 @@ BOOL CMFCLibrary1App::InitInstance()
 extern "C" __declspec(dllexport) DWORD InitPlugInDLL(HINSTANCE hDLL)
 {
 	AFX_MANAGE_STATE(AfxGetStaticModuleState());
-	//AsaDlgClass.Create(IDD_ASA); // создаем окно настроек
-	//m_SettingDlg.Create(IDD_SETTINGS); // создаем окно настроек
+	//AsaDlgClass.Create(IDD_ASA); // СЃРѕР·РґР°РµРј РѕРєРЅРѕ РЅР°СЃС‚СЂРѕРµРє
+	//m_SettingDlg.Create(IDD_SETTINGS); // СЃРѕР·РґР°РµРј РѕРєРЅРѕ РЅР°СЃС‚СЂРѕРµРє
 	//g_cpPlugInClass = NULL;
 	/*ASADlg AsaTestDlg;
 
@@ -238,7 +238,7 @@ extern "C" __declspec(dllexport) BOOL DestroyPlugInObject(DWORD dwObjectIndex)
 {
 	AFX_MANAGE_STATE(AfxGetStaticModuleState());
 
-	// выгружаем вспомогательные библиотеки
+	// РІС‹РіСЂСѓР¶Р°РµРј РІСЃРїРѕРјРѕРіР°С‚РµР»СЊРЅС‹Рµ Р±РёР±Р»РёРѕС‚РµРєРё
 
 	for (int i = 0; i < m_AuxPlugInNum; i++)
 	{
@@ -354,19 +354,19 @@ extern "C" __declspec(dllexport) BOOL SetLinkText(DWORD dwObjectIndex, DWORD dwL
 		sprintf(g_szTextArray[dwLink], "%s", szLinkText);
 	}
 	testOut(dwObjectIndex, dwLink);
-	// наименование подключенных каналов
+	// РЅР°РёРјРµРЅРѕРІР°РЅРёРµ РїРѕРґРєР»СЋС‡РµРЅРЅС‹С… РєР°РЅР°Р»РѕРІ
 
-	// сбрасываем вектор, т.к. SetLinkText может вызываться не единожды
+	// СЃР±СЂР°СЃС‹РІР°РµРј РІРµРєС‚РѕСЂ, С‚.Рє. SetLinkText РјРѕР¶РµС‚ РІС‹Р·С‹РІР°С‚СЊСЃСЏ РЅРµ РµРґРёРЅРѕР¶РґС‹
 	UpdInfoVal.TextInfChan.clear();
 	UpdInfoVal.TextInfChan.shrink_to_fit();
 	for (int i1 = 0; i1 <= dwLink; i1++)
 	{
 		UpdInfoVal.TextInfChan.push_back(g_szTextArray[i1]);
-		UpdInfoVal.TextInfChan[i1].Delete(0, (UpdInfoVal.TextInfChan[i1 ].Find('.') + 1));// удаляем название инструмента, оставляя только название канала
+		UpdInfoVal.TextInfChan[i1].Delete(0, (UpdInfoVal.TextInfChan[i1 ].Find('.') + 1));// СѓРґР°Р»СЏРµРј РЅР°Р·РІР°РЅРёРµ РёРЅСЃС‚СЂСѓРјРµРЅС‚Р°, РѕСЃС‚Р°РІР»СЏСЏ С‚РѕР»СЊРєРѕ РЅР°Р·РІР°РЅРёРµ РєР°РЅР°Р»Р°
 
 	}
 
-	// вызываем функции из вспомогательных dll для получения размера векторов
+	// РІС‹Р·С‹РІР°РµРј С„СѓРЅРєС†РёРё РёР· РІСЃРїРѕРјРѕРіР°С‚РµР»СЊРЅС‹С… dll РґР»СЏ РїРѕР»СѓС‡РµРЅРёСЏ СЂР°Р·РјРµСЂР° РІРµРєС‚РѕСЂРѕРІ
 
 
 	for (int i = 0;i < m_AuxPlugInNum; i++)
@@ -398,8 +398,8 @@ extern "C" __declspec(dllexport) BOOL SetLinkText(DWORD dwObjectIndex, DWORD dwL
 
 	}*/
 
-	//UpdInfoVal.TextInfChan0.Delete(0, (UpdInfoVal.TextInfChan0.Find('.') + 1)); // удаляем название инструмента, оставляя только название канала
-	//UpdInfoVal.TextInfChan1.Delete(0, (UpdInfoVal.TextInfChan1.Find('.') + 1)); // + 1 т.к. нужно удалить вместе со знаком '.'
+	//UpdInfoVal.TextInfChan0.Delete(0, (UpdInfoVal.TextInfChan0.Find('.') + 1)); // СѓРґР°Р»СЏРµРј РЅР°Р·РІР°РЅРёРµ РёРЅСЃС‚СЂСѓРјРµРЅС‚Р°, РѕСЃС‚Р°РІР»СЏСЏ С‚РѕР»СЊРєРѕ РЅР°Р·РІР°РЅРёРµ РєР°РЅР°Р»Р°
+	//UpdInfoVal.TextInfChan1.Delete(0, (UpdInfoVal.TextInfChan1.Find('.') + 1)); // + 1 С‚.Рє. РЅСѓР¶РЅРѕ СѓРґР°Р»РёС‚СЊ РІРјРµСЃС‚Рµ СЃРѕ Р·РЅР°РєРѕРј '.'
 	//UpdInfoVal.TextInfChan2.Delete(0, (UpdInfoVal.TextInfChan2.Find('.') + 1));
 	//UpdInfoVal.TextInfChan3.Delete(0, (UpdInfoVal.TextInfChan3.Find('.') + 1));
 	//UpdInfoVal.TextInfChan4.Delete(0, (UpdInfoVal.TextInfChan4.Find('.') + 1));
@@ -428,9 +428,9 @@ extern "C" __declspec(dllexport) BOOL PaintPlugIn(DWORD dwObjectIndex)
 
 	// Get the SIZE of the window we are using for this plug in
 	GetClientRect(g_hWnd, &rc);
-	imgPlugIn.AlphaBlend(hDC, 0, 0, rc.right, rc.bottom, 0, 0, imgPlugIn.GetWidth(), imgPlugIn.GetHeight()); // выводим изображение фона на окно
+	imgPlugIn.AlphaBlend(hDC, 0, 0, rc.right, rc.bottom, 0, 0, imgPlugIn.GetWidth(), imgPlugIn.GetHeight()); // РІС‹РІРѕРґРёРј РёР·РѕР±СЂР°Р¶РµРЅРёРµ С„РѕРЅР° РЅР° РѕРєРЅРѕ
 	
-	// вывод текста
+	// РІС‹РІРѕРґ С‚РµРєСЃС‚Р°
 	//CRect rect;
 	
 
@@ -455,9 +455,9 @@ extern "C" __declspec(dllexport) BOOL PaintPlugIn(DWORD dwObjectIndex)
 	
 	
 	
-	SetBkMode(hDC,TRANSPARENT); // убираем фон в тексте
+	SetBkMode(hDC,TRANSPARENT); // СѓР±РёСЂР°РµРј С„РѕРЅ РІ С‚РµРєСЃС‚Рµ
 
-	SetTextColor(hDC, RGB(250, 20, 0)); // изменяем цвет текста
+	SetTextColor(hDC, RGB(250, 20, 0)); // РёР·РјРµРЅСЏРµРј С†РІРµС‚ С‚РµРєСЃС‚Р°
 	
 	TextOut(hDC, 20, 40, TestBody2.GetActualNumPic(), TestBody2.GetActualNumPic().GetLength());
 	
@@ -501,7 +501,7 @@ void redrawPlugIn(CString url)
 // (called by BioTrace about 15-20 times per second)
 //************************************************************************************
 
-// расчет количества символов в числе
+// СЂР°СЃС‡РµС‚ РєРѕР»РёС‡РµСЃС‚РІР° СЃРёРјРІРѕР»РѕРІ РІ С‡РёСЃР»Рµ
 int numOfDigits(int number)
 {
 	int result = 0;
@@ -549,7 +549,7 @@ extern "C" __declspec(dllexport) BOOL  UpdatePlugIn(DWORD dwObjectIndex, struct 
 	HDC hDC = GetDC(g_hWnd);
 	
 	//GetClientRect(g_hWnd, &rect);
-	//imgPlugIn.AlphaBlend(hDC, 0, 0, rect.right, rect.bottom, 0, 0, imgPlugIn.GetWidth(), imgPlugIn.GetHeight()); // выводим изображение фона на окно
+	//imgPlugIn.AlphaBlend(hDC, 0, 0, rect.right, rect.bottom, 0, 0, imgPlugIn.GetWidth(), imgPlugIn.GetHeight()); // РІС‹РІРѕРґРёРј РёР·РѕР±СЂР°Р¶РµРЅРёРµ С„РѕРЅР° РЅР° РѕРєРЅРѕ
 	CString csStr;
 	char* valLen;
 	// this prints the supplied data channel value.
@@ -560,11 +560,11 @@ extern "C" __declspec(dllexport) BOOL  UpdatePlugIn(DWORD dwObjectIndex, struct 
 	
 	//csStr.Format("Sample DATA = %5.3f", psUInfo->dDataVal);
 	
-	//SetBkMode(hDC, TRANSPARENT); // убираем фон в тексте
-	//SetBkMode(hDC, TRANSPARENT); // убираем фон в тексте
+	//SetBkMode(hDC, TRANSPARENT); // СѓР±РёСЂР°РµРј С„РѕРЅ РІ С‚РµРєСЃС‚Рµ
+	//SetBkMode(hDC, TRANSPARENT); // СѓР±РёСЂР°РµРј С„РѕРЅ РІ С‚РµРєСЃС‚Рµ
 
-	//SetTextColor(hDC, RGB(250, 20, 0)); // изменяем цвет текста
-	//SetTextColor(hDC, RGB(250, 20, 0)); // изменяем цвет текста
+	//SetTextColor(hDC, RGB(250, 20, 0)); // РёР·РјРµРЅСЏРµРј С†РІРµС‚ С‚РµРєСЃС‚Р°
+	//SetTextColor(hDC, RGB(250, 20, 0)); // РёР·РјРµРЅСЏРµРј С†РІРµС‚ С‚РµРєСЃС‚Р°
 	val1 = psUInfo->dDataVal;
 	//csStr.Format("Sample DATA = %5.3f", val1);
 	switch (psUInfo->dwChanIndex)
@@ -581,8 +581,8 @@ extern "C" __declspec(dllexport) BOOL  UpdatePlugIn(DWORD dwObjectIndex, struct 
 			csStr.Format("%s" "%s" "%5.3f", UpdInfoVal.TextInfChan[0], " = ", val1);
 			//csStr.Format("Sample DATA = %5.3f", val1);
 
-			TextOut(hDC, 20, 120, csStr, strlen(UpdInfoVal.TextInfChan[0]) + numOfDigits(val1) + 6); // выводим текст в заданные координаты с длиной выводимой области равной длине строки массива
-		}																		// +6 это 3 числа после запятой и 3 знака в " = "
+			TextOut(hDC, 20, 120, csStr, strlen(UpdInfoVal.TextInfChan[0]) + numOfDigits(val1) + 6); // РІС‹РІРѕРґРёРј С‚РµРєСЃС‚ РІ Р·Р°РґР°РЅРЅС‹Рµ РєРѕРѕСЂРґРёРЅР°С‚С‹ СЃ РґР»РёРЅРѕР№ РІС‹РІРѕРґРёРјРѕР№ РѕР±Р»Р°СЃС‚Рё СЂР°РІРЅРѕР№ РґР»РёРЅРµ СЃС‚СЂРѕРєРё РјР°СЃСЃРёРІР°
+		}																		// +6 СЌС‚Рѕ 3 С‡РёСЃР»Р° РїРѕСЃР»Рµ Р·Р°РїСЏС‚РѕР№ Рё 3 Р·РЅР°РєР° РІ " = "
 	}
 	break;
 	case 1:
@@ -625,7 +625,7 @@ extern "C" __declspec(dllexport) BOOL  UpdatePlugIn(DWORD dwObjectIndex, struct 
 
 
 
-	// выводим показания со вспомогательных плагинов
+	// РІС‹РІРѕРґРёРј РїРѕРєР°Р·Р°РЅРёСЏ СЃРѕ РІСЃРїРѕРјРѕРіР°С‚РµР»СЊРЅС‹С… РїР»Р°РіРёРЅРѕРІ
 
 
 	for (int i = 0;i < m_AuxPlugInNum; i++)//
@@ -644,7 +644,7 @@ extern "C" __declspec(dllexport) BOOL  UpdatePlugIn(DWORD dwObjectIndex, struct 
 
 					for (int i1 = 0; i1 < NameChannelSecDll.TextInfCh.size();i1++)
 					{
-						UpdInfoVal.updInfChan[4 + 4*i + i1] = NameChannelSecDll.valChannel[i1]; // добавляем значения из вспомогательной dll в основной вектор с данными
+						UpdInfoVal.updInfChan[4 + 4*i + i1] = NameChannelSecDll.valChannel[i1]; // РґРѕР±Р°РІР»СЏРµРј Р·РЅР°С‡РµРЅРёСЏ РёР· РІСЃРїРѕРјРѕРіР°С‚РµР»СЊРЅРѕР№ dll РІ РѕСЃРЅРѕРІРЅРѕР№ РІРµРєС‚РѕСЂ СЃ РґР°РЅРЅС‹РјРё
 						csStr.Format("%s" "%s" "%5.3f", NameChannelSecDll.TextInfCh[i1], " = ", NameChannelSecDll.valChannel[i1]);
 						TextOut(hDC, 20, 240 + i1 * 20 + 100*i, csStr, strlen(NameChannelSecDll.TextInfCh[i1]) + numOfDigits(NameChannelSecDll.valChannel[i1]) + 6);
 
@@ -685,7 +685,7 @@ extern "C" __declspec(dllexport) BOOL  EditPlugInSettings(DWORD dwObjectIndex)
 	
 
 
-	//m_SettingDlg.ShowWindow(SW_SHOW); // показываем окно настроек
+	//m_SettingDlg.ShowWindow(SW_SHOW); // РїРѕРєР°Р·С‹РІР°РµРј РѕРєРЅРѕ РЅР°СЃС‚СЂРѕРµРє
 	//AsaDlgClass.ShowASA();
 	//AsaDlgClass.DoModal();
 	//ShowASA();
@@ -702,7 +702,7 @@ extern "C" __declspec(dllexport) BOOL  EditPlugInSettings(DWORD dwObjectIndex)
 // in case your plug-in should use the RECORD/REPLAY/PAUSE buttons
 //***********************************************************************
 
-bool StartRecorPlay = false;// проверка на запуск записи
+bool StartRecorPlay = false;// РїСЂРѕРІРµСЂРєР° РЅР° Р·Р°РїСѓСЃРє Р·Р°РїРёСЃРё
 // Start to "PLAY" your content/media
 extern "C" __declspec(dllexport) BOOL  Play(DWORD dwObjectIndex, char *szSessionDirectory)
 {

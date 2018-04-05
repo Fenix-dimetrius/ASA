@@ -1,4 +1,4 @@
-#include "stdafx.h"
+п»ї#include "stdafx.h"
 #include "TimerCls.h"
 
 
@@ -11,14 +11,14 @@ TimerCls::~TimerCls()
 {
 }
 
-//инициализация
+//РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ
 void TimerCls::init()
 {
 	freq = getFreq();
-	tickLen = 1000.0 / freq; // длитильность тика 1 мс
+	tickLen = 1000.0 / freq; // РґР»РёС‚РёР»СЊРЅРѕСЃС‚СЊ С‚РёРєР° 1 РјСЃ
 }
 
-//частота таймера
+//С‡Р°СЃС‚РѕС‚Р° С‚Р°Р№РјРµСЂР°
 double TimerCls::getFreq()
 {
 
@@ -28,28 +28,28 @@ double TimerCls::getFreq()
 	return (double)fr.QuadPart;
 }
 
-//остановить таймер
+//РѕСЃС‚Р°РЅРѕРІРёС‚СЊ С‚Р°Р№РјРµСЂ
 void TimerCls::stopTimer()
 {
 	currentTime = 0;
 	lastTime = 0;
 }
 
-//старт таймера
+//СЃС‚Р°СЂС‚ С‚Р°Р№РјРµСЂР°
 void TimerCls::startTimer()
 {
 	init();
-	DWORD_PTR oldMask = SetThreadAffinityMask(GetCurrentThread(), 2); ///использовать только 2 ядро процессора 
+	DWORD_PTR oldMask = SetThreadAffinityMask(GetCurrentThread(), 2); ///РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ С‚РѕР»СЊРєРѕ 2 СЏРґСЂРѕ РїСЂРѕС†РµСЃСЃРѕСЂР° 
 	QueryPerformanceCounter(&start);
 	SetThreadAffinityMask(GetCurrentThread(), oldMask);
 	lastTime = currentTime = readTimer();
 }
-//считывание времени
+//СЃС‡РёС‚С‹РІР°РЅРёРµ РІСЂРµРјРµРЅРё
 double TimerCls::readTimer()
 {
-	DWORD_PTR oldMask = SetThreadAffinityMask(GetCurrentThread(), 2); //использовать только 2 ядро процессора (по идее 3 ядро, но почему то грузится только второе)
-	LARGE_INTEGER currentTime;                                              //засечь текущее время
-	QueryPerformanceCounter(&currentTime);                                  //восстановить маску использования ядер процессора
-	SetThreadAffinityMask(GetCurrentThread(), oldMask);                      //вернуть текущее время
-	return (currentTime.QuadPart - start.QuadPart) * tickLen; // возвращаем время в мс
+	DWORD_PTR oldMask = SetThreadAffinityMask(GetCurrentThread(), 2); //РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ С‚РѕР»СЊРєРѕ 2 СЏРґСЂРѕ РїСЂРѕС†РµСЃСЃРѕСЂР° (РїРѕ РёРґРµРµ 3 СЏРґСЂРѕ, РЅРѕ РїРѕС‡РµРјСѓ С‚Рѕ РіСЂСѓР·РёС‚СЃСЏ С‚РѕР»СЊРєРѕ РІС‚РѕСЂРѕРµ)
+	LARGE_INTEGER currentTime;                                              //Р·Р°СЃРµС‡СЊ С‚РµРєСѓС‰РµРµ РІСЂРµРјСЏ
+	QueryPerformanceCounter(&currentTime);                                  //РІРѕСЃСЃС‚Р°РЅРѕРІРёС‚СЊ РјР°СЃРєСѓ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ СЏРґРµСЂ РїСЂРѕС†РµСЃСЃРѕСЂР°
+	SetThreadAffinityMask(GetCurrentThread(), oldMask);                      //РІРµСЂРЅСѓС‚СЊ С‚РµРєСѓС‰РµРµ РІСЂРµРјСЏ
+	return (currentTime.QuadPart - start.QuadPart) * tickLen; // РІРѕР·РІСЂР°С‰Р°РµРј РІСЂРµРјСЏ РІ РјСЃ
 }

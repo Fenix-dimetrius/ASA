@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include "resource.h"
 #include "afxwin.h"
 
@@ -6,23 +6,23 @@
 
 extern int MenOrWomen;
 
-// диалоговое окно PlugInSettingDlg
+// РґРёР°Р»РѕРіРѕРІРѕРµ РѕРєРЅРѕ PlugInSettingDlg
 
 class PlugInSettingDlg : public CDialogEx
 {
 	DECLARE_DYNAMIC(PlugInSettingDlg)
 
 public:
-	PlugInSettingDlg(CWnd* pParent = NULL);   // стандартный конструктор
+	PlugInSettingDlg(CWnd* pParent = NULL);   // СЃС‚Р°РЅРґР°СЂС‚РЅС‹Р№ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 	virtual ~PlugInSettingDlg();
 	bool ShowSettings();
-// Данные диалогового окна
+// Р”Р°РЅРЅС‹Рµ РґРёР°Р»РѕРіРѕРІРѕРіРѕ РѕРєРЅР°
 #ifdef AFX_DESIGN_TIME
 	enum { IDD = IDD_SETTINGS };
 #endif
 
 protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // поддержка DDX/DDV
+	virtual void DoDataExchange(CDataExchange* pDX);    // РїРѕРґРґРµСЂР¶РєР° DDX/DDV
 
 	DECLARE_MESSAGE_MAP()
 
@@ -34,59 +34,59 @@ public:
 	afx_msg void OnBnClickedButton1();
 //	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
 	afx_msg void OnBnClickedOk();
-	// Завершение показа по клику
+	// Р—Р°РІРµСЂС€РµРЅРёРµ РїРѕРєР°Р·Р° РїРѕ РєР»РёРєСѓ
 //	bool m_EndShowCheck;
 	
 //protected:
-	//// Время показа
+	//// Р’СЂРµРјСЏ РїРѕРєР°Р·Р°
 	//float m_ShowTimeEdit;
-	//// Задержка до показа
+	//// Р—Р°РґРµСЂР¶РєР° РґРѕ РїРѕРєР°Р·Р°
 	//float m_BeforeShowEdit;
-	////  Задержка после показа
+	////  Р—Р°РґРµСЂР¶РєР° РїРѕСЃР»Рµ РїРѕРєР°Р·Р°
 	//float m_AfterShowEdit;
 //public:
 	
 //protected:
 //
 //	
-//	// Задержка до показа
+//	// Р—Р°РґРµСЂР¶РєР° РґРѕ РїРѕРєР°Р·Р°
 //	//float m_BeforeShowEdit;
-//	// Время показа
+//	// Р’СЂРµРјСЏ РїРѕРєР°Р·Р°
 //	//float m_ShowTimeEdit;
-//	// Задержка после показа
+//	// Р—Р°РґРµСЂР¶РєР° РїРѕСЃР»Рµ РїРѕРєР°Р·Р°
 //	//float m_AfterShowEdit;
 private:
 
 	
 
 
-	//  завершение показа по клику
+	//  Р·Р°РІРµСЂС€РµРЅРёРµ РїРѕРєР°Р·Р° РїРѕ РєР»РёРєСѓ
 	CButton m_EndShow;
-	// Задержка до показа
+	// Р—Р°РґРµСЂР¶РєР° РґРѕ РїРѕРєР°Р·Р°
 	CEdit m_BeforeShowEdit;
-	// Время показа
+	// Р’СЂРµРјСЏ РїРѕРєР°Р·Р°
 	CEdit m_ShowTimeEdit;
-	// Задержка после показа
+	// Р—Р°РґРµСЂР¶РєР° РїРѕСЃР»Рµ РїРѕРєР°Р·Р°
 	CEdit m_AfterShowEdit;
 public:
 	afx_msg void OnSize(UINT nType, int cx, int cy);
 	afx_msg void OnPaint();
-	// генерация до выбора
+	// РіРµРЅРµСЂР°С†РёСЏ РґРѕ РІС‹Р±РѕСЂР°
 	CButton m_GenNumPicBefore;
-	// точные интервалы отсчетов
+	// С‚РѕС‡РЅС‹Рµ РёРЅС‚РµСЂРІР°Р»С‹ РѕС‚СЃС‡РµС‚РѕРІ
 	CButton m_AccurInterval;
-	// интервал тиков таймера записи
+	// РёРЅС‚РµСЂРІР°Р» С‚РёРєРѕРІ С‚Р°Р№РјРµСЂР° Р·Р°РїРёСЃРё
 	CComboBox m_TimeIntervalTick;
-	// Предзапись
+	// РџСЂРµРґР·Р°РїРёСЃСЊ
 	CEdit m_DelaySpeedMouseEdit;
-	// число подключаемых вспомогательных плагинов
+	// С‡РёСЃР»Рѕ РїРѕРґРєР»СЋС‡Р°РµРјС‹С… РІСЃРїРѕРјРѕРіР°С‚РµР»СЊРЅС‹С… РїР»Р°РіРёРЅРѕРІ
 	CComboBox AuxPlugInNum;
-	// фамилия
+	// С„Р°РјРёР»РёСЏ
 	CEdit s_SureName;
-	// Имя
+	// РРјСЏ
 	CEdit s_Name;
-	// Отчество
+	// РћС‚С‡РµСЃС‚РІРѕ
 	CEdit s_SecName;
-	// Пол
+	// РџРѕР»
 	BOOL s_ManWoman;
 };

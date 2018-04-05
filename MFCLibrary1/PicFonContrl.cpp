@@ -1,4 +1,4 @@
-#include "stdafx.h"
+п»ї#include "stdafx.h"
 #include "PicFonContrl.h"
 #include "ASADlg.h"
 
@@ -24,11 +24,11 @@ END_MESSAGE_MAP()
 void PicFonContrl::OnPaint()
 {
 	CPaintDC dc(this); // device context for painting
-					   // TODO: добавьте свой код обработчика сообщений
-					   // Не вызывать CStatic::OnPaint() для сообщений рисования
+					   // TODO: РґРѕР±Р°РІСЊС‚Рµ СЃРІРѕР№ РєРѕРґ РѕР±СЂР°Р±РѕС‚С‡РёРєР° СЃРѕРѕР±С‰РµРЅРёР№
+					   // РќРµ РІС‹Р·С‹РІР°С‚СЊ CStatic::OnPaint() РґР»СЏ СЃРѕРѕР±С‰РµРЅРёР№ СЂРёСЃРѕРІР°РЅРёСЏ
 	CRect rect;
 	GetClientRect(&rect);
-	imgFon.AlphaBlend(dc, 0, 0, rect.right, rect.bottom, 0, 0, imgFon.GetWidth(), imgFon.GetHeight()); // выводим изображение фона на окно
+	imgFon.AlphaBlend(dc, 0, 0, rect.right, rect.bottom, 0, 0, imgFon.GetWidth(), imgFon.GetHeight()); // РІС‹РІРѕРґРёРј РёР·РѕР±СЂР°Р¶РµРЅРёРµ С„РѕРЅР° РЅР° РѕРєРЅРѕ
 
 	//SetWi
 }
@@ -57,7 +57,7 @@ RECT PicFonContrl::SetPosFon(RECT rect)
 
 void PicFonContrl::OnRButtonDown(UINT nFlags, CPoint point)
 {
-	// TODO: добавьте свой код обработчика сообщений или вызов стандартного
+	// TODO: РґРѕР±Р°РІСЊС‚Рµ СЃРІРѕР№ РєРѕРґ РѕР±СЂР°Р±РѕС‚С‡РёРєР° СЃРѕРѕР±С‰РµРЅРёР№ РёР»Рё РІС‹Р·РѕРІ СЃС‚Р°РЅРґР°СЂС‚РЅРѕРіРѕ
 	ASADlg AsaDlgCl;
 	AsaDlgCl.RBtnClckForm();
 
